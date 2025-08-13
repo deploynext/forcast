@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
-}
+} */
 
-@theme inline {
+/* @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -17,10 +18,59 @@
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  background: var(--background);
+  /* background: var(--background); */
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Crimson Pro", serif;
+  font-optical-sizing: auto;
+}
+
+
+/* Plain CSS Animation for Navbar */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.image-hover-scale {
+  transform-origin: -10% center; /* moves origin 10% left outside container */
+  transition: transform 0.3s ease-in-out;
+}
+.image-hover-scale:hover {
+  transform: scale(1.05) translateX(8px);
+}
+.clip-polygon {
+  clip-path: polygon(0 0, 102% -6%, 84% 100%, 0% 100%);
+}
+.underline-wrapper {
+  display: inline;
+  background-image: linear-gradient(rgb(255, 5, 5), rgb(255, 0, 0));
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 100% 0;
+  transition: background-size 0.5s ease;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  
+}
+
+.group:hover {
+  background-size: 100% 3px;
+
+}
+.underline-wrapper-black {
+  display: inline;
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 100% 0;
+  transition: background-size 0.5s ease;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  
 }

@@ -1,0 +1,51 @@
+import { AlarmClock } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+type Article = {
+  title: string;
+  image: string;
+ category:string;
+ slug:string;
+ date:string;
+};
+
+interface MostReadProps {
+  articles: Article;
+}
+
+export default function MostRead({ articles }: MostReadProps) {
+  return (
+    <div className="w-full ">
+      
+        <div  className="lg:flex lg:flex-row gap-3 mb-3 justify-items-center  pb-2 ">
+          
+          <Link href={`/${articles.category}/${articles.slug}`} className="shrink-0">
+            <Image
+              src={articles.image}
+              alt={articles.title}
+              width={150}
+              height={100}
+              className="w-full lg:w-[100px] h-[100px] object-cover rounded mt-1.5 mb-2"
+            />
+          </Link>
+
+         
+          <div className="flex flex-col">
+            <Link
+              href={`/${articles.category}/${articles.slug}`}
+              className="font-bold text-[17px] font-serif mb-2 lg:line-clamp-3"
+            >
+              {articles.title}
+            </Link>
+            <p className="flex flex-row text-[16px] font-sans font-semibold">
+              <AlarmClock className="me-2 w-5 text-gray-500" />
+              {articles.date}
+            </p>
+          </div>
+
+        </div>
+   
+    </div>
+  );
+}
