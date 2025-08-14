@@ -72,5 +72,16 @@ body {
   transition: background-size 0.5s ease;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
-  
+  line-clamp: 2;
+}
+.underline-wrapper-white {
+  display: inline;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 100% 0;
+  transition: background-size 0.5s ease;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-clamp: 2;
 }

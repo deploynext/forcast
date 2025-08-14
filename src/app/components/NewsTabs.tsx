@@ -42,10 +42,10 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
           <button
             key={tab.num}
             onClick={() => setActiveTab(tab.num)}
-            className={`px-4 py-2 font-medium border-b-2 ${
+            className={`mr-1 py-2 ml-3 font-semibold text-[20px] border-b-2 ${
               activeTab === tab.num
                 ? "border-red-500 text-red-600"
-                : "border-transparent text-gray-600 hover:text-black"
+                : "border-transparent text-gray-700 hover:text-black"
             }`}
           >
             {tab.label}
@@ -54,9 +54,9 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
       </div>
 
       {/* Articles */}
-      <div className="space-y-6">
+      <div className="space-y-2">
         {currentArticles.slice(10,15).map((article, index) => (
-          <div key={index} className="flex gap-4">
+          <div key={index} className="flex gap-4 border-b border-gray-300 pt-2 pb-[19px]">
             <div className="w-1/3 h-28 overflow-hidden rounded-xs relative">
                <Link href={`/${article.category}/${article.slug}`}>
                   <Image
@@ -68,14 +68,14 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                 </Link>
             </div>
             <div className="w-2/3">
-              <Link href={`/${article.category}/${article.slug}`}>
-                <h3 className="group mt-2 text-lg font-serif font-semibold leading-relaxed underline-wrapper-black cursor-pointer">
+              <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
+                <h3 className="group mt-2 text-lg font-serif font-semibold leading-relaxed underline-wrapper-black  cursor-pointer">
                   {article.title}
                 </h3>
               </Link>
               <div className="flex items-center gap-2 mt-2 text-sm">
-                <span className="px-2 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans text-xs font-medium">{article.category}</span>                
-                  <span className="text-gray-500 font-sans">by </span><span className="text-sm font-sans">{article.author || "Reporter"}</span>
+                <span className="px-2 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer text-sm font-medium">{article.category}</span>                
+                  <span className="text-gray-500 font-sans text-lg">by </span><span className="text-lg font-sans">{article.author || "Reporter"}</span>
               </div>
             </div>
           </div>
