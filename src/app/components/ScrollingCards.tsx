@@ -35,13 +35,13 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
             {/* Group A */}
             <div className={`${styles.marqueeGroup} gap-6`}>
               {articles.map((article, idx) => (
-                <div className={styles.card} key={`a-${article.slug}-${idx}`}>
+                <div className={`${styles.card} group`} key={`a-${article.slug}-${idx} `}>
                     <Link href={`/${article.category}/${article.slug}`}>
                         <Image
                           src={article.image}
                           alt={article.title}
                           fill
-                          className=  "object-cover transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
+                          className=  "object-cover transform transition-transform duration-700 ease-in-out scale-110 group-hover:scale-112 group-hover:translate-x-3"
                         />
                     </Link>
                   <div className={`${styles.cardInfo} inset-0 bg-gradient-to-t from-black to-transparent`}>

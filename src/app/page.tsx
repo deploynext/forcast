@@ -15,6 +15,16 @@ import RightImage from "./components/RightImage"
 import MinusTop from "./components/MinusTop"
 import ScrollingCards from "./components/ScrollingCards"
 import DontMiss from "./components/DontMiss"
+import Trending from "./components/Trending"
+import PopularNews from "./components/PopularNews"
+import SubscribeBox from "./components/SubscribeBox"
+import WorldNews from "./components/WorldNews"
+import WorldNews2 from "./components/WorldNews2"
+import ThreeNews from "./components/ThreeNews"
+import TwoNews from "./components/TwoNews"
+import LatestHead from "./components/LatestHead"
+import QuoteSlider from "./components/QuoteSlider"
+import NewsCard from "./components/NewsCard"
 
 
 
@@ -51,7 +61,7 @@ export default function Home() {
         <div className="lg:w-2/3">
           <FeaturedArticleCard article={mergedArticles[0]}/>
           <div className="md:flex md:flex-row gap-8 mt-8">
-            <div className="md:w-1/2 py-4 ">
+            <div className="md:w-1/2  py-4 ">
               <IndexArticle article={politicsArticle[0]}/>
             </div>
             <div className="md:w-1/2">
@@ -81,7 +91,7 @@ export default function Home() {
           <div  className="lg:top-[-158px] relative">
             <div className="md:flex md:flex-row  ">
               {mergedArticles.
-               filter(articles => articles.category === "lifestyle").
+               filter(articles => articles.category === "politics").
                slice(10,12).
                map((article,index) => (
                 <div key={index} className="md:w-1/2">
@@ -105,10 +115,27 @@ export default function Home() {
               
       </div>
       <DontMiss articles={sportArticle}/>
-      <div className="border-t-2 border-gray-300 pt-10 ">
+      <Trending articles={science}/>
+      <div className=" pt-10 ">
         <ScrollingCards articles={businessArticle}/>
       </div>
-      
+      <PopularNews articles={education}/>
+      <WorldNews articles={entertainment}/>
+      <SubscribeBox/>
+      <WorldNews2 articles={lifestyle}/>
+      <div className="flex flex-row lg:mx-44">
+        <div className="w-3/4">
+            <LatestHead/>
+            <ThreeNews articles={sports}/>
+            <TwoNews articles={technology}/>
+            <ThreeNews articles={business}/>
+            <TwoNews articles={science}/>
+        </div>
+        <div className="w-1/4">
+          <div className="ml-8"><QuoteSlider/></div>
+          <NewsCard/>
+        </div>
+      </div>
     </>
   );
 }

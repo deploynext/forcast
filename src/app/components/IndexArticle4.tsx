@@ -10,7 +10,7 @@ interface Article {
   slug:string;
   author?:string;
 }
-export default function IndexArticle ({ article }: { article: Article }) {
+export default function IndexArticle4 ({ article }: { article: Article }) {
     return (
     <div className="w-full relative  pb-6">
         <div className="relative w-full h-56 overflow-hidden border border-gray-300 rounded-md">
@@ -37,10 +37,7 @@ export default function IndexArticle ({ article }: { article: Article }) {
             </Link>
 
             <div className=" mx-2">by  <span className="text-sm font-semibold">{article.author || "Reporter"}</span></div>
-            <div className="w-px h-3 bg-gray-500 mx-2 mt-2"></div>
-            <div className="flex items-center gap-2 text-gray-500 text-sm  font-sans">
-                <span>{article.date}</span>
-            </div>
+            
         </div>
     </div>
     )

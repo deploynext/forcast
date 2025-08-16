@@ -43,7 +43,11 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                         <span className="text-4xl md:text-5xl font-bold text-red-600">
                             {String(index + 1).padStart(2, "0")}
                         </span>
-                        <Link href={`/${article.category}/${article.slug}`} className="font-serif line-clamp-2 font-semibold text-lg leading-snug hover:underline cursor-pointer">
+                        <Link href={`/${article.category}/${article.slug}`} className="font-serif line-clamp-2 font-semibold text-lg leading-snug cursor-pointer"
+                                style={{
+                                    
+                                }}
+                        >
                             {article.title}
                         </Link>
                     </div>
