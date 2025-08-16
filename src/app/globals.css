@@ -73,8 +73,8 @@ body {
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   line-clamp: 2;
-}
-.underline-wrapper-white {
+}.underline-wrapper-white
+ {
   display: inline;
   background-image: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255));
   background-position: 0 100%;

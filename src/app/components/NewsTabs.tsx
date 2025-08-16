@@ -35,14 +35,14 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
   );
 
   return (
-    <div className="max-w-2xl mx-auto">
+    <div className="max-w-2xl  ">
       {/* Tabs */}
-      <div className="flex border-b mb-4">
+      <div className="flex border-b mb-4 gap-8 pl-5 md:gap-20 lg:gap-0 md:pl-20 lg:pl-0">
         {tabs.map(tab => (
           <button
             key={tab.num}
             onClick={() => setActiveTab(tab.num)}
-            className={`mr-1 py-2 ml-3 font-semibold text-[20px] border-b-2 ${
+            className={`lg:mr-1 py-2 lg:ml-3  font-semibold text-[20px]  border-b-2 ${
               activeTab === tab.num
                 ? "border-red-500 text-red-600"
                 : "border-transparent text-gray-700 hover:text-black"
@@ -56,8 +56,8 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
       {/* Articles */}
       <div className="space-y-2">
         {currentArticles.slice(10,15).map((article, index) => (
-          <div key={index} className="flex gap-4 border-b border-gray-300 pt-2 pb-[19px]">
-            <div className="w-1/3 h-28 overflow-hidden rounded-xs relative">
+          <div key={index} className="flex gap-4 border-b border-gray-300 pt-2 lg:pb-[19px]">
+            <div className="lg:w-1/3 md:w-28 w-full h-28 overflow-hidden rounded-xs relative">
                <Link href={`/${article.category}/${article.slug}`}>
                   <Image
                     src={article.image}

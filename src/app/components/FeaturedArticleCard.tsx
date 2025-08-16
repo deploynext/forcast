@@ -19,9 +19,9 @@ interface FeaturedArticleCardProps {
 
 export default function FeaturedArticleCard({article}: FeaturedArticleCardProps) {
   return (
-    <div className="bg-black text-white  rounded-lg overflow-hidden flex flex-col lg:flex-row font-sans">
+    <div className="bg-black text-white  rounded-lg overflow-hidden flex flex-col md:flex-row font-sans">
       {/* Text content */}
-      <div className="p-6 lg:w-1/2 w-full md:py-32 md:px-8">
+      <div className="p-6 md:w-1/2 w-full md:py-32 md:px-8">
         <Link href={`/${article.category}/${article.slug}`}>
           <h2 className="group text-2xl md:text-3xl font-bold font-serif leading-tight underline-wrapper-white line-clamp-4">
             {article.title} 
@@ -42,7 +42,7 @@ export default function FeaturedArticleCard({article}: FeaturedArticleCardProps)
 
       {/* Image */}
       
-      <div className="relative w-full lg:w-1/2 h-72 lg:h-auto  overflow-hidden">
+      <div className="relative w-full md:w-1/2 h-72 md:h-auto  overflow-hidden">
         <Link href={`/${article.category}/${article.slug}`}>
           <Image
             src={article.image}

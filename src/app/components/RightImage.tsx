@@ -11,8 +11,8 @@ interface Article {
 export default function RightImage ({ article }: { article: Article }) {
     return(
         <div className="space-y-2 mt-4">
-          <div  className="flex gap-4 border-b border-gray-300  pb-[19px]">
-            <div className="w-1/3 h-28 overflow-hidden rounded-xs relative">
+          <div  className="md:flex gap-4 pb-[19px]">
+            <div className="md:w-1/3 w-full  h-36 md:h-28 overflow-hidden rounded-xs relative">
                <Link href={`/${article.category}/${article.slug}`}>
                   <Image
                     src={article.image}
@@ -22,7 +22,7 @@ export default function RightImage ({ article }: { article: Article }) {
                   />
                 </Link>
             </div>
-            <div className="w-2/3">
+            <div className="md:w-2/3">
               <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
                 <h3 className="group mt-2 text-lg font-serif font-semibold leading-relaxed underline-wrapper-black  cursor-pointer">
                   {article.title}

@@ -12,7 +12,7 @@ interface Article {
 }
 export default function IndexArticle ({ article }: { article: Article }) {
     return (
-    <div className="w-full border-b pb-6 border-gray-400 top-[-130] overflow-auto ">
+    <div className="w-full relative border-b pb-6 border-gray-400">
         <div className="relative w-full h-56 overflow-hidden border border-gray-300 rounded-md">
          <Link href={`/${article.category}/${article.slug}`}>
            <Image

@@ -1,0 +1,95 @@
+/* container */
+.scrollContainer {
+  width: 100%;
+  overflow: hidden;
+
+  position: relative;
+}
+
+/* --- Marquee: two identical groups side by side --- */
+.marquee {
+  display: flex;           /* holds two groups */
+  overflow: hidden;
+}
+
+.marqueeGroup {
+  display: flex;           /* each group lays out the cards horizontally */
+  flex-shrink: 0;          /* don't shrink; widths must stay identical */
+  animation: scroll-left 100s linear infinite;
+  will-change: transform;  /* smoother */
+}
+
+/* Pause BOTH groups when hovering parent */
+.scrollContainer:hover .marqueeGroup {
+  animation-play-state: paused;
+}
+
+/* One group slides exactly its own width */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* --- Cards (your original styles, kept) --- */
+.card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 400px;
+  height: 500px;
+  margin-right: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+
+
+
+
+
+/* image */
+/* .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  
+} */
+
+
+/* info panel */
+.cardInfo {
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  transition: bottom 0.6s ease;
+  z-index: 2; /* above gradient overlay */
+}
+
+/* Slide info up on hover */
+.card:hover .cardInfo {
+  bottom: 0;
+}
+
+.category {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+@media(max-width:768px){
+    .card {
+      position: relative;
+      flex: 0 0 auto;
+      width: 200px;
+      height: 300px;
+      margin-right: 10px;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+}
