@@ -1,4 +1,8 @@
+"use client"
+
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 interface Article{
     title:string;
@@ -6,8 +10,14 @@ interface Article{
     category:string;
 }
 export default function AlsoLike ({articles}:{articles:Article[]}){
+    const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
     return(
-        <div className="font-serif">
+        <div className={`font-serif ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
             <h3 className="font-semibold text-xl my-5">You Might Also Like</h3>
             {articles.slice(10,15).map((article,index)=>(
                 <div key={index} className="mb-5 ">

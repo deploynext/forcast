@@ -21,7 +21,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-neutral-900 text-neutral-200 w-full">
+    <footer className="bg-neutral-900 text-neutral-200 w-full font-sans">
       <div className="mx-auto max-w-7xl px-6 py-14">
         {/* Container flex: column on mobile, row on lg */}
         <div className="flex flex-col lg:flex-row lg:gap-12">

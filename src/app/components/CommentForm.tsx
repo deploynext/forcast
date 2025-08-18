@@ -1,8 +1,17 @@
-export default function CommentForm() {
+"use client"
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
+export default function CommentForm() {
+const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
 
   return (
-    <form className="  mt-10 p-4 font-sans">
+    <form className={`mt-10 p-4 font-sans ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
       <h2 className="text-2xl font-bold mb-2 font-serif">Leave a comment</h2>
       <p className="text-sm text-gray-600 mb-4">
         Your email address will not be published. Required fields are marked <span className="text-red-600">*</span>

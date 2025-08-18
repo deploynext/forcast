@@ -28,10 +28,10 @@ export default function WorldNews ({ articles }: { articles: Article[] }) {
               </Link>
             </div>
             <div className="lg:flex lg:flex-row align-middle gap-10">
-                <div className="w-2/3 flex items-stretch p-4 ">
+                <div className="lg:w-2/3 flex items-stretch p-4 ">
                     <TitleInside2 article={articles[20]}/>
                 </div>
-                <div className="flex flex-col w-1/3">
+                <div className="flex flex-col lg:w-1/3">
                     {articles.slice(1,5).map((article,index)=>(
                         <div key={index} className="border-t border-gray-300 first:border-t-0">
                             <RightImage2 article={article}/>

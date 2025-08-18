@@ -1,5 +1,5 @@
 "use client";
-
+import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
 
 interface Quote {
@@ -24,6 +24,11 @@ const quotes: Quote[] = [
 
 export default function QuoteSlider() {
   const [current, setCurrent] = useState(0);
+      const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+    
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,10 +37,12 @@ export default function QuoteSlider() {
 
     return () => clearInterval(interval);
   }, []);
+  useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
 
   return (
     <div className="w-full flex justify-center mt-10 ">
-      <div className="relative w-full max-w-md overflow-hidden rounded-3xl shadow-lg bg-gray-50 transform -skew-x-3">
+      <div className={`relative w-full max-w-md overflow-hidden rounded-3xl shadow-lg  transform -skew-x-3 ${ theme === "dark" ? "bg-gray-800 text-gray-50" : "bg-gray-50 text-gray-900"}`}>
         
         {/* Slides wrapper */}
         <div
@@ -72,12 +79,12 @@ export default function QuoteSlider() {
               </span>
 
               {/* Quote Text */}
-              <p className="text-gray-700 italic mb-4">
+              <p className=" italic mb-4">
                 {`"${quote.text}"`}
               </p>
 
               {/* Author */}
-              <span className="font-semibold text-gray-900 block">
+              <span className="font-semibold  block">
                 {quote.author}
               </span>
             </div>

@@ -1,3 +1,6 @@
+"use client"
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -12,13 +15,19 @@ interface Article{
 }
 
 const LeftImage = ({ article }: { article: Article }) => {
+      const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
   return (
     <div className="space-y-2 mt-4">
           <div  className="md:flex gap-4 pb-[19px]">
            
-            <div className="md:w-2/3">
+            <div className={`md:w-2/3 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
               <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
-                <h3 className="group mt-2 text-lg font-serif font-semibold leading-relaxed underline-wrapper-black  cursor-pointer">
+                <h3 className={`group mt-2 text-lg font-serif font-semibold leading-relaxed   cursor-pointer ${theme === "dark" ? "underline-wrapper-white" : "underline-wrapper-black"}`}>
                   {article.title}
                 </h3>
               </Link>

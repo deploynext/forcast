@@ -1,6 +1,9 @@
+"use client"
 import Image from "next/image";
 import { Calendar } from "lucide-react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 interface Article {
   
@@ -12,6 +15,12 @@ interface Article {
 }
 
 export default function ArticleCard({ article }: { article: Article }) {
+  const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
   return (
     <div className="w-full px-2 pb-8">
       {/* Image */}
@@ -35,7 +44,7 @@ export default function ArticleCard({ article }: { article: Article }) {
       <br />
       {/* Title */}
       <Link href={`/${article.category}/${article.slug}`}>
-        <h3 className="group mt-2 text-lg font-serif font-semibold leading-relaxed underline-wrapper cursor-pointer">
+        <h3 className={`group mt-2 text-lg font-serif font-semibold leading-relaxed underline-wrapper cursor-pointer ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
           {article.title}
         </h3>
       </Link>

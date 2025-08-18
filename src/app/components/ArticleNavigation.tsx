@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 type Article = {
   slug: string;
@@ -26,9 +28,16 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
 
   const nextArticle: Article | null =
     currentIndex < articles.length - 1 ? articles[currentIndex + 1] : null;
+    const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
 
   return (
-    <div className="w-full flex justify-between items-center border-t border-b py-16 my-11 px-5 gap-6 overflow-hidden border-gray-300">
+    <div 
+    className={`w-full flex justify-between items-center border-t border-b py-16 my-11 px-5 gap-6 overflow-hidden border-gray-300 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
       {/* Previous Article */}
       <div className="flex-1 min-w-0">
         {prevArticle ? (

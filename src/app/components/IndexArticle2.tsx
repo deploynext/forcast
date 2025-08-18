@@ -1,5 +1,8 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 interface Article {
   
@@ -11,9 +14,15 @@ interface Article {
   author?:string;
 }
 export default function IndexArticle2 ({ article }: { article: Article }) {
+    const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+    useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
     return (
     <div className="w-full pb-6">
-        <div className="relative w-full h-full overflow-hidden border border-gray-300 rounded-md">
+        <div className="relative w-full h-full overflow-hidden  rounded-md">
          <Link href={`/${article.category}/${article.slug}`}>
            <Image
              src={article.image}
@@ -25,11 +34,11 @@ export default function IndexArticle2 ({ article }: { article: Article }) {
          </Link>
         </div>
         <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2 mt-5">
-          <h3 className="group  text-2xl font-serif font-semibold leading-relaxed underline-wrapper-black cursor-pointer">
+          <h3 className={`group  text-2xl font-serif font-semibold leading-relaxed  cursor-pointer ${theme === "dark" ? "text-gray-50 underline-wrapper-white":"text-gray-950 underline-wrapper-black"}`}>
             {article.title}
           </h3>
         </Link>
-        <div className="flex flex-row align-middle just mt-4 gap-2 font-sans ">
+        <div className={`flex flex-row align-middle just mt-4 gap-2 font-sans ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`} >
             <Link href={`/${article.category}`} className="inline-block    rounded">
               <span className="  font-sans text-sm font-semibold border hover:bg-red-700
                 hover:text-white px-3 py-1 capitalize me-2">

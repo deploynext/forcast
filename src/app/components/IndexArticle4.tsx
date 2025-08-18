@@ -1,6 +1,8 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
-
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 interface Article {
   
   category: string;
@@ -11,9 +13,15 @@ interface Article {
   author?:string;
 }
 export default function IndexArticle4 ({ article }: { article: Article }) {
+    const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
     return (
-    <div className="w-full relative  pb-6">
-        <div className="relative w-full h-56 overflow-hidden border border-gray-300 rounded-md">
+    <div className={`w-full relative  pb-6 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
+        <div className="relative w-full h-56 overflow-hidden  rounded-md">
          <Link href={`/${article.category}/${article.slug}`}>
            <Image
              src={article.image}
@@ -24,7 +32,7 @@ export default function IndexArticle4 ({ article }: { article: Article }) {
          </Link>
         </div>
         <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2 mt-5">
-          <h3 className="group  text-xl font-serif font-semibold leading-relaxed underline-wrapper-black cursor-pointer">
+          <h3 className={`group  text-xl font-serif font-semibold leading-relaxed  cursor-pointer ${theme === "dark" ? "underline-wrapper-white" : "underline-wrapper-black"}`}>
             {article.title}
           </h3>
         </Link>

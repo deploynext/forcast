@@ -1,7 +1,9 @@
-
+"use client"
 import { Calendar,  User } from "lucide-react";
 
 import SocialIcons from "./SocialIcons";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 interface Article {
   title: string;
@@ -12,6 +14,12 @@ interface Article {
 }
 
 export default function ArticleHeader({ article }: { article: Article }) {
+   const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
     const reporter = "Reporter"
   return (
     <div className="w-full flex flex-col lg:flex-row lg:items-start lg:justify-between  pb-6 ">
@@ -23,7 +31,7 @@ export default function ArticleHeader({ article }: { article: Article }) {
            - {article.category}
           </span>
         )}
-        <h1 className="text-2xl lg:text-4xl font-bold font-serif my-4">
+        <h1 className={`text-2xl lg:text-4xl font-bold font-serif my-4 ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
           {article.title}
         </h1>
 
@@ -47,7 +55,7 @@ export default function ArticleHeader({ article }: { article: Article }) {
 
       {/* Social Share Section */}
       <div className="   lg:mt-40">
-        <p className="text-lg font-semibold mb-3 font-sans">Share This Article:</p>
+        <p className={`text-lg font-semibold mb-3 font-sans ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>Share This Article:</p>
         <SocialIcons/>
       </div>
     </div>

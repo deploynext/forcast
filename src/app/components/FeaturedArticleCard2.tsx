@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
  
 interface Article{
   title: string;
@@ -18,10 +20,16 @@ interface FeaturedArticleCardProps {
 }
 
 export default function FeaturedArticleCard2({article}: FeaturedArticleCardProps) {
+    const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+    useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
   return (
     <div className=" rounded-lg overflow-hidden flex flex-col md:flex-row font-sans border border-gray-300">
       {/* Text content */}
-      <div className="px-6 py-12 md:w-1/2 w-full">
+      <div className={`px-6 py-12 md:w-1/2 w-full ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
         <Link href={`/${article.category}/${article.slug}`}>
           <h2 className="group text-xl md:text-2xl font-bold font-serif leading-tight underline-wrapper-white line-clamp-4">
             {article.title} 
@@ -36,7 +44,7 @@ export default function FeaturedArticleCard2({article}: FeaturedArticleCardProps
           <Link href={`/${article.category}`} className="border  px-2 py-1 capitalize hover:bg-red-700 rounded-xs">{article.category}</Link>
           <span>by</span><span className='font-semibold text-sm'>{article.author || "Reporter"}</span>
           <div className='w-px h-4 bg-gray-700'></div>
-          <span className="text-gray-700">{article.date}</span>
+          <span className="text-gray-500 text-xs">{article.date}</span>
         </div>
       </div>
 

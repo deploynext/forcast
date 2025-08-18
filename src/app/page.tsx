@@ -25,6 +25,8 @@ import TwoNews from "./components/TwoNews"
 import LatestHead from "./components/LatestHead"
 import QuoteSlider from "./components/QuoteSlider"
 import NewsCard from "./components/NewsCard"
+import Navbar from "./components/Navbar"
+import Footer from "./components/Footer"
 
 
 
@@ -56,6 +58,7 @@ export default function Home() {
   const businessArticle = mergedArticles.filter(articles => articles.category === "business")
   return (
     <>
+    <Navbar/>
       <div className="lg:mx-44 mx-5 mt-5 md:mt-20">
         <div className="lg:flex lg:flex-row gap-8">
         <div className="lg:w-2/3">
@@ -123,19 +126,20 @@ export default function Home() {
       <WorldNews articles={entertainment}/>
       <SubscribeBox/>
       <WorldNews2 articles={lifestyle}/>
-      <div className="flex flex-row lg:mx-44">
-        <div className="w-3/4">
+      <div className="flex lg:flex-row flex-col p-5 lg:mx-44 gap-6 mt-6">
+        <div className="lg:w-2/3">
             <LatestHead/>
             <ThreeNews articles={sports}/>
-            <TwoNews articles={technology}/>
+            <TwoNews articles={science}/>
             <ThreeNews articles={business}/>
             <TwoNews articles={science}/>
         </div>
-        <div className="w-1/4">
-          <div className="ml-8"><QuoteSlider/></div>
+        <div className="lg:w-1/3 lg:ml-8 flex flex-col space-y-10">
+          <div className=""><QuoteSlider/></div>
           <NewsCard/>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

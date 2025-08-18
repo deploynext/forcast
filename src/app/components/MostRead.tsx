@@ -1,6 +1,9 @@
+"use client"
 import { AlarmClock } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 type Article = {
   title: string;
@@ -15,10 +18,18 @@ interface MostReadProps {
 }
 
 export default function MostRead({ articles }: MostReadProps) {
+
+  const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
+
   return (
     <div className="w-full ">
       
-        <div  className="lg:flex lg:flex-row gap-3 mb-3 justify-items-center  pb-2 ">
+        <div  className={`lg:flex lg:flex-row gap-3 mb-3 justify-items-center  pb-2 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`} >
           
           <Link href={`/${articles.category}/${articles.slug}`} className="shrink-0">
             <Image

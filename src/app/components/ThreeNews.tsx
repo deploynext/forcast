@@ -1,5 +1,5 @@
 
-import IndexArticle3 from './IndexArticle3';
+import IndexArticle5 from './IndexArticle5';
 
 
 interface Article {
@@ -13,10 +13,10 @@ interface Article {
 }
 const ThreeNews = ({ articles }: { articles: Article[] }) => {
   return (
-    <div className='flex flex-row gap-6 grid-cols-3'>
+    <div className='md:flex md:flex-row gap-6 md:grid-cols-3'>
         {articles.slice(10,13).map((article,index)=>(
-            <div key={index} className='w-1/3'>
-                <IndexArticle3 article={article}/>
+            <div key={index} className='md:w-1/3'>
+                <IndexArticle5 article={article}/>
             </div>
         ))}
     </div>

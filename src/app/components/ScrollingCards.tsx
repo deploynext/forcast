@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./ScrollingCards.module.css";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 interface Article {
   title: string;
@@ -14,18 +16,24 @@ interface Article {
 }
 
 export default function ScrollingCards({ articles }: { articles: Article[] }) {
+    const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+    useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
   return (
     <div className="py-10">
         <div className="pb-16 md:flex md:flex-row md:justify-between flex flex-col gap-5 mx-5 lg:mx-44 ">
           <div className="md:flex md:flex-row align-middle gap-5 ">
-              <h1 className="text-4xl font-bold">Highlight</h1>
+              <h1 className={`text-4xl font-bold ${ theme === "dark" ? "text-gray-50" : "text-gray-900"}`}>Highlight</h1>
               <div className="hidden mt-4 md:mt-0 md:block w-px  h-12 bg-gray-300"></div>
               <div className="text-gray-500 flex flex-col font-sans text-lg">
                   <p >Lorem ipsum dolor sit amet consectetur. Ut tellus suspendisse nulla aliquam.</p>  
                   <p>Risus tellus eget ultrices pretium nisi amet facilisis.</p>
               </div>
           </div>
-          <Link href={`/${articles[0].category}`} className="font-sans max-h-15 max-w-24 font-semibold border px-3 m-4 py-1 hover:text-white hover:bg-red-600">
+          <Link href={`/${articles[0].category}`} className={`font-sans max-h-15 max-w-24 font-semibold border px-3 m-4 py-1 hover:text-white hover:bg-red-600 ${ theme === "dark" ? "border-gray-50 text-gray-50" : "text-gray-900"}`}>
           See More
           </Link>
         </div>

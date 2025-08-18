@@ -13,16 +13,17 @@ interface Article {
   slug:string;
   author?:string;
 }
-export default function IndexArticle ({ article }: { article: Article }) {
-  const {theme} = useTheme()
+export default function IndexArticle5 ({ article }: { article: Article }) {
+    const {theme} = useTheme()
 
     const [mounted,setMounted] = useState(false)
     
       useEffect(() => setMounted(true), []);
-  if (!mounted) return null;
+    if (!mounted) return null;
+  
     return (
-    <div className="w-full relative  pb-6">
-        <div className="relative w-full h-56 overflow-hidden rounded-md">
+    <div className={`w-full relative  pb-6 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
+        <div className="relative w-full h-36 overflow-hidden rounded-md">
          <Link href={`/${article.category}/${article.slug}`}>
            <Image
              src={article.image}
@@ -33,11 +34,11 @@ export default function IndexArticle ({ article }: { article: Article }) {
          </Link>
         </div>
         <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2 mt-5">
-          <h3 className={`group  text-xl font-serif font-semibold leading-relaxed  cursor-pointer ${ theme === "dark" ? "text-gray-50 underline-wrapper-white":"text-gray-950 underline-wrapper-black"}`}>
+          <h3 className={`group  text-lg font-serif font-semibold leading-relaxed underline-wrapper-black cursor-pointer ${theme === "dark" ? "underline-wrapper-white" : "underline-wrapper-black"}`}>
             {article.title}
           </h3>
         </Link>
-        <div className={`flex flex-row align-middle just mt-4 gap-2 font-sans ${ theme === "dark" ? "text-gray-50":"text-gray-950"} `}>
+        <div className="flex flex-row align-middle just mt-4 gap-2 font-sans ">
             <Link href={`/${article.category}`} className="inline-block    rounded">
               <span className="  font-sans text-sm font-semibold border hover:bg-red-700
                 hover:text-white px-3 py-1 capitalize me-2">
@@ -45,11 +46,8 @@ export default function IndexArticle ({ article }: { article: Article }) {
               </span>
             </Link>
 
-            <div className=" mx-2"><span className="text-gray-500">by </span> <span className="text-sm font-semibold">{article.author || "Reporter"}</span></div>
-            <div className="w-px h-3 bg-gray-500 mx-2 mt-2"></div>
-            <div className="flex items-center gap-2 text-gray-500 text-sm  font-sans">
-                <span>{article.date}</span>
-            </div>
+            <div className=" mx-2">by  <span className="text-sm font-semibold">{article.author || "Reporter"}</span></div>
+            
         </div>
     </div>
     )

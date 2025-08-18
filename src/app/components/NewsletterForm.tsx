@@ -1,7 +1,16 @@
+"use client"
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 export default function NewsletterForm() {
+  const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+  if (!mounted) return null;
   return (
     <div
-      className="empath__sidebar-item bg-cover bg-center  overflow-hidden border-2 border-gray-200 rounded-xl"
+      className={`empath__sidebar-item bg-cover bg-center  overflow-hidden border-2 border-gray-200 rounded-xl  ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}
       style={{
         backgroundImage:
           "url('/images/Newsletter.webp')",

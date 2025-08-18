@@ -5,14 +5,15 @@ import Link from "next/link";
 
 export default function NewsCard() {
   return (
-    <div className="relative w-full max-w-sm rounded-lg overflow-hidden shadow-md">
+    <div className="">
+      <div className="relative w-full h-full rounded-lg overflow-hidden shadow-md ">
       {/* Background Image */}
       <Image
         src="/images/indexad.webp" 
         alt="News"
         width={400}
-        height={500}
-        className="object-cover w-full h-96"
+        height={700}
+        className="object-cover w-full md:h-[1320px] lg:h-[640px]"
       />
 
       {/* Overlay */}
@@ -34,6 +35,7 @@ export default function NewsCard() {
         >
           Explore Now
         </Link>
+      </div>
       </div>
     </div>
   );

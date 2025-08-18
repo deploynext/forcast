@@ -3,6 +3,8 @@ import fs from 'fs/promises';
 import path from 'path';
 import CategoryHeader from '../components/CategoryHeader';
 import ArticleCard from '../components/ArticleCard';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 interface Article {
     title:string;
@@ -57,6 +59,8 @@ export default async function CategoryPage({ params }: PageProps) {
 
 
   return (
+    <>
+    <Navbar/>
     <div className='lg:px-5 '>
         <CategoryHeader category={category}/>
         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 lg:gap-x-8 py-20 container mx-0 lg:mx-12 ">
@@ -68,5 +72,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 ))}
         </div>
     </div>
+    <Footer/>
+    </>
   )
 }

@@ -1,8 +1,17 @@
-import { Mail } from "lucide-react"; // using Lucide icon (paper-plane alt)
+"use client"
+import { Mail } from "lucide-react"; 
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
 export default function SubscribeBox() {
+    const {theme} = useTheme()
+
+    const [mounted,setMounted] = useState(false)
+    
+      useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
   return (
-    <div className="relative my-10  font-sans bg-white border rounded-md p-8 flex flex-col md:flex-row items-center justify-between gap-6 lg:mx-44 mx-5">
+    <div className={`relative my-10  font-sans border rounded-md p-8 flex flex-col md:flex-row items-center justify-between gap-6 lg:mx-44 mx-5 ${ theme === "dark" ? "text-gray-50 bg-gray-950":"text-gray-950 bg-gray-50"}`}>
       
       {/* Left Section */}
       <div className="flex items-start gap-4">

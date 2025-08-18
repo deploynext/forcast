@@ -11,6 +11,8 @@ import AlsoLike from "@/app/components/AlsoLike";
 import Tagged from "@/app/components/Tagged";
 import ArticleNavigation from "@/app/components/ArticleNavigation";
 import CommentForm from "@/app/components/CommentForm";
+import Navbar from "@/app/components/Navbar";
+import Footer from "@/app/components/Footer";
 
 
 interface Article {
@@ -63,8 +65,9 @@ export default async function Page({
 // const isClientSlug = category==="politics" && slug === "misunderstood-chapter-story-battle-stability-during-pandemic";
     return(
       <div>
+        <Navbar/>
         <Detailbc slug={article.slug}/>
-      <div className="lg:px-20 px-2 ">
+      <div className="lg:px-20 px-2 mt-5">
         
         <ArticleHeader article={article}/>
         <div className="flex flex-col lg:flex-row lg:gap-6 mt-6">
@@ -95,6 +98,7 @@ export default async function Page({
           </div>
         </div>
       </div>
+      <Footer/>
       </div>
     )
    } catch (error) {

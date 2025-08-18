@@ -14,7 +14,7 @@ return(
     <div>
      <div className="w-full">
       {/* Image */}
-       <div className="relative w-full h-56 overflow-hidden border border-gray-300 rounded-md  ">
+       <div className="relative w-full h-56 overflow-hidden  rounded-md  ">
         <Link href={`/${article.category}/${article.slug}`}>
           <Image
             src={article.image}
