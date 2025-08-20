@@ -30,7 +30,7 @@ export default function CategoryHeader( { category } :{category : string}) {
         </nav>
 
         {/* Title */}
-        <h1 className="text-3xl md:text-4xl font-serif font-bold ">
+        <h1 className="text-3xl md:text-4xl  font-bold ">
           Category: <span className="font-extrabold capitalize">{category}</span>
         </h1>
       </div>

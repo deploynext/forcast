@@ -18,7 +18,7 @@ export default function SubscribeBox() {
         <Mail className="w-12 h-12 text-gray-400" strokeWidth={1.5} />
         <div>
           <p className="text-red-600 font-medium mb-1">Subscribe</p>
-          <h2 className="text-2xl font-bold leading-snug font-serif">
+          <h2 className="text-2xl font-bold leading-snug ">
             Keep Up to Date with the Most <br /> Important News
           </h2>
         </div>

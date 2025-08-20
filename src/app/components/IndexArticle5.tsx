@@ -34,19 +34,19 @@ export default function IndexArticle5 ({ article }: { article: Article }) {
          </Link>
         </div>
         <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2 mt-5">
-          <h3 className={`group  text-lg font-serif font-semibold leading-relaxed underline-wrapper-black cursor-pointer ${theme === "dark" ? "underline-wrapper-white" : "underline-wrapper-black"}`}>
+          <h3 className={`group  text-lg font-semibold leading-relaxed underline-wrapper-black cursor-pointer ${theme === "dark" ? "underline-wrapper-white" : "underline-wrapper-black"}`}>
             {article.title}
           </h3>
         </Link>
         <div className="flex flex-row align-middle just mt-4 gap-2 font-sans ">
             <Link href={`/${article.category}`} className="inline-block    rounded">
-              <span className="  font-sans text-sm font-semibold border hover:bg-red-700
+              <span className="  font-sans text-xs font-semibold border hover:bg-red-700
                 hover:text-white px-3 py-1 capitalize me-2">
                 {article.category}
               </span>
             </Link>
 
-            <div className=" mx-2">by  <span className="text-sm font-semibold">{article.author || "Reporter"}</span></div>
+            <div className=" text-sm">by  <span className="text-xs font-semibold">{article.author || "Reporter"}</span></div>
             
         </div>
     </div>

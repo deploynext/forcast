@@ -23,7 +23,7 @@ export default function MinusTop ( { article }: { article: Article } ) {
       useEffect(() => setMounted(true), []);
   if (!mounted) return null;
     return (
-        <div className="relative lg:top-[-160] py-5 border-t mt-8 border-b border-gray-300  lg:left-[-15]">
+        <div className="relative lg:top-[-160] py-5 border-t mt-8 border-b border-gray-300  ">
           <div  className="md:flex">
             <div className="md:w-96 md:h-[236px] w-full h-72  overflow-hidden rounded-xs relative">
                <Link href={`/${article.category}/${article.slug}`}>
@@ -38,7 +38,7 @@ export default function MinusTop ( { article }: { article: Article } ) {
             </div>
             <div className={`md:w-1/2 space-y-3 mt-2 md:pl-5 ${theme === "dark" ? "text-gray-50":"text-gray-800"}`}>
               <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
-                <h3 className={`group mt-2 text-lg font-serif font-semibold leading-relaxed cursor-pointer  ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black  "}`} >
+                <h3 className={`group mt-2 text-lg  font-semibold leading-relaxed cursor-pointer  ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black  "}`} >
                   {article.title}
                 </h3>
               </Link>

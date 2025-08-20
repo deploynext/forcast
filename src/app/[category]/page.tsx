@@ -60,7 +60,7 @@ export default async function CategoryPage({ params }: PageProps) {
 
   return (
     <>
-    <Navbar/>
+    <Navbar articles={articles}/>
     <div className='lg:px-5 '>
         <CategoryHeader category={category}/>
         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 lg:gap-x-8 py-20 container mx-0 lg:mx-12 ">

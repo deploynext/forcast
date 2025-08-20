@@ -58,12 +58,12 @@ export default function Home() {
   const businessArticle = mergedArticles.filter(articles => articles.category === "business")
   return (
     <>
-    <Navbar/>
-      <div className="lg:mx-44 mx-5 mt-5 md:mt-20">
+    <Navbar articles={mergedArticles}/>
+      <div className="lg:mx-40 mx-5 mt-5 md:mt-10 z-0">
         <div className="lg:flex lg:flex-row gap-8">
-        <div className="lg:w-2/3">
-          <FeaturedArticleCard article={mergedArticles[0]}/>
-          <div className="md:flex md:flex-row gap-8 mt-8">
+        <div className="lg:w-2/3 mt-3">
+          <FeaturedArticleCard article={mergedArticles[35]}/>
+          <div className="md:flex md:flex-row gap-8 mt-5">
             <div className="md:w-1/2  py-4 ">
               <IndexArticle article={politicsArticle[0]}/>
             </div>

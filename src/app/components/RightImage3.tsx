@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { Bookmark, Calendar } from "lucide-react";
 
 interface Article {
   title: string;
@@ -10,8 +11,9 @@ interface Article {
   author?: string;
   image: string;
   slug:string;
+  date:string;
 }
-export default function RightImage ({ article }: { article: Article }) {
+export default function RightImage3 ({ article }: { article: Article }) {
   const {theme} = useTheme()
 
     const [mounted,setMounted] = useState(false)
@@ -19,9 +21,9 @@ export default function RightImage ({ article }: { article: Article }) {
       useEffect(() => setMounted(true), []);
   if (!mounted) return null;
     return(
-        <div className="space-y-2 mt-4">
+        <div className="">
           <div  className="md:flex gap-4 pb-[19px]">
-            <div className="md:w-1/3 w-full  h-36 md:h-28 overflow-hidden rounded-xs relative">
+            <div className="w-20  h-20  overflow-hidden rounded-xs relative">
                <Link href={`/${article.category}/${article.slug}`}>
                   <Image
                     src={article.image}
@@ -31,16 +33,14 @@ export default function RightImage ({ article }: { article: Article }) {
                   />
                 </Link>
             </div>
-            <div className={`md:w-2/3 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
+            <div className="md:w-2/3">
               <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
-                <h3 className={`group mt-2 text-lg 
-                  font-semibold leading-relaxed   cursor-pointer ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black"}`}>
+                <h3 className={`group mt-2 text-sm font-semibold leading-relaxed   cursor-pointer ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black"}`}>
                   {article.title}
                 </h3>
               </Link>
-              <div className="flex items-center gap-2 mt-4 ">
-                <Link href={`/${article.category}`}><span className="px-2 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer text-xs font-medium">{article.category}</span></Link>
-                <span className="text-gray-500 font-sans text-xs">by </span><span className="text-xs font-sans">{article.author || "Reporter"}</span>
+              <div className="flex items-center gap-2 mt-4 text-sm justify-between">
+                <span className="flex flex-row gap-2 align-middle text-gray-500 font-sans text-xs"><Calendar size={12} className="mt-0.5"/>{article.date}</span><div className="rounded-full bg-gray-700 p-1"><Bookmark size={12}/></div>
               </div>
             </div>
           </div>

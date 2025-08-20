@@ -24,7 +24,7 @@ export default function WorldNews2 ({ articles }: { articles: Article[] }) {
       useEffect(() => setMounted(true), []);
   if (!mounted) return null;
     return(
-        <div className="lg:mx-44 m-5">
+        <div className="lg:mx-44 m-5 pt-10">
             <div className="pb-16 md:flex md:flex-row md:justify-between flex flex-col gap-5  ">
               <div className="md:flex md:flex-row align-middle gap-5 ">
                   <h1 className={`text-4xl font-bold ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>World News</h1>

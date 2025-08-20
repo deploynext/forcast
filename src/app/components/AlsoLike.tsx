@@ -17,7 +17,7 @@ export default function AlsoLike ({articles}:{articles:Article[]}){
       useEffect(() => setMounted(true), []);
   if (!mounted) return null;
     return(
-        <div className={`font-serif ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
+        <div className={` ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
             <h3 className="font-semibold text-xl my-5">You Might Also Like</h3>
             {articles.slice(10,15).map((article,index)=>(
                 <div key={index} className="mb-5 ">

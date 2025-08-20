@@ -44,7 +44,7 @@ export default function ArticleCard({ article }: { article: Article }) {
       <br />
       {/* Title */}
       <Link href={`/${article.category}/${article.slug}`}>
-        <h3 className={`group mt-2 text-lg font-serif font-semibold leading-relaxed underline-wrapper cursor-pointer ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
+        <h3 className={`group mt-2 text-lg  font-semibold leading-relaxed underline-wrapper cursor-pointer ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
           {article.title}
         </h3>
       </Link>

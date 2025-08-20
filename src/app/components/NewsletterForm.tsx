@@ -17,7 +17,7 @@ export default function NewsletterForm() {
       }}
     >
       <div className="px-16 py-32 text-center">
-        <h2 className="text-3xl font-serif font-bold mb-2">
+        <h2 className="text-3xl  font-bold mb-2">
           Subscribe To Our Newsletter
         </h2>
         <p className="mb-4 text-sm opacity-90 font-sans">

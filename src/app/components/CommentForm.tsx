@@ -12,7 +12,7 @@ const {theme} = useTheme()
 
   return (
     <form className={`mt-10 p-4 font-sans ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
-      <h2 className="text-2xl font-bold mb-2 font-serif">Leave a comment</h2>
+      <h2 className="text-2xl font-bold mb-2 ">Leave a comment</h2>
       <p className="text-sm text-gray-600 mb-4">
         Your email address will not be published. Required fields are marked <span className="text-red-600">*</span>
       </p>

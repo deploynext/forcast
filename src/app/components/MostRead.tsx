@@ -14,7 +14,7 @@ type Article = {
 };
 
 interface MostReadProps {
-  articles: Article;
+  articles: Article[];
 }
 
 export default function MostRead({ articles }: MostReadProps) {
@@ -27,9 +27,12 @@ export default function MostRead({ articles }: MostReadProps) {
   if (!mounted) return null;
 
   return (
-    <div className="w-full ">
-      
-        <div  className={`lg:flex lg:flex-row gap-3 mb-3 justify-items-center  pb-2 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`} >
+    <div className={`w-full  ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`} >
+      <h2 className=" border-b border-gray-400 text-2xl font-semibold pb-5  mb-5">
+                Top Week
+              </h2>
+        {articles.slice(10,15).map((articles,index)=>(
+        <div  className={`lg:flex lg:flex-row gap-3 mb-3 justify-items-center  pb-2`} key={index} >
           
           <Link href={`/${articles.category}/${articles.slug}`} className="shrink-0">
             <Image
@@ -45,7 +48,7 @@ export default function MostRead({ articles }: MostReadProps) {
           <div className="flex flex-col">
             <Link
               href={`/${articles.category}/${articles.slug}`}
-              className="font-bold text-[17px] font-serif mb-2 lg:line-clamp-3"
+              className="font-bold text-[17px]  mb-2 lg:line-clamp-3"
             >
               {articles.title}
             </Link>
@@ -56,7 +59,7 @@ export default function MostRead({ articles }: MostReadProps) {
           </div>
 
         </div>
-   
+      ))}
     </div>
   );
 }

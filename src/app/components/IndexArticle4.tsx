@@ -32,7 +32,7 @@ export default function IndexArticle4 ({ article }: { article: Article }) {
          </Link>
         </div>
         <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2 mt-5">
-          <h3 className={`group  text-xl font-serif font-semibold leading-relaxed  cursor-pointer ${theme === "dark" ? "underline-wrapper-white" : "underline-wrapper-black"}`}>
+          <h3 className={`group  text-xl font-semibold leading-relaxed  cursor-pointer ${theme === "dark" ? "underline-wrapper-white" : "underline-wrapper-black"}`}>
             {article.title}
           </h3>
         </Link>

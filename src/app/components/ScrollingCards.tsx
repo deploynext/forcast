@@ -23,7 +23,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
     useEffect(() => setMounted(true), []);
     if (!mounted) return null;
   return (
-    <div className="py-10">
+    <div className="pb-10">
         <div className="pb-16 md:flex md:flex-row md:justify-between flex flex-col gap-5 mx-5 lg:mx-44 ">
           <div className="md:flex md:flex-row align-middle gap-5 ">
               <h1 className={`text-4xl font-bold ${ theme === "dark" ? "text-gray-50" : "text-gray-900"}`}>Highlight</h1>
@@ -33,7 +33,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                   <p>Risus tellus eget ultrices pretium nisi amet facilisis.</p>
               </div>
           </div>
-          <Link href={`/${articles[0].category}`} className={`font-sans max-h-15 max-w-24 font-semibold border px-3 m-4 py-1 hover:text-white hover:bg-red-600 ${ theme === "dark" ? "border-gray-50 text-gray-50" : "text-gray-900"}`}>
+          <Link href={`/${articles[0].category}`} className={`font-sans max-h-10 max-w-24 font-semibold border px-3  relative text-sm pt-2 hover:text-white hover:bg-red-600 ${ theme === "dark" ? "border-gray-50 text-gray-50" : "text-gray-900"}`}>
           See More
           </Link>
         </div>
@@ -55,7 +55,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                   <div className={`${styles.cardInfo} inset-0 bg-gradient-to-t from-black to-transparent`}>
                     <div className="absolute bottom-5 px-5 pb-2">
                       <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
-                        <h3 className="group mt-2 text-xl font-serif font-semibold underline-wrapper-white leading-relaxed cursor-pointer">
+                        <h3 className="group mt-2 text-xl  font-semibold underline-wrapper-white leading-relaxed cursor-pointer">
                           {article.title}
                         </h3>
                       </Link>
@@ -88,7 +88,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                   <div className={styles.cardInfo}>
                     <div className="absolute bottom-5 px-5 pb-2">
                       <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
-                        <h3 className="group mt-2 text-xl font-serif font-semibold leading-relaxed cursor-pointer">
+                        <h3 className="group mt-2 text-xl  font-semibold leading-relaxed cursor-pointer">
                           {article.title}
                         </h3>
                       </Link>

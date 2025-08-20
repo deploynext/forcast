@@ -31,7 +31,7 @@ export default function ArticleHeader({ article }: { article: Article }) {
            - {article.category}
           </span>
         )}
-        <h1 className={`text-2xl lg:text-4xl font-bold font-serif my-4 ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
+        <h1 className={`text-2xl lg:text-4xl font-bold my-4 ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
           {article.title}
         </h1>
 

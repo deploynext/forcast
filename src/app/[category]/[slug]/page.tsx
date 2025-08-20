@@ -65,7 +65,7 @@ export default async function Page({
 // const isClientSlug = category==="politics" && slug === "misunderstood-chapter-story-battle-stability-during-pandemic";
     return(
       <div>
-        <Navbar/>
+        <Navbar articles={articles}/>
         <Detailbc slug={article.slug}/>
       <div className="lg:px-20 px-2 mt-5">
         
@@ -84,14 +84,12 @@ export default async function Page({
           <div className="sticky top-1">
             <SidebarAd/>
             <div className="p-12">
-              <h2 className="font-serif border-b border-gray-400 text-2xl font-semibold pb-5  mb-5">
-                Top Week
-              </h2>
-              {articles.slice(0, 5).map((article, index) => (
-                <div key={index}>
-                  <MostRead articles={article} />
-                </div>
-              ))}
+              
+              
+                
+                  <MostRead articles={articles} />
+                
+            
             </div>
             <NewsletterForm/>
             </div>

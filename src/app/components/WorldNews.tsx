@@ -23,7 +23,7 @@ export default function WorldNews ({ articles }: { articles: Article[] }) {
                       <p>Risus tellus eget ultrices pretium nisi amet facilisis.</p>
                   </div>
               </div>
-              <Link href={`/${articles[0].category}`} className="font-sans max-h-15 max-w-24 font-semibold border px-3 m-4 py-1 hover:text-white hover:bg-red-600">
+              <Link href={`/${articles[0].category}`} className="font-sans max-h-10 max-w-24 font-semibold border px-3  text-sm pt-2 hover:text-white hover:bg-red-600">
               See More
               </Link>
             </div>
