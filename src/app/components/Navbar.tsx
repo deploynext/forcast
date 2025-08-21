@@ -323,7 +323,7 @@ const [searchOpen, setSearchOpen] = useState(false)
           animate={{ opacity: 1, x: 0 }}
           
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="absolute  top-0 left-0 z-50"
+          className="absolute  top-0 left-0 z-200"
         >
           <div
             className="h-screen  w-[400px] bg-black text-white border-2 border-gray-800 shadow  overflow-y-auto"
@@ -337,11 +337,11 @@ const [searchOpen, setSearchOpen] = useState(false)
                 display: none;
               }
             `}</style>
-            <div className="w-full flex justify-between items-center px-10 py-5 border-b border-gray-700  ">
+            <div className="w-full flex justify-between items-center px-10 py-6 border-b border-gray-700  ">
               <Link href="/" className="text-gray-50 text-2xl">
                 FORCAST NEWS
               </Link>
-              <button onClick={() => setMenuOpen(false)} className="text-gray-50 hover:text-gray-600 cursor-pointer">
+              <button onClick={() => setMenuOpen(false)} className="text-gray-50 hover:text-gray-600 font-sans cursor-pointer">
                 X
               </button>
             </div>            
