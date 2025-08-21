@@ -289,8 +289,8 @@ const [searchOpen, setSearchOpen] = useState(false)
       {/* Mobile Navbar (unchanged) */}
       <div className={`border-b border-gray-200 font-sans block md:hidden bg-gray-50  ${theme === "dark" ? "bg-gray-800 text-gray-50" :"bg-gray-50 text-gray-900"}`}>
         <div className="flex items-center space-x-4 px-3 py-3 w-full ">
-          <div className="flex w-3/4">
-            <Calendar className="w-[16px] me-2" />
+          <div className="flex w-3/4 text-sm">
+            <Calendar className="w-[12px] me-2 " />
             Wednesday, 30 July 2025
           </div>
           <div className="h-6 w-px bg-gray-300" />
