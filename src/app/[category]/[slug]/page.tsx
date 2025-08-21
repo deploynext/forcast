@@ -66,7 +66,7 @@ export default async function Page({
     return(
       <div>
         <Navbar articles={articles}/>
-        <Detailbc slug={article.slug}/>
+        <Detailbc title={article.title}/>
       <div className="lg:px-20 px-2 mt-5">
         
         <ArticleHeader article={article}/>

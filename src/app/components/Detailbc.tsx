@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-export  default function Detailbc({slug}:{slug:string}){
+export  default function Detailbc({title}:{title:string}){
   const {theme} = useTheme()
 
     const [mounted,setMounted] = useState(false)
@@ -19,7 +19,7 @@ export  default function Detailbc({slug}:{slug:string}){
               <span className="mx-2">›</span>
             </Link>
           </li>
-          <li className=" font-medium  truncate md:truncate-none">{slug}</li>
+          <li className=" font-medium  truncate md:truncate-none">{title}</li>
         </ol>
       </nav> 
       </div>
