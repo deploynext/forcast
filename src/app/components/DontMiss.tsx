@@ -20,7 +20,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
       useEffect(() => setMounted(true), []);
   if (!mounted) return null;
     return(
-        <div className="relative top-[-100] border-t-2 border-gray-300 py-16">
+        <div className="relative md:top-[-100] border-t-2 border-gray-300 py-16">
             <div className="pb-16 md:flex md:flex-row md:justify-between flex flex-col gap-5 mx-5 lg:mx-44 ">
               <div className="md:flex md:flex-row align-middle gap-5 ">
                   <h1 className={`text-4xl font-bold ${ theme === "dark" ? "text-gray-50":"text-gray-950"}` }>Dont Miss</h1>
@@ -30,7 +30,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                       <p>Risus tellus eget ultrices pretium nisi amet facilisis.</p>
                   </div>
               </div>
-              <Link href={`/${articles[0].category}`} className={`font-sans text-sm max-h-10 max-w-24 font-semibold border px-3 mx-4 pt-2 hover:text-white ${ theme === "dark" ? "text-gray-50 border-gray-50":"text-gray-950 border-gray-950"}`}>
+              <Link href={`/${articles[0].category}`} className={`font-sans text-sm max-h-10 max-w-24 font-semibold border px-3 mx-4 md:pt-2 hover:text-white ${ theme === "dark" ? "text-gray-50 border-gray-50":"text-gray-950 border-gray-950"}`}>
               See More
               </Link>
             </div>

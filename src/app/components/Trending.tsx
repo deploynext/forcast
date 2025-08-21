@@ -24,7 +24,7 @@ export default function Trending ({ articles }: { articles: Article[] }) {
       useEffect(() => setMounted(true), []);
   if (!mounted) return null;
     return(
-        <div className={`relative top-[-50] lg:px-44 py-10 px-5  ${theme === "dark" ? "bg-gray-900":"bg-gray-100"}`}>
+        <div className={`relative md:top-[-50] lg:px-44 py-10 px-5  ${theme === "dark" ? "bg-gray-900":"bg-gray-100"}`}>
             <div className="pb-16 md:flex md:flex-row md:justify-between flex flex-col gap-5  ">
               <div className="md:flex md:flex-row align-middle gap-5 ">
                   <h1 className={`text-4xl font-bold ${theme === "dark" ? "text-gray-50" :"text-gray-900"}`}>Trending</h1>
@@ -34,7 +34,7 @@ export default function Trending ({ articles }: { articles: Article[] }) {
                       <p>Risus tellus eget ultrices pretium nisi amet facilisis.</p>
                   </div>
               </div>
-              <Link href={`/${articles[0].category}`} className={`font-sans text-sm max-h-10 max-w-24 font-semibold border px-3 pt-2   hover:text-white hover:bg-red-600 ${theme === "dark" ? "border-gray-50 text-gray-50":"border-gray-950 text-gray-950"}`}>
+              <Link href={`/${articles[0].category}`} className={`font-sans text-sm max-h-10 max-w-24 font-semibold border px-3 md:pt-2   hover:text-white hover:bg-red-600 ${theme === "dark" ? "border-gray-50 text-gray-50":"border-gray-950 text-gray-950"}`}>
               See More
               </Link>
             </div>
