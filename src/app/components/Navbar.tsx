@@ -288,16 +288,6 @@ const [searchOpen, setSearchOpen] = useState(false)
 
       {/* Mobile Navbar (unchanged) */}
       <div className={`border-b border-gray-200 font-sans block md:hidden bg-gray-50  ${theme === "dark" ? "bg-gray-800 text-gray-50" :"bg-gray-50 text-gray-900"}`}>
-        <div className="flex justify-between items-center px-3 py-2 text-sm">
-          <div className="flex flex-col">
-            <span className="font-semibold mx-1 mb-2">Quick Links:</span>
-            <div>
-              <Link href="#" className="mx-1 ">About Us</Link> - 
-              <Link href="#" className="mx-1 ">Contact Us</Link> - 
-              <Link href="#" className="mx-1 ">Latest News</Link>
-            </div>
-          </div>
-        </div>
         <div className="flex items-center space-x-4 px-3 py-3 w-full ">
           <div className="flex w-3/4">
             <Calendar className="w-[16px] me-2" />
