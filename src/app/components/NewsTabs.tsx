@@ -77,7 +77,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
               key={index}
               className="flex gap-4 border-t first:border-t-0 border-gray-300 pt-3 pb-3 first:pt-0"
             >
-              <div className="lg:w-1/3 md:w-28 w-full h-[100px] overflow-hidden rounded-xs relative">
+              <div className="w-1/3   h-[100px] overflow-hidden rounded-xs relative">
                 <Link href={`/${article.category}/${article.slug}`}>
                   <Image
                     src={article.image}
