@@ -269,9 +269,9 @@ const [searchOpen, setSearchOpen] = useState(false)
         </div>)}
         {/* Right - User / Theme / Buy Now */}
         <div className="flex items-center gap-4 mt-3 md:mt-0 min-w-fit  font-sans">
-          <button className="p-2">
+          {/* <button className="p-2">
             <User2 size={22} />
-          </button>
+          </button> */}
           <div className="hidden md:block h-5 w-px bg-gray-300" />
          {mounted && (
                 <button
@@ -320,7 +320,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             />
           </div>
           <div className="flex items-center space-x-5">
-            <button className="py-2"><User2 size={22} /></button>
+            
             <div className="h-6 w-px bg-gray-300" />
             {mounted && (
                 <button
