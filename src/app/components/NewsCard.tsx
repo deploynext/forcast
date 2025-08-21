@@ -20,8 +20,13 @@ export default function NewsCard() {
       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
 
       {/* Category Tag */}
-      <span className="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 text-sm font-bold rounded">
-        Forcast News
+      <span className="absolute top-4 left-4  t px-3 py-1  bg-red-600 h-[35px] flex items-center justify-center">
+        <Image
+        src="/logo-black.webp"
+        alt="logo"
+        width={150}
+        height={25}
+        />
       </span>
 
       {/* Content */}

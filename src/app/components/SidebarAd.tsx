@@ -6,7 +6,7 @@ export default function SidebarAd() {
     <div className="empath__sidebar-item top-0">
       <Link href="#">
         <Image
-          src="/images/SidebarAd.webp"
+          src="/images/SidebarAd.png"
           alt="Side Advertisement"
           width={579}
           height={531}

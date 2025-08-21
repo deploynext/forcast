@@ -19,6 +19,8 @@ import WithNumber from "./WithNumber";
 import { createPortal } from "react-dom";
 import { usePathname } from "next/navigation";
 import SearchModel from "./SearchModel";
+import Image from "next/image";
+
 
  
 interface Article {
@@ -89,9 +91,9 @@ const [searchOpen, setSearchOpen] = useState(false)
     <>
       {/* Desktop Navbar */}
       <div>
-     <nav className="hidden md:block w-full  font-sans relative z-[100]">
+     <nav className="hidden md:block w-full   relative z-[100]">
       {/* Top Bar */}
-      <div className={`flex items-center justify-between px-6 py-5 text-sm  border-b border-gray-300  ${theme === "dark" ? "bg-gray-900 text-gray-50" :"bg-gray-50 text-gray-900"}`} >
+      <div className={`flex items-center justify-between px-6 py-5 text-sm font-sans border-b border-gray-300  ${theme === "dark" ? "bg-gray-900 text-gray-50" :"bg-gray-50 text-gray-900"}`} >
         {/* Quick Links */}
         <div className="flex gap-2 flex-wrap">
           <span>Quick Links:</span>
@@ -109,11 +111,27 @@ const [searchOpen, setSearchOpen] = useState(false)
         </div>
 
         {/* Logo */}
-        <div className="flex items-center px-8 ml-8">
-          <Link href="/" className="text-3xl font-bold font font-serif tracking-wide  mx-auto md:mx-0">
-            Forecast News
-          </Link>
-        </div>
+        <div className="flex w-[300px] h-[50px] items-center px-8 ml-8 overflow-hidden">
+  <Link href="/" className="font-bold tracking-wide md:mx-0">
+    {/* Show black logo in light mode */}
+    <Image
+      src="/logo-black.webp"
+      alt="logo"
+      width={230}
+      height={36}
+      className={`scale-125 ${theme === "dark" ? "hidden" : "block"}`}
+    />
+
+    {/* Show white logo in dark mode */}
+    <Image
+      src="/logo-white.webp"
+      alt="logo"
+      width={230}
+      height={36}
+      className={`scale-125 ${theme === "dark" ? "block" : "hidden"}`}
+    />
+  </Link>
+</div>
 
         {/* Date + Social */}
         <div className="flex items-center gap-4 ">
@@ -148,7 +166,7 @@ const [searchOpen, setSearchOpen] = useState(false)
           </button>
           <SearchModel  isOpen={searchOpen} onClose={() => setSearchOpen(false)}/>
         </div>
-     <div className="ml-16 w-full overflow-x-visible overflow-y-visible">
+     <div className=" justify-items-center  w-full overflow-x-visible overflow-y-visible">
         <div
           ref={rowRef}
           className="flex flex-nowrap justify-start gap-3 sm:gap-4 md:gap-8 text-[.9rem] sm:text-lg px-1"
@@ -159,7 +177,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             onMouseEnter={() => openMenu("")}
             onMouseLeave={scheduleClose}
           >
-            <Link href="/" className="font-semibold font-sans block py-2">
+            <Link href="/" className=" block py-2">
               Home
             </Link>
           </div>
@@ -182,7 +200,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             >
               <Link
                 href={`/${label.toLowerCase()}`}
-                className="font-semibold font-sans block py-2"
+                className="font-semibold  block py-2"
               >
                 {label}
               </Link>
@@ -215,11 +233,11 @@ const [searchOpen, setSearchOpen] = useState(false)
               left: 0,
               right: 0,
               top: menuTop, 
-              zIndex: 9999,
+              zIndex: 199,
             }}
            >
             <div
-              className={`${theme === "dark" ? "bg-gray-800 text-gray-50" : "bg-white text-gray-900"} shadow-lg mx-28 mt-5 border-t border-gray-200`}
+              className={`${theme === "dark" ? "bg-gray-800 text-gray-50" : "bg-white text-gray-900"} shadow-lg mx-28 mt-4  border-gray-200`}
             >
               {/* Inner content row; full width, with padding */}
               <div className=" mx-6 py-6">
@@ -263,9 +281,6 @@ const [searchOpen, setSearchOpen] = useState(false)
                   {theme === "dark" ? <Sun size={22} /> : <Moon size={22} />}
                 </button>
               )}
-          <button className="bg-red-600 text-white font-semibold px-4 sm:px-5 py-2 rounded hover:bg-gray-800 cursor-pointer transition">
-            Buy Now
-          </button>
         </div>
       </div>
     </nav>
@@ -298,7 +313,22 @@ const [searchOpen, setSearchOpen] = useState(false)
           </div>
         </div>
         <div className="flex justify-between items-center px-4 py-3 border-t border-gray-200 text-lg">
-          <span className="text-2xl tracking-wide font-serif">Forecast News</span>
+          <div className="w-[150px] h-[24px] overflow-hidden flex items-center justify-center">
+            <Image
+            src="/logo-black.webp"
+            alt="logo"
+            width={150}
+            height={24}
+            className={`object-contain ${theme === "dark" ? "hidden":"block"}`}
+            />
+            <Image
+            src="/logo-white.webp"
+            alt="logo"
+            width={150}
+            height={24}
+            className={`object-contain ${theme === "dark" ? "block":"hidden"}`}
+            />
+          </div>
           <div className="flex items-center space-x-5">
             <button className="py-2"><User2 size={22} /></button>
             <div className="h-6 w-px bg-gray-300" />
@@ -323,7 +353,7 @@ const [searchOpen, setSearchOpen] = useState(false)
           animate={{ opacity: 1, x: 0 }}
           
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="absolute  top-0 left-0 z-200"
+          className="absolute  top-0 left-0 z-360"
         >
           <div
             className="h-screen  w-[400px] bg-black text-white border-2 border-gray-800 shadow  overflow-y-auto"
@@ -339,14 +369,20 @@ const [searchOpen, setSearchOpen] = useState(false)
             `}</style>
             <div className="w-full flex justify-between items-center px-10 py-6 border-b border-gray-700  ">
               <Link href="/" className="text-gray-50 text-2xl">
-                FORCAST NEWS
+                 <Image
+                  src="/logo-white.webp"
+                  alt="logo"
+                  width={230}
+                  height={36}
+                  className={`scale-125${theme === "dark" ? "block":"hidden"}`}
+                  />
               </Link>
               <button onClick={() => setMenuOpen(false)} className="text-gray-50 hover:text-gray-600 font-sans cursor-pointer">
                 X
               </button>
             </div>            
             
-            <div className="pt-14 px-2">
+            <div className=" py-20 px-5">
               {articles.slice(5,9).map((artcle,index)=>(
                 <div key={index} className="px-10">
                   <RightImage3 article={artcle}/>
@@ -356,9 +392,13 @@ const [searchOpen, setSearchOpen] = useState(false)
 
             <div className="border-t border-gray-700 pb-10 px-8 ">
               <div className="block px-4 py-5 text-2xl"><h2>Contact Us</h2></div>
-              <Link href="#" className="block px-4 py-2 text-gray-50  font-bold text-sm font-sans">ADDRESS: <span className="text-gray-500 font-normal">Street, City, Country</span></Link>
-              <Link href="#" className="block px-4 py-2 text-gray-50  font-bold text-sm font-sans">PHONE: <span className="text-gray-500 font-normal">+(123) 456 789</span></Link>
-              <Link href="#" className="block px-4 py-2 text-gray-50  font-bold text-sm font-sans">E-MAIL: <span className="text-gray-500 font-normal">your-email@mail.com</span></Link>
+              <div className="flex items-center gap-6 py-5 ml-3">
+                <FontAwesomeIcon className="cursor-pointer text-xl" icon={faFacebookF} />
+                <FontAwesomeIcon className="cursor-pointer text-xl" icon={faXTwitter} />
+                <FontAwesomeIcon className="cursor-pointer text-xl" icon={faInstagram} />
+                <FontAwesomeIcon className="cursor-pointer text-xl" icon={faYoutube} />
+                <FontAwesomeIcon className="cursor-pointer text-xl" icon={faLinkedinIn} />
+              </div>
             </div>
           </div>
         </motion.div>
@@ -384,9 +424,15 @@ const [searchOpen, setSearchOpen] = useState(false)
                 X
               </button>
             </div>            
-            <div className="pl-5 pt-5 mt-5">
+            <div className=" pt-5 mt-5">
               <Link href="/" className="text-gray-700 font-bold ">
-                FORCAST NEWS
+                 <Image
+                  src="/logo.webp"
+                  alt="logo"
+                  width={230}
+                  height={36}
+                  className={`scale-125${theme === "dark" ? "block":"hidden"}`}
+                  />
               </Link>
             </div>
             <div className="px-5 mt-2">

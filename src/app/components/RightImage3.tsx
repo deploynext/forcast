@@ -21,9 +21,9 @@ export default function RightImage3 ({ article }: { article: Article }) {
       useEffect(() => setMounted(true), []);
   if (!mounted) return null;
     return(
-        <div className="">
-          <div  className="md:flex gap-4 pb-[19px]">
-            <div className="w-20  h-20  overflow-hidden rounded-xs relative">
+        <div className=" my-2">
+          <div  className="md:flex gap-4 ">
+            <div className="w-[80px]  h-[80px]  overflow-hidden rounded-xs relative">
                <Link href={`/${article.category}/${article.slug}`}>
                   <Image
                     src={article.image}
@@ -35,11 +35,11 @@ export default function RightImage3 ({ article }: { article: Article }) {
             </div>
             <div className="md:w-2/3">
               <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
-                <h3 className={`group mt-2 text-sm font-semibold leading-relaxed   cursor-pointer ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black"}`}>
+                <h3 className={`group mt-2 text-xl font-semibold leading-relaxed   cursor-pointer ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black"}`}>
                   {article.title}
                 </h3>
               </Link>
-              <div className="flex items-center gap-2 mt-4 text-sm justify-between">
+              <div className="flex items-center gap-2  text-sm justify-between">
                 <span className="flex flex-row gap-2 align-middle text-gray-500 font-sans text-xs"><Calendar size={12} className="mt-0.5"/>{article.date}</span><div className="rounded-full bg-gray-700 p-1"><Bookmark size={12}/></div>
               </div>
             </div>
