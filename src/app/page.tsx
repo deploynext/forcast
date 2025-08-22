@@ -28,6 +28,67 @@ import NewsCard from "./components/NewsCard"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 
+// seo
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Fiscal Fusion - Fusing News and Numbers.",
+  description:
+      "Fiscal Fusion – your go-to destination for global news, timely updates, and deep insights on everything from politics and business to lifestyle and innovation.",
+  authors: [{ name: "fiscal fusion Team", url: "https://www.fiscalfusion.org/" }],
+  publisher: "fiscal fusion",
+  metadataBase: new URL("https://www.fiscalfusion.org/"),
+  alternates: {
+    canonical: "https://www.fiscalfusion.org/",
+  },
+
+  openGraph: {
+    title: "Fiscal Fusion - Fusing News and Numbers.",
+    description:
+      "Fiscal Fusion – your go-to destination for global news, timely updates, and deep insights on everything from politics and business to lifestyle and innovation.",
+    url: "https://www.fiscalfusion.org/",
+    siteName: "Fiscal Fusion",
+    images: [
+      {
+        url: "/logo-black.webp",
+        width: 1200,
+        height: 630,
+        alt: "Fiscal Fusion Logo",
+      },
+    ],
+    type: "website",
+    locale: "en_US",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Fiscal Fusion - Fusing News and Numbers.",
+    description:
+      "Fiscal Fusion – your go-to destination for global news, timely updates, and deep insights on everything from politics and business to lifestyle and innovation.",
+    site: "@fiscalfusion",
+    images: ["https://www.fiscalfusion.org/"],
+  },
+
+  // robots: {
+  //   index: true,
+  //   follow: true,
+  //   googleBot: { index: true, follow: true },
+  // },
+  icons: {
+    icon: "/logo-black.webp",
+    shortcut: "/logo-black.webp",
+    apple: "/logo-black.webp",
+  },
+};
+
+
+  
+
+
+
+
+
 
 
 type Article ={
@@ -53,11 +114,70 @@ const mergedArticles: Article[] = [
   ...entertainment
 ]
 export default function Home() {
+
+
+  //seo
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        name: metadata.title,
+        url: metadata.metadataBase?.toString() ?? "https://www.fiscalfusion.org/",
+      },
+      {
+        "@type": "WebPage",
+        headline: "Home",
+        url: metadata.metadataBase?.toString() ?? "https://www.fiscalfusion.org/",
+        keywords: [
+          "fiscal fusion",
+          "global news",
+          "breaking news",
+          "world headlines",
+        ],
+        isPartOf: {
+          "@type": ["CreativeWork", "Product"],
+          name: metadata.title,
+          productID: "fiscalfusion.org:standard",
+        },
+        publisher: {
+          "@type": "NewsMediaOrganization",
+          name: metadata.publisher,
+          logo: {
+            "@type": "ImageObject",
+            url: "https://www.fiscalfusion.org/logo-black.webp",
+          },
+          // sameAs: [
+          //   "https://x.com/ChroniqNow",
+          //   "https://www.instagram.com/chroniqnow/",
+          // ],
+        },
+      },
+      {
+        "@type": "NewsMediaOrganization",
+        name: metadata.publisher,
+        url: metadata.metadataBase?.toString() ?? "https://www.fiscalfusion.org/",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.fiscalfusion.org/logo-black.webp",
+        },
+      },
+    ],
+  };
+
+
   const sportArticle = mergedArticles.filter(articles => articles.category === "sports")
   const politicsArticle = mergedArticles.filter(articles => articles.category === "politics")
   const businessArticle = mergedArticles.filter(articles => articles.category === "business")
   return (
     <>
+    <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\u003c"),
+        }}
+      />
     <Navbar articles={mergedArticles}/>
       <div className="lg:mx-40 mx-5 mt-5 md:mt-10 z-0">
         <div className="lg:flex lg:flex-row gap-8">
