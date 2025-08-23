@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function SidebarAd() {
   return (
     <div className="empath__sidebar-item top-0">
-      <Link href="#">
+      <Link href="#" title="sidebar ad">
         <Image
           src="/images/SidebarAd.png"
           alt="Side Advertisement"

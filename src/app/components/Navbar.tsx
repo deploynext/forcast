@@ -97,41 +97,44 @@ const [searchOpen, setSearchOpen] = useState(false)
         {/* Quick Links */}
         <div className="flex gap-2 flex-wrap">
           <span>Quick Links:</span>
-          <Link href="#" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
+          <Link href="#" title="contact info" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
             About Us
           </Link>
           <span>-</span>
-          <Link href="#" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
+          <Link href="#" title="contact info" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
             Contact Us
           </Link>
           <span>-</span>
-          <Link href="#" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
+          <Link href="#" title="contact info" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
             Latest News
           </Link>
         </div>
 
         {/* Logo */}
         <div className="flex w-[300px] h-[50px] items-center px-8 ml-8 overflow-hidden">
-  <Link href="/" className="font-bold tracking-wide md:mx-0">
-    {/* Show black logo in light mode */}
-    <Image
-      src="/logo-black.webp"
-      alt="logo"
-      width={230}
-      height={36}
-      className={`scale-125 ${theme === "dark" ? "hidden" : "block"}`}
-    />
+          <Link title="logo" href="/" className="font-bold tracking-wide md:mx-0">
+          <h1 title="fiscal fusion">
+            {/* Show black logo in light mode */}
+            <Image
+              src="/logo-black.webp"
+              alt="logo"
+              width={230}
+              height={36}
+              className={`scale-125 ${theme === "dark" ? "hidden" : "block"}`}
+            />
 
-    {/* Show white logo in dark mode */}
-    <Image
-      src="/logo-white.webp"
-      alt="logo"
-      width={230}
-      height={36}
-      className={`scale-125 ${theme === "dark" ? "block" : "hidden"}`}
-    />
-  </Link>
-</div>
+            {/* Show white logo in dark mode */}
+            <Image
+              src="/logo-white.webp"
+              alt="logo"
+              width={230}
+              height={36}
+              className={`scale-125 ${theme === "dark" ? "block" : "hidden"}`}
+            />
+            </h1>
+          </Link>
+          
+        </div>
 
         {/* Date + Social */}
         <div className="flex items-center gap-4 ">
@@ -177,7 +180,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             onMouseEnter={() => openMenu("")}
             onMouseLeave={scheduleClose}
           >
-            <Link href="/" className=" block py-2">
+            <Link href="/" title="home" className=" block py-2">
               Home
             </Link>
           </div>
@@ -200,6 +203,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             >
               <Link
                 href={`/${label.toLowerCase()}`}
+                title={label}
                 className="font-semibold  block py-2"
               >
                 {label}
@@ -305,6 +309,7 @@ const [searchOpen, setSearchOpen] = useState(false)
         </div>
         <div className="flex justify-between items-center px-4 py-3 border-t border-gray-200 text-lg">
           <div className="w-[150px] h-[24px] overflow-hidden flex items-center justify-center">
+            <Link href="/" title="logo">
             <Image
             src="/logo-black.webp"
             alt="logo"
@@ -319,6 +324,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             height={24}
             className={`object-contain ${theme === "dark" ? "block":"hidden"}`}
             />
+            </Link>
           </div>
           <div className="flex items-center space-x-5">
             
@@ -360,7 +366,7 @@ const [searchOpen, setSearchOpen] = useState(false)
               }
             `}</style>
             <div className="w-full flex justify-between items-center px-10 py-6 border-b border-gray-700  ">
-              <Link href="/" className="text-gray-50 text-2xl">
+              <Link href="/" title="logo" className="text-gray-50 text-2xl">
                  <Image
                   src="/logo-white.webp"
                   alt="logo"
@@ -383,7 +389,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             </div>
 
             <div className="border-t border-gray-700 pb-10 px-8 ">
-              <div className="block px-4 py-5 text-2xl"><h2>Contact Us</h2></div>
+              <div className="block px-4 py-5 text-2xl"><h4>Contact Us</h4></div>
               <div className="flex items-center gap-6 py-5 ml-3">
                 <FontAwesomeIcon className="cursor-pointer text-xl" icon={faFacebookF} />
                 <FontAwesomeIcon className="cursor-pointer text-xl" icon={faXTwitter} />
@@ -417,7 +423,7 @@ const [searchOpen, setSearchOpen] = useState(false)
               </button>
             </div>            
             <div className=" pt-5 mt-5">
-              <Link href="/" className="text-gray-700 font-bold ">
+              <Link href="/" title="logo" className="text-gray-700 font-bold ">
                  <Image
                   src="/logo.webp"
                   alt="logo"
@@ -430,15 +436,15 @@ const [searchOpen, setSearchOpen] = useState(false)
             <div className="px-5 mt-2">
               <input placeholder="Search Here" className="w-full border border-gray-200 font-sans pl-2 py-3 text-xs"/>
             </div>
-            <Link onClick={() => setMenuOpen1(false)} href="/politics" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200">Politics</Link>
-            <Link onClick={() => setMenuOpen1(false)} href="/business" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Business</Link>
-            <Link onClick={() => setMenuOpen1(false)} href="/health" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Health</Link>
-            <Link onClick={() => setMenuOpen1(false)} href="/sports" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Sports</Link>
-            <Link onClick={() => setMenuOpen1(false)} href="/science" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Science</Link>
-            <Link onClick={() => setMenuOpen1(false)} href="/technology" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Technology</Link>
-            <Link onClick={() => setMenuOpen1(false)} href="/education" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Education</Link>
-            <Link onClick={() => setMenuOpen1(false)} href="/entertainment" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200">Entertainment</Link>
-            <Link onClick={() => setMenuOpen1(false)} href="/lifestyle" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200">Lifestyle</Link>
+            <Link onClick={() => setMenuOpen1(false)} title="poltics" href="/politics" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200">Politics</Link>
+            <Link onClick={() => setMenuOpen1(false)} title="business" href="/business" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Business</Link>
+            <Link onClick={() => setMenuOpen1(false)} title="health" href="/health" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Health</Link>
+            <Link onClick={() => setMenuOpen1(false)} title="sports" href="/sports" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Sports</Link>
+            <Link onClick={() => setMenuOpen1(false)} title="science" href="/science" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Science</Link>
+            <Link onClick={() => setMenuOpen1(false)} title="technology" href="/technology" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Technology</Link>
+            <Link onClick={() => setMenuOpen1(false)} title="education" href="/education" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Education</Link>
+            <Link onClick={() => setMenuOpen1(false)} title="entertainment" href="/entertainment" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200">Entertainment</Link>
+            <Link onClick={() => setMenuOpen1(false)} title="lifestyle" href="/lifestyle" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200">Lifestyle</Link>
           
           </div>
         )}

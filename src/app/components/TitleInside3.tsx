@@ -15,7 +15,7 @@ return(
      <div className="w-full h-full">
       {/* Image */}
        <div className="relative w-full h-96 md:h-full  overflow-hidden rounded-md group ">
-        <Link href={`/${article.category}/${article.slug}`}>
+        <Link href={`/${article.category}/${article.slug}`} title={article.title}>
           <Image
             src={article.image}
             alt={article.title}
@@ -28,13 +28,13 @@ return(
         <div className="bottom-0 h-full  absolute  text-white inset-0 bg-gradient-to-t from-black to-transparent ">
           <div className="relative w-full h-full">
             <div className="absolute bottom-5 px-5 mb-2 text-center items-center">
-                <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
+                <Link href={`/${article.category}/${article.slug}`} title={article.title} className="line-clamp-2">
                     <h3 className="group mt-2 text-2xl  font-semibold leading-relaxed underline-wrapper-white cursor-pointer ">
                       {article.title}
                     </h3>
                 </Link>
-                  <div className="flex flex-row align-middle just mt-4 gap-2 w-full justify-center text-xs items-center">
-                <Link href={`/${article.category}`} className="inline-block    rounded">
+                  <div className="flex flex-row align-middle just mt-4 md:gap-2 gap-1 w-full justify-center md:text-xs text-[10px] items-center">
+                <Link href={`/${article.category}`} title={article.category} className="inline-block    rounded">
                   <span className="  font-sans  font-semibold border hover:bg-red-700
                    px-3 py-1 capitalize me-2">
                     {article.category}

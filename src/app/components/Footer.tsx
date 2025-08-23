@@ -35,14 +35,14 @@ export default function Footer() {
               <div>
                 <h3 className="mb-4 text-lg font-semibold font-serif text-white">News</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link className="text-neutral-400 hover:text-white" href="#">Home Page</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">World</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/politics">Politics</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/education">Education</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/sports">Sports</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/business">Business</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/technology">Tech</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/science">Science</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="#">Home Page</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/#">World</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/politics">Politics</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/education">Education</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/sports">Sports</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/business">Business</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/technology">Tech</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/science">Science</Link></li>
                 </ul>
               </div>
 
@@ -50,14 +50,14 @@ export default function Footer() {
               <div>
                 <h3 className="mb-4 text-lg font-semibold font-serif text-white">Lifestyle</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Fashion ’24</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Style</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Restaurant Reviews</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Health</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Entertainment</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Trends</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Food</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Auto</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Fashion ’24</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Style</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Restaurant Reviews</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Health</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Entertainment</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Trends</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Food</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Auto</Link></li>
                 </ul>
               </div>
 
@@ -65,14 +65,14 @@ export default function Footer() {
               <div>
                 <h3 className="mb-4 text-lg font-semibold font-serif text-white">Economics</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Today’s Opinion</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Columnists</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Guest Essays</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Sunday Opinion</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Opinion Video</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Real Estate</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Pop Culture</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" href="/#">Book Review</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Today’s Opinion</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Columnists</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Guest Essays</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Sunday Opinion</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Opinion Video</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Real Estate</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Pop Culture</Link></li>
+                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Book Review</Link></li>
                 </ul>
               </div>
             </div>
@@ -148,7 +148,9 @@ export default function Footer() {
       <div className="border-t border-neutral-800">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col items-center justify-between gap-3 text-sm text-neutral-400 md:flex-row">
           <div className="font-serif h-10 overflow-hidden flex items-center justify-center">
-            <Link href="/" >
+            <Link href="/"
+            title="logo"
+            >
                  <Image
                   src="/logo-white.webp"
                   alt="logo"
@@ -160,9 +162,9 @@ export default function Footer() {
           </div>
           <div>Fiscal Fusion. All Rights Reserved.</div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 md:flex-row">
-            <Link className="hover:text-white" href="#">Privacy</Link>
-            <Link className="hover:text-white" href="#">Terms</Link>
-            <Link className="hover:text-white" href="#">Contact</Link>
+            <Link className="hover:text-white" title="Privacy" href="#">Privacy</Link>
+            <Link className="hover:text-white" title="Terms" href="#">Terms</Link>
+            <Link className="hover:text-white" title="Contact" href="#">Contact</Link>
           </div>
         </div>
       </div>

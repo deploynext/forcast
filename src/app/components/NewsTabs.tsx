@@ -79,7 +79,9 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
               className="flex gap-4 border-t first:border-t-0 border-gray-300 pt-3 pb-3 first:pt-0"
             >
               <div className="w-1/3   h-[100px] overflow-hidden rounded-xs relative">
-                <Link href={`/${article.category}/${article.slug}`}>
+                <Link href={`/${article.category}/${article.slug}`}
+                title={article.title}
+                >
                   <Image
                     src={article.image}
                     alt={article.title}
@@ -92,6 +94,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                 <Link
                   href={`/${article.category}/${article.slug}`}
                   className="line-clamp-2"
+                  title={article.title}
                 >
                   <h3
                     className={`group mt-2 text-lg font-bold leading-6 text-justify cursor-pointer ${
@@ -103,9 +106,9 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                     {article.title}
                   </h3>
                 </Link>
-                <div className="flex items-center gap-1 mt-2 text-xs">
+                <div className="flex items-center gap-1 mt-2 text-[10px]">
                   <span
-                    className={`px-2 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer text-xs rounded-sm font-medium ${
+                    className={`px-1 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer  rounded-sm font-medium ${
                       theme === "dark" ? "text-gray-50" : "text-black"
                     }`}
                   >
@@ -113,7 +116,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                   </span>
                   <span className="text-gray-500 font-sans ">by </span>
                   <span
-                    className={`text-xs font-sans font-medium
+                    className={` font-sans font-medium truncate max-w-[60px]
                     ${
                       theme === "dark" ? "text-gray-50" : "text-black"
                     }`}

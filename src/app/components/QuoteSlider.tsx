@@ -9,15 +9,15 @@ interface Quote {
 
 const quotes: Quote[] = [
   {
-    text: "Lorem ipsum dolor amet consectetur. Ay tellus dummy suspendisse aliquam any ready to many facilisis.",
-    author: "Salman Morid",
+    text: "Knowing yourself is the beginning of all wisdom.",
+    author: "Aristotle",
   },
   {
-    text: "Lorem ipsum dolor amet consectetur. Ay tellus dummy suspendisse aliquam any ready to many facilisis.",
-    author: "David Morid",
+    text: "He who has a why to live can bear almost any how.",
+    author: "Friedrich Nietzsche",
   },
   {
-    text: "Lorem ipsum dolor amet consectetur. Ay tellus dummy suspendisse aliquam any ready to many facilisis.",
+    text: "Life can only be understood backwards; but it must be lived forwards.",
     author: "Stifin Morid",
   },
 ];
@@ -33,7 +33,7 @@ export default function QuoteSlider() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev === quotes.length - 1 ? 0 : prev + 1));
-    }, 4000); // change every 4 seconds
+    }, 4000); 
 
     return () => clearInterval(interval);
   }, []);

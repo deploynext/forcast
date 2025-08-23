@@ -18,7 +18,7 @@ export default function CategoryHeader( { category } :{category : string}) {
         <nav className="mb-4  text-sm" aria-label="breadcrumb font-sans">
           <ol className="inline-flex items-center space-x-2 justify-center">
             <li>
-              <Link href="/" className="hover:text-gray-700 font-sans">
+              <Link href="/" className="hover:text-gray-700 font-sans" title="Home">
               Home
               </Link>
             </li>

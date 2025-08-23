@@ -43,6 +43,7 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
         {prevArticle ? (
           <Link
             href={`/${prevArticle.category}/${prevArticle.slug}`}
+            title={prevArticle.title}
             className="flex items-center gap-3 overflow-hidden"
           >
             <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 leading-none">
@@ -69,6 +70,7 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
         {nextArticle ? (
           <Link
             href={`/${nextArticle.category}/${nextArticle.slug}`}
+            title={nextArticle.title}
             className="flex items-center gap-3 justify-end overflow-hidden"
           >
             <div className="min-w-0">

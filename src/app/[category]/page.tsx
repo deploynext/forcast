@@ -17,7 +17,7 @@ interface Article {
     author:string;
 }
 
-type Category = 'politics' | 'business' | 'technology' | 'sports' | 'science' | 'health';
+type Category = 'politics' | 'business' | 'technology' | 'sports' | 'science' | 'health' | 'lifestyle' | 'education' | 'entertainment';
 
 interface PageProps {
   params: Promise<{ category: Category }>;
@@ -32,6 +32,9 @@ export async function generateStaticParams() {
     'sports',
     'science',
     'health',
+    'lifestyle',
+    'entertainment',
+    'education'
   ];
 
   return categories.map((category) => ({

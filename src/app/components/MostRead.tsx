@@ -34,7 +34,7 @@ export default function MostRead({ articles }: MostReadProps) {
         {articles.slice(10,15).map((articles,index)=>(
         <div  className={`lg:flex lg:flex-row gap-3 mb-3 justify-items-center  pb-2`} key={index} >
           
-          <Link href={`/${articles.category}/${articles.slug}`} className="shrink-0">
+          <Link href={`/${articles.category}/${articles.slug}`} title={articles.title} className="shrink-0">
             <Image
               src={articles.image}
               alt={articles.title}
@@ -48,11 +48,12 @@ export default function MostRead({ articles }: MostReadProps) {
           <div className="flex flex-col">
             <Link
               href={`/${articles.category}/${articles.slug}`}
+              title={articles.title}
               className="font-bold text-[17px]  mb-2 lg:line-clamp-3"
             >
               {articles.title}
             </Link>
-            <p className="flex flex-row text-[16px] font-sans font-semibold">
+            <p className="flex flex-row text-sm font-sans font-semibold">
               <AlarmClock className="me-2 w-5 text-gray-500" />
               {articles.date}
             </p>

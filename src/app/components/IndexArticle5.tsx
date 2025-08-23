@@ -24,7 +24,7 @@ export default function IndexArticle5 ({ article }: { article: Article }) {
     return (
     <div className={`w-full relative  pb-6 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
         <div className="relative w-full h-36 overflow-hidden rounded-md">
-         <Link href={`/${article.category}/${article.slug}`}>
+         <Link href={`/${article.category}/${article.slug}`} title={article.title}>
            <Image
              src={article.image}
              alt={article.title}
@@ -33,19 +33,19 @@ export default function IndexArticle5 ({ article }: { article: Article }) {
            />
          </Link>
         </div>
-        <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2 mt-5">
+        <Link href={`/${article.category}/${article.slug}`} title={article.title} className="line-clamp-2 mt-5">
           <h3 className={`group  text-xl font-semibold leading-relaxed underline-wrapper-black cursor-pointer ${theme === "dark" ? "underline-wrapper-white" : "underline-wrapper-black"}`}>
             {article.title}
           </h3>
         </Link>
-        <div className="flex flex-row text-[10px] align-middle just mt-4 gap-1 font-sans ">
-            <Link href={`/${article.category}`} className="inline-block    rounded">
+        <div className="flex flex-row md:text-[10px]  text-xs gap-2 align-middle just mt-4 md:gap-1 font-sans ">
+            <Link href={`/${article.category}`} title={article.category} className="inline-block    rounded">
               <span className="  font-sans font-semibold border hover:bg-red-700
                 hover:text-white px-1 py-1 capitalize ">
                 {article.category}
               </span>
             </Link>
-            <div className="">by  <span className=" font-semibold">{article.author || "Reporter"}</span></div>
+            <div className=" md:truncate md:max-w-[60px]">by  <span className=" font-semibold">{article.author || "Reporter"}</span></div>
             <div className="w-px h-2 bg-gray-500  mt-1"></div>
             <div className="flex items-center  text-gray-500   font-sans">
                 <span>{article.date}</span>

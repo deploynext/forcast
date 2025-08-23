@@ -74,7 +74,7 @@ export default async function Page({
           
           <div className="w-full lg:w-2/3">
             <Details article={article}/>
-            <AlsoLike articles={articles}/>
+            <AlsoLike  articles={articles}/>
 
             <Tagged/>
             <ArticleNavigation articles={articles}/>

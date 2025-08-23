@@ -25,7 +25,7 @@ export default function WithNumber ({ article,index }: { article: Article , inde
                 <div className="">
                     <div  className="flex flex-col items-start">
                         <div className="relative w-[350px] h-48 overflow-hidden rounded-md">
-                            <Link href={`/${article.category}/${article.slug}`}>
+                            <Link href={`/${article.category}/${article.slug}`} title={article.title}>
                                 <Image
                                   src={article.image}
                                   alt={article.title}
@@ -39,7 +39,7 @@ export default function WithNumber ({ article,index }: { article: Article , inde
                         <span className="text-4xl md:text-5xl font-bold text-red-600">
                             {String(index + 1).padStart(2, "0")}
                         </span>
-                        <Link href={`/${article.category}/${article.slug}`} className={`line-clamp-2 ml-2 font-semibold text-2xl leading-snug cursor-pointer ${theme === "dark" ? "text-gray-50" : "text-gray-950"}`}
+                        <Link href={`/${article.category}/${article.slug}`} title={article.title} className={`line-clamp-2 ml-2 font-semibold text-2xl leading-snug cursor-pointer ${theme === "dark" ? "text-gray-50" : "text-gray-950"}`}
                         >
                             {article.title}
                         </Link>
@@ -48,7 +48,7 @@ export default function WithNumber ({ article,index }: { article: Article , inde
                     {/* Meta */}
                     <div className={` ml-16 mt-3 flex flex-wrap items-center gap-4  font-sans ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
                         <Link
-                          href={`/category/${article.category.toLowerCase()}`}
+                          href={`/${article.category.toLowerCase()}`} title={article.category}
                           className="px-2  py-1 border border-gray-400 hover:bg-red-600 hover:text-white transition-colors capitalize text-xs font-medium"
                         >
                           {article.category}

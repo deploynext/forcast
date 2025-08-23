@@ -24,7 +24,9 @@ export default function RightImage3 ({ article }: { article: Article }) {
         <div className=" my-2">
           <div  className="md:flex gap-4 ">
             <div className="w-[80px]  h-[80px]  overflow-hidden rounded-xs relative">
-               <Link href={`/${article.category}/${article.slug}`}>
+               <Link href={`/${article.category}/${article.slug}`}
+               title={article.title}
+               >
                   <Image
                     src={article.image}
                     alt={article.title}
@@ -34,7 +36,7 @@ export default function RightImage3 ({ article }: { article: Article }) {
                 </Link>
             </div>
             <div className="md:w-2/3 md:mt-0 mt-5">
-              <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
+              <Link href={`/${article.category}/${article.slug}`} title={article.title} className="line-clamp-2">
                 <h3 className={`group mt-2 text-xl font-semibold leading-relaxed   cursor-pointer ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black"}`}>
                   {article.title}
                 </h3>

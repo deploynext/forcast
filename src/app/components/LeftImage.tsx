@@ -26,7 +26,7 @@ const LeftImage = ({ article }: { article: Article }) => {
          <div className="flex flex-col md:flex-row gap-4 pb-[19px]">
           {/* IMAGE (top on mobile, right on desktop) */}
           <div className="w-full md:w-1/3 h-48 md:h-28 overflow-hidden relative rounded-xs order-1 md:order-2">
-            <Link href={`/${article.category}/${article.slug}`}>
+            <Link href={`/${article.category}/${article.slug}`} title={article.title}>
               <Image
                 src={article.image}
                 alt={article.title}
@@ -38,21 +38,21 @@ const LeftImage = ({ article }: { article: Article }) => {
 
           {/* TEXT (bottom on mobile, left on desktop) */}
           <div className={`w-full md:w-2/3 order-2 md:order-1 ${theme === "dark" ? "text-gray-50" : "text-gray-950"}`}>
-            <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
+            <Link href={`/${article.category}/${article.slug}`} title={article.title} className="line-clamp-2">
               <h3 className={`group mt-2 text-xl font-semibold leading-relaxed cursor-pointer ${theme === "dark" ? "underline-wrapper-white" : "underline-wrapper-black"}`}>
                 {article.title}
               </h3>
             </Link>
-            <div className="flex items-center gap-1 mt-4 text-xs">
-              <Link href={`/${article.category}`}>
+            <div className="flex items-center md:gap-1 gap-2 mt-4 text-xs md:text-[10px]">
+              <Link href={`/${article.category}`} title={article.category}>
                 <span className="px-2 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer font-medium">
                   {article.category}
                 </span>
               </Link>
               <span className="text-gray-500 font-sans">by </span>
-              <span className="font-sans">{article.author || "Reporter"}</span>
+              <span className="font-sans font-semibold">{article.author || "Reporter"}</span>
               <div className="w-px h-3 bg-gray-500 mt-1"></div>
-              <div className="flex items-center gap-2 text-[10px] text-gray-500 font-sans">
+              <div className="flex items-center  text-gray-500 font-sans">
                 <span>{article.date}</span>
               </div>
             </div>

@@ -16,14 +16,14 @@ export default function WorldNews ({ articles }: { articles: Article[] }) {
         <div className="lg:px-44 py-16 px-5 bg-gray-900 text-white">
             <div className="pb-16 md:flex md:flex-row md:justify-between flex flex-col gap-5  ">
               <div className="md:flex md:flex-row align-middle gap-5 ">
-                  <h1 className="text-4xl font-bold">World News</h1>
+                  <h2 className="text-4xl mb-5 font-bold">World News</h2>
                   <div className="hidden mt-4 md:mt-0 md:block w-px  h-12 bg-gray-300"></div>
                   <div className="text-gray-500 flex flex-col font-sans text-lg">
-                      <p >Lorem ipsum dolor sit amet consectetur. Ut tellus suspendisse nulla aliquam.</p>  
-                      <p>Risus tellus eget ultrices pretium nisi amet facilisis.</p>
+                      <p >What’s trending in health and medicine </p>  
+                      <p>— breakthrough research, public health updatesand medical stories shaping the conversation.</p>
                   </div>
               </div>
-              <Link href={`/${articles[0].category}`} className="font-sans max-h-10 max-w-24 font-semibold border px-3  text-sm md:pt-2 hover:text-white hover:bg-red-600">
+              <Link href={`/${articles[0].category}`} title="see more" className="font-sans max-h-10 max-w-24 font-semibold border px-3  text-sm md:pt-2 hover:text-white hover:bg-red-600">
               See More
               </Link>
             </div>

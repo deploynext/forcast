@@ -25,7 +25,7 @@ export default function ArticleCard({ article }: { article: Article }) {
     <div className="w-full px-2 pb-8">
       {/* Image */}
        <div className="relative w-full h-44 overflow-hidden border border-gray-300 rounded-md sm:w-[800px] lg:w-[300px] ">
-        <Link href={`/${article.category}/${article.slug}`}>
+        <Link href={`/${article.category}/${article.slug}`} title={article.title}>
           <Image
             src={article.image}
             alt={article.title}
@@ -43,7 +43,7 @@ export default function ArticleCard({ article }: { article: Article }) {
       </div>
       <br />
       {/* Title */}
-      <Link href={`/${article.category}/${article.slug}`}>
+      <Link href={`/${article.category}/${article.slug}`} title={article.title}>
         <h3 className={`group mt-2 text-lg  font-semibold leading-relaxed underline-wrapper cursor-pointer ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
           {article.title}
         </h3>

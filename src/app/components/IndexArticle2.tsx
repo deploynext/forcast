@@ -23,7 +23,7 @@ export default function IndexArticle2 ({ article }: { article: Article }) {
     return (
     <div className="w-full pb-6">
         <div className="relative w-full h-full overflow-hidden  rounded-md">
-         <Link href={`/${article.category}/${article.slug}`}>
+         <Link href={`/${article.category}/${article.slug}`} title={article.title}>
            <Image
              src={article.image}
              alt={article.title}
@@ -33,13 +33,13 @@ export default function IndexArticle2 ({ article }: { article: Article }) {
            />
          </Link>
         </div>
-        <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2 mt-5">
+        <Link href={`/${article.category}/${article.slug}`} title={article.title} className="line-clamp-2 mt-5">
           <h3 className={`group  text-2xl  font-semibold leading-relaxed  cursor-pointer ${theme === "dark" ? "text-gray-50 underline-wrapper-white":"text-gray-950 underline-wrapper-black"}`}>
             {article.title}
           </h3>
         </Link>
         <div className={`flex flex-row align-middle just mt-4 gap-2 font-sans text-xs ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`} >
-            <Link href={`/${article.category}`} className="inline-block    rounded">
+            <Link href={`/${article.category}`} title={article.category} className="inline-block    rounded">
               <span className="  font-sans  font-semibold border hover:bg-red-700
                 hover:text-white px-3 py-1 capitalize me-2">
                 {article.category}

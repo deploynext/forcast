@@ -35,6 +35,7 @@ export default function NewsCard() {
           University of South Florida Coach Complications work During Surgery
         </h2>
         <Link
+          title="Explore Now"
           href="#"
           className="inline-block bg-white text-black px-4 py-2 rounded font-medium hover:bg-gray-200 transition"
         >

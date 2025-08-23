@@ -22,7 +22,8 @@ export default function FeaturedArticleCard({article}: FeaturedArticleCardProps)
     <div className="bg-black text-white  rounded-sm overflow-hidden flex flex-col md:flex-row ">
       {/* Text content */}
       <div className="p-6 md:w-1/2 w-full md:py-20 md:px-8">
-        <Link href={`/${article.category}/${article.slug}`}>
+        <Link href={`/${article.category}/${article.slug}`}
+        title={article.title}>
           <h2 className="group text-xl md:text-2xl font-bold  leading-tight underline-wrapper-white line-clamp-4">
             {article.title} 
           </h2>
@@ -33,7 +34,7 @@ export default function FeaturedArticleCard({article}: FeaturedArticleCardProps)
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-2 text-xs">
-          <Link href={`/${article.category}`} className="border border-white px-3 py-1 capitalize hover:bg-red-700 rounded-xs font-sans">{article.category}</Link>
+          <Link href={`/${article.category}`} title={article.title} className="border border-white px-3 py-1 capitalize hover:bg-red-700 rounded-xs font-sans">{article.category}</Link>
           <span className='font-sans'>by</span><span className='font-semibold  font-sans'>{article.author || "Reporter"}</span>
           <div className='w-px h-4 bg-gray-400'></div>
           <span className="text-gray-400 font-sans text-xs">{article.date}</span>
@@ -43,7 +44,7 @@ export default function FeaturedArticleCard({article}: FeaturedArticleCardProps)
       {/* Image */}
       
       <div className="relative w-full md:w-1/2 h-72 md:h-auto  overflow-hidden">
-        <Link href={`/${article.category}/${article.slug}`}>
+        <Link href={`/${article.category}/${article.slug}`} title={article.title}>
           <Image
             src={article.image}
             alt={article.title}

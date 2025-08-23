@@ -14,7 +14,7 @@ export  default function Detailbc({title}:{title:string}){
          <nav className="mb-4  text-[18px]" aria-label="breadcrumb">
         <ol className="flex flex-col md:flex md:flex-row space-x-2 ">
           <li>
-            <Link href="/" className="hover:text-gray-700 ">
+            <Link href="/" className="hover:text-gray-700 " title="Home">
               Home
               <span className="mx-2">›</span>
             </Link>

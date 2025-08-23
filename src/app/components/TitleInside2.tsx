@@ -15,7 +15,7 @@ return(
      <div className="w-full md:h-full h-80">
       {/* Image */}
        <div className="relative w-full h-full  max-h-[560px]  overflow-hidden rounded-md group ">
-        <Link href={`/${article.category}/${article.slug}`}>
+        <Link href={`/${article.category}/${article.slug}`} title={article.title}>
           <Image
             src={article.image}
             alt={article.title}
@@ -28,22 +28,22 @@ return(
         <div className="bottom-0 h-full  absolute  text-white inset-0 bg-gradient-to-t from-black to-transparent ">
           <div className="relative w-full h-full">
             <div className="absolute bottom-5 px-5 mb-2 text-center items-center">
-                <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
+                <Link href={`/${article.category}/${article.slug}`} title={article.title} className="line-clamp-2">
                     <h3 className="group mt-2 text-2xl  font-semibold leading-relaxed underline-wrapper-white cursor-pointer ">
                       {article.title}
                     </h3>
                 </Link>
                   <div className="flex flex-row align-middle just text-xs mt-4 gap-2 w-full justify-center items-center">
-                <Link href={`/${article.category}`} className="inline-block    rounded">
+                <Link href={`/${article.category}`} title={article.category} className="inline-block    rounded">
                   <span className="  font-sans  font-semibold border hover:bg-red-700
-                   px-3 py-1 capitalize me-2">
+                   px-3 py-1 capitalize ">
                     {article.category}
                   </span>
                 </Link>
         
-                <div className=" mx-2 font-sans">by  <span className=" font-semibold">{article.author || "Reporter"}</span></div>
+                <div className="  font-sans">by  <span className=" font-semibold">{article.author || "Reporter"}</span></div>
                 <div className="w-px h-3 bg-gray-500  mt-1"></div>
-                <div className="flex items-center gap-2 text-gray-500   font-sans">
+                <div className="flex items-center  text-gray-500   font-sans">
                     <span>{article.date}</span>
                 </div>
                 </div>
