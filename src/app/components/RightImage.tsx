@@ -10,6 +10,7 @@ interface Article {
   author?: string;
   image: string;
   slug:string;
+  date:string;
 }
 export default function RightImage ({ article }: { article: Article }) {
   const {theme} = useTheme()
@@ -31,16 +32,20 @@ export default function RightImage ({ article }: { article: Article }) {
                   />
                 </Link>
             </div>
-            <div className={`md:w-2/3 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
+            <div className={`md:w-2/3 mt-5 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
               <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
-                <h3 className={`group mt-2 text-lg 
-                  font-semibold leading-relaxed   cursor-pointer ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black"}`}>
+                <h3 className={`group mt-2 text-xl 
+                   leading-relaxed   cursor-pointer ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black"}`}>
                   {article.title}
                 </h3>
               </Link>
-              <div className="flex items-center gap-2 mt-4 ">
+              <div className="flex items-center gap-1 mt-2 ">
                 <Link href={`/${article.category}`}><span className="px-2 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer text-xs font-medium">{article.category}</span></Link>
                 <span className="text-gray-500 font-sans text-xs">by </span><span className="text-xs font-sans">{article.author || "Reporter"}</span>
+                <div className="w-px h-3 bg-gray-500  mt-1"></div>
+                <div className="flex items-center  text-gray-500 text-xs  font-sans">
+                    <span>{article.date}</span>
+                </div>
               </div>
             </div>
           </div>

@@ -41,7 +41,7 @@ export default function WorldNews2 ({ articles }: { articles: Article[] }) {
                 </div>
                 <div className="md:w-4/12">
                     {articles.slice(5,8).map((article,index)=>(
-                        <div key={index} className="border-t border-gray-300 first:border-0">
+                        <div key={index} className="border-t border-gray-300 first:border-0 my-2">
                             <LeftImage article={article}/>
                         </div>
                     ))}

@@ -13,7 +13,7 @@ export default function CategoryHeader( { category } :{category : string}) {
     <section className={` py-24  overflow-hidden relative w-full  ${theme === "dark" ? "bg-black/ text-gray-50":'breadcrumb-bg text-gray-800'}`}
     
     >
-      <div className="max-w-7xl mx-auto px-6 items-center justify-items-center">
+      <div className="max-w-7xl mx-auto px-6 items-center  justify-items-center">
         {/* Breadcrumb */}
         <nav className="mb-4  text-sm" aria-label="breadcrumb font-sans">
           <ol className="inline-flex items-center space-x-2 justify-center">

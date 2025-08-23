@@ -7,6 +7,7 @@ interface Article {
   author?: string;
   image: string;
   slug:string;
+  date:string;
 }
 export default function RightImage2 ({ article }: { article: Article }) {
     return(
@@ -22,15 +23,19 @@ export default function RightImage2 ({ article }: { article: Article }) {
                   />
                 </Link>
             </div>
-            <div className="md:w-2/3">
+            <div className="md:w-2/3 mt-5 md:mt-0">
               <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
-                <h3 className="group mt-2 text-lg  font-semibold leading-relaxed underline-wrapper-white  cursor-pointer">
+                <h3 className="group mt-2 text-xl  font-semibold leading-relaxed underline-wrapper-white  cursor-pointer">
                   {article.title}
                 </h3>
               </Link>
-              <div className="flex items-center gap-2 mt-4 text-xs">
-                <Link href={`/${article.category}`}><span className="px-2 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer text-sm font-medium">{article.category}</span></Link>
+              <div className="flex items-center gap-1 mt-4 text-xs">
+                <Link href={`/${article.category}`}><span className="p-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer text-xs font-medium">{article.category}</span></Link>
                 <span className="text-gray-500 font-sans ">by </span><span className="font-sans">{article.author || "Reporter"}</span>
+                <div className="w-px h-3 bg-gray-500  mt-1"></div>
+                <div className="flex items-center  text-gray-500 text-[10px]  font-sans">
+                    <span>{article.date}</span>
+                </div>
               </div>
             </div>
           </div>

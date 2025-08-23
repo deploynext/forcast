@@ -13,6 +13,7 @@ interface Article {
   image: string;
   slug:string;
   shortdescription:string;
+  date:string;
 }
 
 export default function MinusTop ( { article }: { article: Article } ) {
@@ -25,7 +26,7 @@ export default function MinusTop ( { article }: { article: Article } ) {
     return (
         <div className="relative lg:top-[-160] py-5 border-t mt-8 border-b border-gray-300  ">
           <div  className="md:flex">
-            <div className="md:w-96 md:h-[236px] w-full h-72  overflow-hidden rounded-xs relative">
+            <div className="md:w-96 md:h-[236px] w-full h-48  overflow-hidden rounded-xs relative">
                <Link href={`/${article.category}/${article.slug}`}>
                   <Image
                     src={article.image}
@@ -36,24 +37,26 @@ export default function MinusTop ( { article }: { article: Article } ) {
                   />
                 </Link>
             </div>
-            <div className={`md:w-1/2 space-y-3 mt-2 md:pl-5 ${theme === "dark" ? "text-gray-50":"text-gray-800"}`}>
+            <div className={`md:w-1/2 space-y-3 mt-4  md:pl-5 ${theme === "dark" ? "text-gray-50":"text-gray-800"}`}>
               <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
-                <h3 className={`group mt-2 text-lg  font-semibold leading-relaxed cursor-pointer  ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black  "}`} >
+                <h3 className={`group mt-2 text-2xl  font-semibold leading-relaxed cursor-pointer  ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black  "}`} >
                   {article.title}
                 </h3>
               </Link>
               <p className="line-clamp-3">{article.shortdescription}</p>
-              <div className="flex items-center gap-2 mt-4 text-sm">
+              <div className="flex items-center gap-2 mt-4 text-xs">
                 <Link href={`/${article.category}`}>
                   <span 
                   className="px-2 py-1 border hover:bg-red-600 hover:text-white 
-                  capitalize font-sans cursor-pointer text-sm font-medium"
+                  capitalize font-sans cursor-pointer  font-medium"
                   >
                     {article.category}
                   </span>
                 </Link>
-                <span className="text-gray-500 font-sans text-lg">by </span>
-                <span className="text-lg font-sans">{article.author || "Reporter"}</span>
+                <span className="text-gray-500 font-sans ">by </span>
+                <span className="font-sans">{article.author || "Reporter"}</span>
+                <span className="text-gray-500">|</span>
+                <span>{article.date}</span>
               </div>
             </div>
           </div>

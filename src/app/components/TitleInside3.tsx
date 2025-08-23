@@ -9,12 +9,12 @@ interface Article{
     category:string;
     date:string;
 }
-export default function TitleInside2 ({article}:{article:Article}){
+export default function TitleInside3 ({article}:{article:Article}){
 return(
     <div>
-     <div className="w-full md:h-full h-80">
+     <div className="w-full h-full">
       {/* Image */}
-       <div className="relative w-full h-full  max-h-[560px]  overflow-hidden rounded-md group ">
+       <div className="relative w-full h-96 md:h-full  overflow-hidden rounded-md group ">
         <Link href={`/${article.category}/${article.slug}`}>
           <Image
             src={article.image}
@@ -33,7 +33,7 @@ return(
                       {article.title}
                     </h3>
                 </Link>
-                  <div className="flex flex-row align-middle just text-xs mt-4 gap-2 w-full justify-center items-center">
+                  <div className="flex flex-row align-middle just mt-4 gap-2 w-full justify-center text-xs items-center">
                 <Link href={`/${article.category}`} className="inline-block    rounded">
                   <span className="  font-sans  font-semibold border hover:bg-red-700
                    px-3 py-1 capitalize me-2">
@@ -41,9 +41,9 @@ return(
                   </span>
                 </Link>
         
-                <div className=" mx-2 font-sans">by  <span className=" font-semibold">{article.author || "Reporter"}</span></div>
-                <div className="w-px h-3 bg-gray-500  mt-1"></div>
-                <div className="flex items-center gap-2 text-gray-500   font-sans">
+                <div className=" mx-2 font-sans flex flex-row ">by  <span className="ml-2 font-semibold">{article.author || "Reporter"}</span></div>
+                <div className="w-px h-3 bg-gray-500 mt-1"></div>
+                <div className="flex items-center  text-gray-500   font-sans">
                     <span>{article.date}</span>
                 </div>
                 </div>

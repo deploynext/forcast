@@ -29,15 +29,34 @@ export default function WorldNews ({ articles }: { articles: Article[] }) {
             </div>
             <div className="lg:flex lg:flex-row align-middle gap-10">
                 <div className="lg:w-2/3 flex items-stretch p-4 ">
-                    <TitleInside2 article={articles[20]}/>
+                    <TitleInside2 article={articles[15]}/>
                 </div>
-                <div className="flex flex-col lg:w-1/3">
-                    {articles.slice(1,5).map((article,index)=>(
-                        <div key={index} className="border-t border-gray-300 first:border-t-0">
-                            <RightImage2 article={article}/>
-                        </div>
+                <div className="lg:w-1/3">
+                  {/* Mobile view → horizontal scroll */}
+                  <div className="flex lg:hidden overflow-x-auto gap-4 snap-x snap-mandatory pb-2">
+                    {articles.slice(1, 5).map((article, index) => (
+                      <div
+                        key={index}
+                        className="min-w-[80%] snap-start  rounded-md"
+                      >
+                        <RightImage2 article={article} />
+                      </div>
                     ))}
+                  </div>
+                
+                  {/* Desktop view → normal vertical list */}
+                  <div className="hidden lg:flex flex-col">
+                    {articles.slice(1, 5).map((article, index) => (
+                      <div
+                        key={index}
+                        className="border-t border-gray-300 first:border-t-0"
+                      >
+                        <RightImage2 article={article} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
+
                 
             </div>
         </div>

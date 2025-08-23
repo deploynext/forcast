@@ -33,7 +33,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                   <p>Risus tellus eget ultrices pretium nisi amet facilisis.</p>
               </div>
           </div>
-          <Link href={`/${articles[0].category}`} className={`font-sans max-h-10 max-w-24 font-semibold border px-3  relative text-sm pt-2 hover:text-white hover:bg-red-600 ${ theme === "dark" ? "border-gray-50 text-gray-50" : "text-gray-900"}`}>
+          <Link href={`/${articles[0].category}`} className={`font-sans max-h-10 max-w-24 font-semibold border px-3  relative text-sm md:pt-2 hover:text-white hover:bg-red-600 ${ theme === "dark" ? "border-gray-50 text-gray-50" : "text-gray-900"}`}>
           See More
           </Link>
         </div>
@@ -59,14 +59,18 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                           {article.title}
                         </h3>
                       </Link>
-                      <div className="flex flex-row items-center mt-4 gap-2">
+                      <div className="flex flex-row items-center text-xs mt-4 gap-2">
                         <Link href={`/${article.category}`} className="inline-block rounded">
-                          <span className="font-sans text-sm font-semibold border px-3 py-1 capitalize hover:bg-red-700">
+                          <span className="font-sans  font-semibold border px-3 py-1 capitalize hover:bg-red-700">
                             {article.category}
                           </span>
                         </Link>
                         <div className="mx-2">
-                          by <span className="text-sm font-semibold">{article.author || "Reporter"}</span>
+                          by <span className=" font-semibold">{article.author || "Reporter"}</span>
+                        </div>
+                        <div className="w-px h-3 bg-gray-500 mx-2 mt-1"></div>
+                        <div className="flex items-center gap-2 text-gray-500   font-sans">
+                            <span>{article.date}</span>
                         </div>
                       </div>
                     </div>
@@ -92,14 +96,18 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                           {article.title}
                         </h3>
                       </Link>
-                      <div className="flex flex-row items-center mt-4 gap-2">
+                      <div className="flex flex-row items-center mt-4 text-xs gap-2">
                         <Link href={`/${article.category}`} className="inline-block rounded">
-                          <span className="font-sans text-sm font-semibold border px-3 py-1 capitalize hover:bg-red-700">
+                          <span className="font-sans  font-semibold border px-3 py-1 capitalize hover:bg-red-700">
                             {article.category}
                           </span>
                         </Link>
                         <div className="mx-2">
-                          by <span className="text-sm font-semibold">{article.author || "Reporter"}</span>
+                          by <span className=" font-semibold">{article.author || "Reporter"}</span>
+                        </div>
+                        <div className="w-px h-3 bg-gray-500 mx-2 mt-2"></div>
+                        <div className="flex items-center gap-2 text-gray-500   font-sans">
+                            <span>{article.date}</span>
                         </div>
                       </div>
                     </div>

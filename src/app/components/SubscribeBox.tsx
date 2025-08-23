@@ -1,5 +1,5 @@
 "use client"
-import { Mail } from "lucide-react"; 
+import { LucideSend } from "lucide-react"; 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
@@ -11,11 +11,12 @@ export default function SubscribeBox() {
       useEffect(() => setMounted(true), []);
     if (!mounted) return null;
   return (
-    <div className={`relative my-10  font-sans border rounded-md p-8 flex flex-col md:flex-row items-center justify-between gap-6 lg:mx-44 mx-5 ${ theme === "dark" ? "text-gray-50 bg-gray-950":"text-gray-950 bg-gray-50"}`}>
+    <div className="md:m-0 ">
+    <div className={`relative my-10  font-sans border rounded-md p-8 flex flex-col md:flex-row items-center justify-between gap-6 lg:mx-44  ${ theme === "dark" ? "text-gray-50 bg-gray-950":"text-gray-950 bg-gray-50"}`}>
       
       {/* Left Section */}
-      <div className="flex items-start gap-4">
-        <Mail className="w-12 h-12 text-gray-400" strokeWidth={1.5} />
+      <div className="md:flex items-start gap-4">
+        <LucideSend className="w-16 h-16 text-gray-400 -scale-x-100" strokeWidth={1} />
         <div>
           <p className="text-red-600 font-medium mb-1">Subscribe</p>
           <h2 className="text-2xl font-bold leading-snug ">
@@ -45,6 +46,7 @@ export default function SubscribeBox() {
 
       {/* Dotted Background Decoration */}
       <div className="absolute -bottom-6 left-0 w-full h-6 bg-[radial-gradient(circle,_black_1px,_transparent_1px)] [background-size:20px_20px]"></div>
+    </div>
     </div>
   );
 }

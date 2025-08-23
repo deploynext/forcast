@@ -30,7 +30,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                       <p>Risus tellus eget ultrices pretium nisi amet facilisis.</p>
                   </div>
               </div>
-              <Link href={`/${articles[0].category}`} className={`font-sans text-sm max-h-10 max-w-24 font-semibold border px-3 mx-4 md:pt-2 hover:text-white ${ theme === "dark" ? "text-gray-50 border-gray-50":"text-gray-950 border-gray-950"}`}>
+              <Link href={`/${articles[0].category}`} className={`font-sans text-sm max-h-10 max-w-24 font-semibold border px-3  md:pt-2 hover:text-white ${ theme === "dark" ? "text-gray-50 border-gray-50":"text-gray-950 border-gray-950"}`}>
               See More
               </Link>
             </div>
@@ -48,28 +48,34 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                                 />
                             </Link>
                         </div>
-                        <div className="mt-4 flex items-start gap-3">
-                        <span className="text-4xl md:text-5xl font-bold text-red-600">
-                            {String(index + 1).padStart(2, "0")}
+                        <div className="flex flex-row mt-5">
+                        <span className="text-6xl font-bold text-red-600 mr-4 mt-5">
+                            <h3>{String(index + 1).padStart(2, "0")}</h3>
                         </span>
-                        <Link href={`/${article.category}/${article.slug}`} className={`line-clamp-2 font-semibold text-lg leading-snug cursor-pointer ${theme === "dark" ? "text-gray-50" : "text-gray-950"}`}
-                        >
+                        <div className="flex flex-col">
+                        <div >
+                        
+                        <Link href={`/${article.category}/${article.slug}`} className={`line-clamp-2 font-semibold text-xl leading-snug cursor-pointer ${theme === "dark" ? "text-gray-50" : "text-gray-950"}`}
+                        ><h2>
                             {article.title}
+                        </h2>
                         </Link>
-                    </div>
+                        </div>
                     
                     {/* Meta */}
-                    <div className={`mt-2 ml-14 flex flex-wrap items-center gap-2  font-sans ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
+                        <div className={`mt-2 text-xs  flex flex-wrap items-center gap-2  font-sans ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
                         <Link
                           href={`/category/${article.category.toLowerCase()}`}
-                          className="px-2  py-1 border border-gray-400 hover:bg-red-600 hover:text-white transition-colors capitalize text-sm font-medium"
+                          className="px-2  py-1 border border-gray-400 hover:bg-red-600 hover:text-white transition-colors capitalize  font-medium"
                         >
                           {article.category}
                         </Link>
-                        <div className="text-sm"><span className="text-gray-500">by</span> <span >{article.author || "Reporter"}</span></div>
+                        <div className=""><span className="text-gray-500">by</span> <span >{article.author || "Reporter"}</span></div>
                         <span className="text-gray-500">|</span>
                         <span className="text-gray-500">{article.date}</span>
-                      </div>
+                        </div>
+                        </div>
+                        </div>
                     </div>
                 ))}
             </div>

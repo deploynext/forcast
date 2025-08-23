@@ -31,7 +31,7 @@ export default function FeaturedArticleCard2({article}: FeaturedArticleCardProps
       {/* Text content */}
       <div className={`px-6 py-12 md:w-1/2 w-full ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
         <Link href={`/${article.category}/${article.slug}`}>
-          <h2 className="group text-xl md:text-2xl font-bold  leading-tight underline-wrapper-white line-clamp-4">
+          <h2 className="group text-2xl font-bold  leading-tight underline-wrapper-black line-clamp-4">
             {article.title} 
           </h2>
         </Link>

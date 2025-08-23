@@ -11,6 +11,7 @@ interface Article {
   author?: string;
   image: string;
   slug: string;
+  date:string;
 }
 
 interface Tab {
@@ -20,8 +21,8 @@ interface Tab {
 }
 
 const tabs: Tab[] = [
-  { num: 1, label: "Top stories", category: "entertainment" },
-  { num: 2, label: "Trending News", category: "education" },
+  { num: 1, label: "Top stories", category: "science" },
+  { num: 2, label: "Trending News", category: "sports" },
   { num: 3, label: "Latest News", category: "politics" },
 ];
 
@@ -47,7 +48,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
           <button
             key={tab.num}
             onClick={() => setActiveTab(tab.num)}
-            className={`py-2  text-lg border-b-2 ${
+            className={`py-2 text-sm md:text-[16px] md:ml-2 cursor-pointer border-b-2 ${
               activeTab === tab.num
                 ? "border-red-500 text-red-600"
                 : "border-transparent"
@@ -56,8 +57,8 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                 ? "text-gray-50 hover:text-gray-300"
                 : "text-gray-800 hover:text-gray-900"
             }`}
-          >
-            {tab.label}
+          ><h2>{tab.label}</h2>
+            
           </button>
         ))}
       </div>
@@ -102,7 +103,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                     {article.title}
                   </h3>
                 </Link>
-                <div className="flex items-center gap-2 mt-2 text-sm">
+                <div className="flex items-center gap-1 mt-2 text-xs">
                   <span
                     className={`px-2 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer text-xs rounded-sm font-medium ${
                       theme === "dark" ? "text-gray-50" : "text-black"
@@ -110,7 +111,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                   >
                     {article.category}
                   </span>
-                  <span className="text-gray-500 font-sans text-xs">by </span>
+                  <span className="text-gray-500 font-sans ">by </span>
                   <span
                     className={`text-xs font-sans font-medium
                     ${
@@ -119,6 +120,11 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                   >
                     {article.author || "Reporter"}
                   </span>
+                 
+                  <div className="w-px h-3 bg-gray-500  mt-1"></div>
+                  <div className="flex items-center  text-gray-500   font-sans">
+                      <span>{article.date}</span>
+                  </div>
                 </div>
               </div>
             </div>

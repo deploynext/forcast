@@ -86,10 +86,10 @@
     .card {
       position: relative;
       flex: 0 0 auto;
-      width: 200px;
-      height: 300px;
+      width: 350px;
+      height: 450px;
       margin-right: 10px;
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 5px;
     }
 }

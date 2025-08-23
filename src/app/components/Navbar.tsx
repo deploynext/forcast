@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 
-import { Search, Menu, Moon, User2, Calendar, Sun } from "lucide-react";
+import { Search, Menu, Moon, Calendar, Sun } from "lucide-react";
 import {
   faFacebookF,
   faXTwitter,
@@ -220,7 +220,8 @@ const [searchOpen, setSearchOpen] = useState(false)
           initial={{ opacity: 0, y: +40 }}
           animate={{ opacity: 1, y: 0 }}
           
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          
+          transition={{ duration: 0.7, ease: "easeInOut" }}
           onMouseEnter={() => {
               if (closeTimer.current) {
                 window.clearTimeout(closeTimer.current);
@@ -229,7 +230,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             }}
             onMouseLeave={() => setOpenLabel(null)}
             style={{
-              position: "fixed",
+              position: "absolute",
               left: 0,
               right: 0,
               top: menuTop, 
@@ -341,9 +342,10 @@ const [searchOpen, setSearchOpen] = useState(false)
            
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0,x:-40 }}
           
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="absolute  top-0 left-0 z-360"
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="fixed top-0 left-0 z-360"
         >
           <div
             className="h-screen  w-[400px] bg-black text-white border-2 border-gray-800 shadow  overflow-y-auto"

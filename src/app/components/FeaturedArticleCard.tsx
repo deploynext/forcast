@@ -32,9 +32,9 @@ export default function FeaturedArticleCard({article}: FeaturedArticleCardProps)
           {article.shortdescription}
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
+        <div className="mt-6 flex flex-wrap items-center gap-2 text-xs">
           <Link href={`/${article.category}`} className="border border-white px-3 py-1 capitalize hover:bg-red-700 rounded-xs font-sans">{article.category}</Link>
-          <span className='font-sans'>by</span><span className='font-semibold text-sm font-sans'>{article.author || "Reporter"}</span>
+          <span className='font-sans'>by</span><span className='font-semibold  font-sans'>{article.author || "Reporter"}</span>
           <div className='w-px h-4 bg-gray-400'></div>
           <span className="text-gray-400 font-sans text-xs">{article.date}</span>
         </div>

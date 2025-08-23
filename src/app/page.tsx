@@ -31,6 +31,7 @@ import Footer from "./components/Footer"
 // seo
 
 import { Metadata } from "next";
+import ScrollToTop from "./components/ScrollToTop"
 
 export const metadata: Metadata = {
   title: "Fiscal Fusion - Fusing News and Numbers.",
@@ -194,7 +195,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="lg:w-1/3 flex flex-col">
+        <div className="lg:w-1/3 mt-5 md:mt-0 flex flex-col">
           <NewsTabs articles={mergedArticles}/>
         </div>
         </div>
@@ -243,7 +244,7 @@ export default function Home() {
         <ScrollingCards articles={businessArticle}/>
       </div>
       <PopularNews articles={education}/>
-      <WorldNews articles={entertainment}/>
+      <WorldNews articles={health}/>
       <SubscribeBox/>
       <WorldNews2 articles={lifestyle}/>
       <div className="flex lg:flex-row flex-col p-5 lg:mx-44 gap-6 mt-6">
@@ -251,8 +252,8 @@ export default function Home() {
             <LatestHead/>
             <ThreeNews articles={sports}/>
             <TwoNews articles={science}/>
-            <ThreeNews articles={business}/>
-            <TwoNews articles={science}/>
+            <ThreeNews articles={health}/>
+            <TwoNews articles={business}/>
         </div>
         <div className="lg:w-1/3 lg:ml-8 flex flex-col space-y-10">
           <div className=""><QuoteSlider/></div>
@@ -260,6 +261,7 @@ export default function Home() {
         </div>
       </div>
       <Footer/>
+      <ScrollToTop/>
     </>
   );
 }

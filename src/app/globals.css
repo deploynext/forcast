@@ -16,8 +16,23 @@ body {
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: "CustomFont-medium";
+  src: url("/Assets/fonts/nyt-cheltenham-medium.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
 
+h2  {
+  font-family: "CustomFont-medium";
+}
 
+h3{
+   font-family: "CustomFont-medium";
+}
+h1{
+   font-family: "CustomFont-medium";
+}
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

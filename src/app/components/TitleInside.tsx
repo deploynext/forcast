@@ -40,9 +40,9 @@ return(
                   </span>
                 </Link>
         
-                <div className=" mx-2 text-xs font font-sans mt-1 me-1">by  <span className="text-xs font-semibold font-sans">{article.author || "Reporter"}</span></div>
-                <div className="w-px h-3 bg-gray-500 mx-2 mt-2"></div>
-                <div className="flex items-center gap-2 text-gray-500 text-xs  font-sans">
+                <div className="  text-xs font font-sans mt-1 me-1">by  <span className="text-xs font-semibold font-sans">{article.author || "Reporter"}</span></div>
+                <div className="w-px h-3 bg-gray-500  mt-2"></div>
+                <div className="flex items-center  text-gray-500 text-xs  font-sans">
                     <span>{article.date}</span>
                 </div>
                 </div>

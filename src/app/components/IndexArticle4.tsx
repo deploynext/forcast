@@ -36,15 +36,18 @@ export default function IndexArticle4 ({ article }: { article: Article }) {
             {article.title}
           </h3>
         </Link>
-        <div className="flex flex-row align-middle just mt-4 gap-2 font-sans ">
+        <div className="flex flex-row text-xs align-middle just mt-4 gap-2 font-sans ">
             <Link href={`/${article.category}`} className="inline-block    rounded">
-              <span className="  font-sans text-sm font-semibold border hover:bg-red-700
+              <span className="  font-sans font-semibold border hover:bg-red-700
                 hover:text-white px-3 py-1 capitalize me-2">
                 {article.category}
               </span>
             </Link>
-
-            <div className=" mx-2">by  <span className="text-sm font-semibold">{article.author || "Reporter"}</span></div>
+            <div className="">by  <span className=" font-semibold">{article.author || "Reporter"}</span></div>
+            <div className="w-px h-3 bg-gray-500  mt-1"></div>
+            <div className="flex items-center  text-gray-500   font-sans">
+                <span>{article.date}</span>
+            </div>
             
         </div>
     </div>

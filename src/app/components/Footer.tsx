@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Mail, Phone } from "lucide-react";
+import { Mail } from "lucide-react";
 import {
   faFacebookF,
   faXTwitter,
@@ -11,6 +11,7 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Image from "next/image";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -98,8 +99,8 @@ export default function Footer() {
             <p className="mb-4 text-sm text-neutral-300">
               Subscribe to get our newest articles instantly.
             </p>
-             <form onSubmit={onSubmit} className="flex  items-stretch">
-                <div className="relative ">
+             <form onSubmit={onSubmit} className="flex  items-stretch ">
+                <div className="relative md:w-full  ">
                   <input
                     type="email"
                     required
@@ -125,11 +126,11 @@ export default function Footer() {
             <div className="mt-6 space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-neutral-400" />
-                <span>infouemail@gmail.com</span>
+                <span>fiscalfusion@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-neutral-400" />
-                <span>+5-784-8894-678</span>
+               
+                
               </div>
               <div className="mt-4 flex items-center gap-4 text-neutral-300">
                 <FontAwesomeIcon className="hover:text-white cursor-pointer" icon={faFacebookF} />
@@ -146,8 +147,18 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-neutral-800">
         <div className="mx-auto max-w-7xl px-6 py-6 flex flex-col items-center justify-between gap-3 text-sm text-neutral-400 md:flex-row">
-          <div className="font-serif text-xl tracking-wide text-white">Forcast News</div>
-          <div>Forcast News ©2024. All Rights Reserved.</div>
+          <div className="font-serif h-10 overflow-hidden flex items-center justify-center">
+            <Link href="/" >
+                 <Image
+                  src="/logo-white.webp"
+                  alt="logo"
+                  width={230}
+                  height={36}
+                  className="object-contain "
+                  />
+              </Link>
+          </div>
+          <div>Fiscal Fusion. All Rights Reserved.</div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 md:flex-row">
             <Link className="hover:text-white" href="#">Privacy</Link>
             <Link className="hover:text-white" href="#">Terms</Link>

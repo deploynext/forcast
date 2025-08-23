@@ -5,7 +5,8 @@ import RightImage from "./RightImage";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-import TitleInside2 from "./TitleInside2";
+
+import TitleInside3 from "./TitleInside3";
 
 interface Article {
     title:string;
@@ -47,7 +48,7 @@ export default function Trending ({ articles }: { articles: Article[] }) {
                     ))}
                 </div>
                 <div className="lg:w-2/3 flex items-stretch p-4  ">
-                    <TitleInside2 article={articles[19]}/>
+                    <TitleInside3 article={articles[19]}/>
                 </div>
             </div>
         </div>

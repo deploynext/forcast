@@ -33,7 +33,7 @@ export default function RightImage3 ({ article }: { article: Article }) {
                   />
                 </Link>
             </div>
-            <div className="md:w-2/3">
+            <div className="md:w-2/3 md:mt-0 mt-5">
               <Link href={`/${article.category}/${article.slug}`} className="line-clamp-2">
                 <h3 className={`group mt-2 text-xl font-semibold leading-relaxed   cursor-pointer ${theme === "dark" ? "underline-wrapper-white":"underline-wrapper-black"}`}>
                   {article.title}
