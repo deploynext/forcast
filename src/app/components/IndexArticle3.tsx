@@ -45,7 +45,7 @@ export default function IndexArticle3 ({ article }: { article: Article }) {
               </span>
             </Link>
 
-            <div className="ml-2" >
+            <div className="" >
               by  
               <Link 
               title="go to author page"
@@ -61,7 +61,7 @@ export default function IndexArticle3 ({ article }: { article: Article }) {
                 const key = (article.author ?? "").trim();
                 return routes[key] || "/team";
               })()}
-              className=" font-semibold ml-2">
+              className=" font-semibold ml-1">
                 {article.author || "Reporter"}
               </Link>
             </div>
@@ -69,7 +69,7 @@ export default function IndexArticle3 ({ article }: { article: Article }) {
             
         </div>
         <div className="flex items-center text-xs  text-gray-500 mt-2  font-sans">
-                <span>{article.date}</span>
+                <span>Published date: {article.date}</span>
             </div>
     </div>
     )

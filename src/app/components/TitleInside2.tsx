@@ -57,7 +57,7 @@ return(
                     const key = (article.author ?? "").trim();
                     return routes[key] || "/team";
                   })()}
-                  className="ml-2 font-semibold">
+                  className="ml-1 font-semibold">
                     {article.author || "Reporter"}
                   </Link >
                 </div>

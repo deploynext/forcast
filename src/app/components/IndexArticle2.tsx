@@ -62,7 +62,7 @@ export default function IndexArticle2 ({ article }: { article: Article }) {
                 const key = (article.author ?? "").trim();
                 return routes[key] || "/team";
               })()}
-              className=" font-semibold ml-3">
+              className=" font-semibold ">
                 {article.author || "Reporter"}
               </Link>
             </div>

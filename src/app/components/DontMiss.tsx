@@ -95,7 +95,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                             </Link>
                             </div>
                         </div>
-                        <span className="text-gray-500 font-sans text-xs mt-2">{article.date}</span>
+                        <span className="text-gray-500 font-sans text-xs mt-4">Published date : {article.date}</span>
                         </div>
                         </div>
                     </div>

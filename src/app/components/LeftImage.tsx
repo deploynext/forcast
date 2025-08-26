@@ -49,7 +49,7 @@ const LeftImage = ({ article }: { article: Article }) => {
                   {article.category}
                 </span>
               </Link>
-              <span className="text-gray-500 font-sans ml-2">by </span>
+              <span className="text-gray-500 font-sans ml-1">by </span>
               <Link 
               title="go to author page"
                 
@@ -64,12 +64,12 @@ const LeftImage = ({ article }: { article: Article }) => {
                 const key = (article.author ?? "").trim();
                 return routes[key] || "/team";
               })()}
-              className="font-sans font-semibold ml-2 ">
+              className="font-sans font-semibold ml-1 ">
                 {article.author || "Reporter"}
               </Link>       
             </div>
             <div className="flex items-center text-xs mt-2  text-gray-500 font-sans">
-                <span>{article.date}</span>
+                <span>Published date: {article.date}</span>
               </div>
           </div>
         </div>
