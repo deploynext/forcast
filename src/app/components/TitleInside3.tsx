@@ -41,7 +41,26 @@ return(
                   </span>
                 </Link>
         
-                <div className=" mx-2 font-sans flex flex-row ">by  <span className="ml-2 font-semibold">{article.author || "Reporter"}</span></div>
+                <div className=" mx-2 font-sans flex flex-row ">
+                    by  
+                    <Link 
+                    title="go to author page"
+                
+                    href={(() => {
+                      const routes: Record<string, string> = {
+                        "Ashley E. Marsh": "/team/ashley-e-marsh",
+                        "David J. Hughes": "/team/david-j-hughes",
+                        "Judith A. Beach": "/team/judith-a-beach",
+                        "Robert L. Dixon": "/team/robert-l-dixon",
+                        "Xavier M. Thomas": "/team/xavier-m-thomas",
+                      };
+                      const key = (article.author ?? "").trim();
+                      return routes[key] || "/team";
+                    })()}
+                    className="ml-2 font-semibold">
+                        {article.author || "Reporter"}
+                    </Link>
+                </div>
                 <div className="w-px h-3 bg-gray-500 mt-1"></div>
                 <div className="flex items-center  text-gray-500   font-sans">
                     <span>{article.date}</span>

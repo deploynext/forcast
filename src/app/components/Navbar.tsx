@@ -97,17 +97,14 @@ const [searchOpen, setSearchOpen] = useState(false)
         {/* Quick Links */}
         <div className="flex gap-2 flex-wrap">
           <span>Quick Links:</span>
-          <Link href="#" title="contact info" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
+          <Link href="/about-us" title="contact info" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
             About Us
           </Link>
           <span>-</span>
-          <Link href="#" title="contact info" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
+          <Link href="/contact-us" title="contact info" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
             Contact Us
           </Link>
-          <span>-</span>
-          <Link href="#" title="contact info" className={`${theme === "dark" ? "text-gray-50":"text-gray-900"}  font-semibold hover:underline`}>
-            Latest News
-          </Link>
+          
         </div>
 
         {/* Logo */}
@@ -167,7 +164,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             <Search size={22}  />
             
           </button>
-          <SearchModel  isOpen={searchOpen} onClose={() => setSearchOpen(false)}/>
+          <SearchModel articles={articles} isOpen={searchOpen} onClose={() => setSearchOpen(false)}/>
         </div>
      <div className=" justify-items-center  w-full overflow-x-visible overflow-y-visible">
         <div

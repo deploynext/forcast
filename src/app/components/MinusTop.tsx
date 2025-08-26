@@ -54,9 +54,25 @@ export default function MinusTop ( { article }: { article: Article } ) {
                   </span>
                 </Link>
                 <span className="text-gray-500 font-sans ">by </span>
-                <span className="font-sans font-semibold">{article.author || "Reporter"}</span>
+                <Link 
+                title="go to author page"
+                
+              href={(() => {
+                const routes: Record<string, string> = {
+                  "Ashley E. Marsh": "/team/ashley-e-marsh",
+                  "David J. Hughes": "/team/david-j-hughes",
+                  "Judith A. Beach": "/team/judith-a-beach",
+                  "Robert L. Dixon": "/team/robert-l-dixon",
+                  "Xavier M. Thomas": "/team/xavier-m-thomas",
+                };
+                const key = (article.author ?? "").trim();
+                return routes[key] || "/team";
+              })()}
+                className="font-sans font-semibold">
+                  {article.author || "Reporter"}
+                </Link>
                 <span className="text-gray-500">|</span>
-                <span>{article.date}</span>
+                <span className="font-sans">{article.date}</span>
               </div>
             </div>
           </div>

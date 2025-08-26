@@ -4,6 +4,7 @@ import { Calendar,  User } from "lucide-react";
 import SocialIcons from "./SocialIcons";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 interface Article {
   title: string;
@@ -27,7 +28,7 @@ export default function ArticleHeader({ article }: { article: Article }) {
       {/* Title Section */}
       <div className="w-full lg:w-9/12">
         {article.category && (
-          <span className="inline-block font-sans bg-purple-700 text-white text-xs font-bold px-3 py-1 rounded mb-3 capitalize">
+          <span className="inline-block font-sans bg-red-600 text-white text-xs font-bold px-3 py-1 rounded mb-3 capitalize">
            - {article.category}
           </span>
         )}
@@ -38,9 +39,23 @@ export default function ArticleHeader({ article }: { article: Article }) {
         {/* Meta Info */}
         <div className="flex flex-wrap items-center gap-7 my-6 text-gray-600 text-sm">
           
-            <span className="flex items-center font-sans gap-2">
+            <Link 
+            title="go to author page"
+                
+                href={(() => {
+                  const routes: Record<string, string> = {
+                    "Ashley E. Marsh": "/team/ashley-e-marsh",
+                    "David J. Hughes": "/team/david-j-hughes",
+                    "Judith A. Beach": "/team/judith-a-beach",
+                    "Robert L. Dixon": "/team/robert-l-dixon",
+                    "Xavier M. Thomas": "/team/xavier-m-thomas",
+                  };
+                  const key = (article.author ?? "").trim();
+                  return routes[key] ?? "/team";
+                })()} 
+            className="flex items-center font-sans gap-2">
               <User size={16} /> {article.author || reporter} 
-            </span>
+            </Link>
           
           
             <span className="flex items-center font-sans gap-2">
@@ -49,7 +64,7 @@ export default function ArticleHeader({ article }: { article: Article }) {
           
         </div>
         <div className="mt-2">
-            <p className="text-xl text-gray-500 font-sans ">{article.shortdescription}</p>
+            <p className="text-xl text-gray-500 font-sans italic">{article.shortdescription}</p>
         </div>
       </div>
 

@@ -40,11 +40,28 @@ export default function FeaturedArticleCard2({article}: FeaturedArticleCardProps
           {article.shortdescription}
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
+        <div className="mt-6 flex flex-wrap items-center gap-2 text-xs">
           <Link href={`/${article.category}`} title={article.category} className="border  font-sans   px-2 py-1 capitalize hover:bg-red-700 rounded-xs">{article.category}</Link>
-          <span>by</span><span className='font-semibold  font-sans  text-sm'>{article.author || "Reporter"}</span>
+          <span>by</span>
+          <Link 
+          title="go to author page"
+                
+            href={(() => {
+              const routes: Record<string, string> = {
+                "Ashley E. Marsh": "/team/ashley-e-marsh",
+                "David J. Hughes": "/team/david-j-hughes",
+                "Judith A. Beach": "/team/judith-a-beach",
+                "Robert L. Dixon": "/team/robert-l-dixon",
+                "Xavier M. Thomas": "/team/xavier-m-thomas",
+              };
+              const key = (article.author ?? "").trim();
+              return routes[key] || "/team";
+            })()} 
+          className='font-semibold  font-sans '>
+            {article.author || "Reporter"}
+            </Link>
           <div className='w-px h-4 bg-gray-700'></div>
-          <span className="text-gray-500  font-sans  text-xs">{article.date}</span>
+          <span className="text-gray-500  font-sans  ">{article.date}</span>
         </div>
       </div>
 

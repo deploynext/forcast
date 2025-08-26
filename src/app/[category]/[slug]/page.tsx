@@ -4,7 +4,6 @@ import path from "path";
 import MostRead from "@/app/components/MostRead";
 import SidebarAd from "@/app/components/SidebarAd";
 import NewsletterForm from "@/app/components/NewsletterForm";
-import Detailbc from "@/app/components/Detailbc";
 import ArticleHeader from "@/app/components/ArticleHeader";
 import Details from "@/app/components/Details";
 import AlsoLike from "@/app/components/AlsoLike";
@@ -66,13 +65,13 @@ export default async function Page({
     return(
       <div>
         <Navbar articles={articles}/>
-        <Detailbc title={article.title}/>
+        
       <div className="lg:px-20 px-2 mt-5">
         
         <ArticleHeader article={article}/>
         <div className="flex flex-col lg:flex-row lg:gap-6 mt-6">
           
-          <div className="w-full lg:w-2/3">
+          <div className="w-full lg:w-2/3 p-3">
             <Details article={article}/>
             <AlsoLike  articles={articles}/>
 

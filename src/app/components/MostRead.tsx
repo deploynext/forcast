@@ -53,9 +53,9 @@ export default function MostRead({ articles }: MostReadProps) {
             >
               {articles.title}
             </Link>
-            <p className="flex flex-row text-sm font-sans font-semibold">
-              <AlarmClock className="me-2 w-5 text-gray-500" />
-              {articles.date}
+            <p className="flex flex-row text-xs text-gray-500 font-sans font-semibold">
+              <AlarmClock className="me-2 w-3 " />
+              <div className="mt-1">{articles.date}</div>
             </p>
           </div>
 

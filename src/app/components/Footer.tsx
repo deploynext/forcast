@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { Mail } from "lucide-react";
+
 import {
   faFacebookF,
   faXTwitter,
@@ -18,89 +18,43 @@ export default function Footer() {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // handle submission here
+    
   };
 
   return (
     <footer className="bg-neutral-900 text-neutral-200 w-full font-sans">
       <div className="mx-auto max-w-7xl px-6 py-14">
-        {/* Container flex: column on mobile, row on lg */}
         <div className="flex flex-col lg:flex-row lg:gap-12">
-          {/* Left side: lists container, 2/3 width on lg */}
-          <div className="w-full lg:w-2/3 flex flex-col gap-8">
-
-            {/* First 3 lists: grid with 1 col mobile, 3 cols md+ */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {/* News */}
-              <div>
-                <h3 className="mb-4 text-lg font-semibold font-serif text-white">News</h3>
-                <ul className="space-y-2 text-sm">
-                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="#">Home Page</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/#">World</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/politics">Politics</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/education">Education</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/sports">Sports</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/business">Business</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/technology">Tech</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category" href="/science">Science</Link></li>
-                </ul>
-              </div>
-
-              {/* Lifestyle */}
-              <div>
-                <h3 className="mb-4 text-lg font-semibold font-serif text-white">Lifestyle</h3>
-                <ul className="space-y-2 text-sm">
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Fashion ’24</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Style</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Restaurant Reviews</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Health</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Entertainment</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Trends</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Food</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Auto</Link></li>
-                </ul>
-              </div>
-
-              {/* Economics */}
-              <div>
-                <h3 className="mb-4 text-lg font-semibold font-serif text-white">Economics</h3>
-                <ul className="space-y-2 text-sm">
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Today’s Opinion</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Columnists</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Guest Essays</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Sunday Opinion</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Opinion Video</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Real Estate</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Pop Culture</Link></li>
-                  <li><Link className="text-neutral-400 hover:text-white" title="category"  href="/#">Book Review</Link></li>
-                </ul>
+          <div className="md:flex md:flex-row ">
+            <div className="">
+              <Link title="about us" href="/about-us" className="mb-4 text-lg font-semibold font-serif text-white">About Us</Link> 
+              <div className="md:w-1/2 my-5 text-gray-400">
+                Fiscal Fusion is your go-to source for balanced, clear financial news. Covering key topics like Politics, Business, Tech, Science, and Lifestyle, we deliver timely insights that help you stay informed and empowered.
               </div>
             </div>
-
-            
-            {/* <div className="mt-8 md:mt-12">
-              <h3 className="mb-4 text-lg font-semibold font-serif text-white">World</h3>
+            <div className="w-full md:w-2/4">
+              <h3 className="mb-4 text-lg font-semibold font-serif text-white">Category</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link className="text-neutral-400 hover:text-white" href="/#">The Athletic</Link></li>
-                <li><Link className="text-neutral-400 hover:text-white" href="/#">Live Events</Link></li>
-                <li><Link className="text-neutral-400 hover:text-white" href="/#">Reader Center</Link></li>
-                <li><Link className="text-neutral-400 hover:text-white" href="/#">The Learning Network</Link></li>
-                <li><Link className="text-neutral-400 hover:text-white" href="/#">The Great Read</Link></li>
-                <li><Link className="text-neutral-400 hover:text-white" href="/#">Visual Arts</Link></li>
-                <li><Link className="text-neutral-400 hover:text-white" href="/#">Tech</Link></li>
-                <li><Link className="text-neutral-400 hover:text-white" href="/#">Television</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Home Page" href="/">Home Page</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Politics" href="/politics">Politics</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Education" href="/education">Education</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Sports" href="/sports">Sports</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Business" href="/business">Business</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Technology" href="/technology">Technology</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Science" href="/science">Science</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Lifestyle" href="/lifestyle">Lifestyle</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Health" href="/health">Health</Link></li>
+                <li><Link className="text-neutral-400 hover:text-white" title="Entertainment" href="/entertainment">Entertainment</Link></li>
               </ul>
-            </div> */}
+            </div>
           </div>
-
-          {/* Newsletter: on lg take 1/3 width and stay on right; on md+ move up side-by-side with 4th list */}
-          <div className="w-full lg:w-1/3 mt-12 lg:mt-0 lg:self-start">
+          <div className="w-full lg:w-1/2 mt-12 lg:mt-0 lg:self-start">
             <h3 className="mb-4 text-lg font-semibold font-serif text-white">Sign Up for Our Newsletter</h3>
             <p className="mb-4 text-sm text-neutral-300">
               Subscribe to get our newest articles instantly.
             </p>
              <form onSubmit={onSubmit} className="flex  items-stretch ">
-                <div className="relative md:w-full  ">
+                <div className="relative w-full me-10 md:me-0  ">
                   <input
                     type="email"
                     required
@@ -124,10 +78,7 @@ export default function Footer() {
             </label>
 
             <div className="mt-6 space-y-2 text-sm">
-              <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-neutral-400" />
-                <span>fiscalfusion@gmail.com</span>
-              </div>
+              
               <div className="flex items-center gap-2">
                
                 

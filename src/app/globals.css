@@ -94,3 +94,11 @@ h1{
   background-size: cover;
   background-position: center;
 }
+@keyframes spinDots {
+  0%, 39%, 100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+  }
+}

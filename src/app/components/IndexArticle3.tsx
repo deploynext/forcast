@@ -37,7 +37,7 @@ export default function IndexArticle3 ({ article }: { article: Article }) {
             {article.title}
           </h3>
         </Link>
-        <div className={`flex flex-row align-middle just mt-4 md:gap-1 gap-2 font-sans text-xs md:text-[10px] ${ theme === "dark" ? "border-gray-50 text-gray-50" : "text-gray-900"}`}>
+        <div className={`flex flex-row align-middle just mt-4 md:gap-1 gap-2 font-sans text-xs  ${ theme === "dark" ? "border-gray-50 text-gray-50" : "text-gray-900"}`}>
             <Link href={`/${article.category}`}  title={article.category} className="inline-block    rounded">
               <span className="  font-sans  font-semibold border hover:bg-red-700
                 hover:text-white px-2 md:px-1 py-1 capitalize ">
@@ -45,12 +45,32 @@ export default function IndexArticle3 ({ article }: { article: Article }) {
               </span>
             </Link>
 
-            <div className="">by  <span className=" font-semibold">{article.author || "Reporter"}</span></div>
-            <div className="w-px h-3 bg-gray-500  mt-1"></div>
-            <div className="flex items-center  text-gray-500   font-sans">
+            <div className="ml-2" >
+              by  
+              <Link 
+              title="go to author page"
+                
+              href={(() => {
+                const routes: Record<string, string> = {
+                  "Ashley E. Marsh": "/team/ashley-e-marsh",
+                  "David J. Hughes": "/team/david-j-hughes",
+                  "Judith A. Beach": "/team/judith-a-beach",
+                  "Robert L. Dixon": "/team/robert-l-dixon",
+                  "Xavier M. Thomas": "/team/xavier-m-thomas",
+                };
+                const key = (article.author ?? "").trim();
+                return routes[key] || "/team";
+              })()}
+              className=" font-semibold ml-2">
+                {article.author || "Reporter"}
+              </Link>
+            </div>
+            
+            
+        </div>
+        <div className="flex items-center text-xs  text-gray-500 mt-2  font-sans">
                 <span>{article.date}</span>
             </div>
-        </div>
     </div>
     )
 }

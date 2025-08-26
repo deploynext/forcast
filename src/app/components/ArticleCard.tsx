@@ -24,7 +24,7 @@ export default function ArticleCard({ article }: { article: Article }) {
   return (
     <div className="w-full px-2 pb-8">
       {/* Image */}
-       <div className="relative w-full h-44 overflow-hidden border border-gray-300 rounded-md sm:w-[800px] lg:w-[300px] ">
+       <div className="relative w-full h-44 overflow-hidden border border-gray-300 rounded-md sm:w-[800px] lg:w-[350px] ">
         <Link href={`/${article.category}/${article.slug}`} title={article.title}>
           <Image
             src={article.image}
@@ -36,7 +36,7 @@ export default function ArticleCard({ article }: { article: Article }) {
       </div>
 
       {/* Category Tag */}
-      <div className="inline-block  clip-polygon mt-4 bg-purple-700 pl-2 pe-3 py-1 mb-2 rounded">
+      <div className="inline-block  clip-polygon mt-4 bg-red-600 pl-2 pe-3 py-1 mb-2 rounded">
         <span className=" text-white font-sans text-sm font-semibold  uppercase me-2">
           {article.category}
         </span>
@@ -44,7 +44,7 @@ export default function ArticleCard({ article }: { article: Article }) {
       <br />
       {/* Title */}
       <Link href={`/${article.category}/${article.slug}`} title={article.title}>
-        <h3 className={`group mt-2 text-lg  font-semibold leading-relaxed underline-wrapper cursor-pointer ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
+        <h3 className={`group mt-2 text-xl   leading-relaxed underline-wrapper cursor-pointer ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
           {article.title}
         </h3>
       </Link>

@@ -34,13 +34,32 @@ return(
                 </Link>
                   <div className="flex flex-row align-middle just mt-4 gap-2 ">
                 <Link href={`/${article.category}`} title={article.category} className="inline-block    rounded">
-                  <span className="  font-sans text-sm font-semibold border hover:bg-red-700
+                  <span className="  font-sans text-xs font-semibold border hover:bg-red-700
                    px-3 py-1 capitalize me-2">
                     {article.category}
                   </span>
                 </Link>
         
-                <div className="  text-xs font font-sans mt-1 me-1">by  <span className="text-xs font-semibold font-sans">{article.author || "Reporter"}</span></div>
+                <div className="  text-xs font font-sans mt-1 me-1">
+                  by  
+                  <Link 
+                  title="go to author page"
+                
+                  href={(() => {
+                    const routes: Record<string, string> = {
+                      "Ashley E. Marsh": "/team/ashley-e-marsh",
+                      "David J. Hughes": "/team/david-j-hughes",
+                      "Judith A. Beach": "/team/judith-a-beach",
+                      "Robert L. Dixon": "/team/robert-l-dixon",
+                      "Xavier M. Thomas": "/team/xavier-m-thomas",
+                    };
+                    const key = (article.author ?? "").trim();
+                    return routes[key] || "/team";
+                  })()}
+                  className="text-xs font-semibold ml-2 font-sans">
+                    {article.author || "Reporter"}
+                  </Link>
+                </div>
                 <div className="w-px h-3 bg-gray-500  mt-2"></div>
                 <div className="flex items-center  text-gray-500 text-xs  font-sans">
                     <span>{article.date}</span>

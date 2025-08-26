@@ -43,13 +43,33 @@ export default function IndexArticle4 ({ article }: { article: Article }) {
                 {article.category}
               </span>
             </Link>
-            <div className="">by  <span className=" font-semibold">{article.author || "Reporter"}</span></div>
-            <div className="w-px h-3 bg-gray-500  mt-1"></div>
-            <div className="flex items-center  text-gray-500   font-sans">
-                <span>{article.date}</span>
+            <div className="">
+              by  
+              <Link 
+              title="go to author page"
+                
+              href={(() => {
+                const routes: Record<string, string> = {
+                  "Ashley E. Marsh": "/team/ashley-e-marsh",
+                  "David J. Hughes": "/team/david-j-hughes",
+                  "Judith A. Beach": "/team/judith-a-beach",
+                  "Robert L. Dixon": "/team/robert-l-dixon",
+                  "Xavier M. Thomas": "/team/xavier-m-thomas",
+                };
+                const key = (article.author ?? "").trim();
+                return routes[key] || "/team";
+              })()}
+              className=" font-semibold ml-2">
+                {article.author || "Reporter"}
+              </Link>
             </div>
+            <div className="flex items-center text-xs  text-gray-500  font-sans">
             
+          
         </div>
+        
+        </div>
+        <p className="text-gray-500 font-sans text-xs mt-2">{article.date}</p>
     </div>
     )
 }

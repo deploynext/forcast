@@ -23,7 +23,7 @@ const LeftImage = ({ article }: { article: Article }) => {
   if (!mounted) return null;
   return (
     <div className="space-y-2 mt-4">
-         <div className="flex flex-col md:flex-row gap-4 pb-[19px]">
+         <div className="flex flex-col md:flex-row gap-2">
           {/* IMAGE (top on mobile, right on desktop) */}
           <div className="w-full md:w-1/3 h-48 md:h-28 overflow-hidden relative rounded-xs order-1 md:order-2">
             <Link href={`/${article.category}/${article.slug}`} title={article.title}>
@@ -43,19 +43,34 @@ const LeftImage = ({ article }: { article: Article }) => {
                 {article.title}
               </h3>
             </Link>
-            <div className="flex items-center md:gap-1 gap-2 mt-4 text-xs md:text-[10px]">
+            <div className="flex items-center md:gap-1 gap-2 mt-4 text-xs ">
               <Link href={`/${article.category}`} title={article.category}>
                 <span className="px-2 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer font-medium">
                   {article.category}
                 </span>
               </Link>
-              <span className="text-gray-500 font-sans">by </span>
-              <span className="font-sans font-semibold">{article.author || "Reporter"}</span>
-              <div className="w-px h-3 bg-gray-500 mt-1"></div>
-              <div className="flex items-center  text-gray-500 font-sans">
+              <span className="text-gray-500 font-sans ml-2">by </span>
+              <Link 
+              title="go to author page"
+                
+              href={(() => {
+                const routes: Record<string, string> = {
+                  "Ashley E. Marsh": "/team/ashley-e-marsh",
+                  "David J. Hughes": "/team/david-j-hughes",
+                  "Judith A. Beach": "/team/judith-a-beach",
+                  "Robert L. Dixon": "/team/robert-l-dixon",
+                  "Xavier M. Thomas": "/team/xavier-m-thomas",
+                };
+                const key = (article.author ?? "").trim();
+                return routes[key] || "/team";
+              })()}
+              className="font-sans font-semibold ml-2 ">
+                {article.author || "Reporter"}
+              </Link>       
+            </div>
+            <div className="flex items-center text-xs mt-2  text-gray-500 font-sans">
                 <span>{article.date}</span>
               </div>
-            </div>
           </div>
         </div>
 

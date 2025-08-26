@@ -53,7 +53,25 @@ export default function WithNumber ({ article,index }: { article: Article , inde
                         >
                           {article.category}
                         </Link>
-                        <div ><span className="text-gray-500 text-xs">by</span> <span className="text-xs">{article.author || "Reporter"}</span></div>
+                        <div ><span className="text-gray-500 text-xs">by</span> 
+                        <Link 
+                        title="go to author page"
+                
+                        href={(() => {
+                          const routes: Record<string, string> = {
+                            "Ashley E. Marsh": "/team/ashley-e-marsh",
+                            "David J. Hughes": "/team/david-j-hughes",
+                            "Judith A. Beach": "/team/judith-a-beach",
+                            "Robert L. Dixon": "/team/robert-l-dixon",
+                            "Xavier M. Thomas": "/team/xavier-m-thomas",
+                          };
+                          const key = (article.author ?? "").trim();
+                          return routes[key] || "/team";
+                        })()}
+                        className="text-xs">
+                            {article.author || "Reporter"}
+                        </Link>
+                        </div>
                         <span className="text-gray-500">|</span>
                         <span className="text-gray-500 text-xs">{article.date}</span>
                       </div>

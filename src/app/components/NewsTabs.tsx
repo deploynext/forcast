@@ -76,7 +76,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
           {currentArticles.slice(10, 15).map((article, index) => (
             <div
               key={index}
-              className="flex gap-4 border-t first:border-t-0 border-gray-300 pt-3 pb-3 first:pt-0"
+              className="flex gap-4 border-t first:border-t-0 border-gray-300 pt-3 pb-2 first:pt-0"
             >
               <div className="w-1/3   h-[100px] overflow-hidden rounded-xs relative">
                 <Link href={`/${article.category}/${article.slug}`}
@@ -106,7 +106,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                     {article.title}
                   </h3>
                 </Link>
-                <div className="flex items-center gap-1 mt-2 text-[10px]">
+                <div className="flex items-center gap-1 mt-2 text-xs">
                   <span
                     className={`px-1 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer  rounded-sm font-medium ${
                       theme === "dark" ? "text-gray-50" : "text-black"
@@ -114,21 +114,35 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                   >
                     {article.category}
                   </span>
-                  <span className="text-gray-500 font-sans ">by </span>
-                  <span
-                    className={` font-sans font-medium truncate max-w-[60px]
+                  <span className="text-gray-500 font-sans ml-2">by </span>
+                  <Link
+                  title="go to author page"
+                
+                   href={(() => {
+                     const routes: Record<string, string> = {
+                       "Ashley E. Marsh": "/team/ashley-e-marsh",
+                       "David J. Hughes": "/team/david-j-hughes",
+                       "Judith A. Beach": "/team/judith-a-beach",
+                       "Robert L. Dixon": "/team/robert-l-dixon",
+                       "Xavier M. Thomas": "/team/xavier-m-thomas",
+                     };
+                     const key = (article.author ?? "").trim();
+                     return routes[key] || "/team";
+                   })()}
+                    className={` font-sans font-medium 
                     ${
                       theme === "dark" ? "text-gray-50" : "text-black"
                     }`}
                   >
                     {article.author || "Reporter"}
-                  </span>
+                  </Link>
                  
-                  <div className="w-px h-3 bg-gray-500  mt-1"></div>
-                  <div className="flex items-center  text-gray-500   font-sans">
+                 
+                  
+                </div>
+                <div className="flex items-center text-xs mt-2 text-gray-500   font-sans">
                       <span>{article.date}</span>
                   </div>
-                </div>
               </div>
             </div>
           ))}

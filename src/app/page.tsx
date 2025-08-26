@@ -32,6 +32,7 @@ import Footer from "./components/Footer"
 
 import { Metadata } from "next";
 import ScrollToTop from "./components/ScrollToTop"
+import SidebarAd from "./components/SidebarAd"
 
 export const metadata: Metadata = {
   title: "Fiscal Fusion - Fusing News and Numbers.",
@@ -82,15 +83,6 @@ export const metadata: Metadata = {
     apple: "/logo-black.webp",
   },
 };
-
-
-  
-
-
-
-
-
-
 
 type Article ={
   title:string;
@@ -255,9 +247,9 @@ export default function Home() {
             <ThreeNews articles={health}/>
             <TwoNews articles={business}/>
         </div>
-        <div className="lg:w-1/3 lg:ml-8 flex flex-col space-y-10">
+        <div className="lg:w-1/3 relative lg:ml-8 flex flex-col space-y-10">
           <div className=""><QuoteSlider/></div>
-          <NewsCard/>
+          <SidebarAd/>
         </div>
       </div>
       <Footer/>

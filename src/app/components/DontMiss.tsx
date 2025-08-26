@@ -66,7 +66,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                         </div>
                     
                     {/* Meta */}
-                        <div className={`mt-2 text-xs md:text-[10px] flex flex-wrap items-center gap-2  font-sans ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
+                        <div className={`mt-2 text-xs flex flex-wrap items-center gap-2  font-sans ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
                         <Link
                           href={`/category/${article.category.toLowerCase()}`}
                           title={article.category}
@@ -74,10 +74,28 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                         >
                           {article.category}
                         </Link>
-                        <div className="text-gray-900 truncate max-w-[60px]"><span className="text-gray-500">by</span> <span className="font-semibold  ">{article.author || "Reporter"}</span></div>
-                        <span className="text-gray-500">|</span>
-                        <span className="text-gray-500">{article.date}</span>
+                        <div className="text-gray-900">
+                            <span className="text-gray-500 me-2">by</span> 
+                            <Link 
+                            title="go to author page"
+                
+                            href={(() => {
+                              const routes: Record<string, string> = {
+                                "Ashley E. Marsh": "/team/ashley-e-marsh",
+                                "David J. Hughes": "/team/david-j-hughes",
+                                "Judith A. Beach": "/team/judith-a-beach",
+                                "Robert L. Dixon": "/team/robert-l-dixon",
+                                "Xavier M. Thomas": "/team/xavier-m-thomas",
+                              };
+                              const key = (article.author ?? "").trim();
+                              return routes[key] || "/team";
+                            })()} 
+                            className="font-semibold  ">
+                                {article.author || "Reporter"}
+                            </Link>
+                            </div>
                         </div>
+                        <span className="text-gray-500 font-sans text-xs mt-2">{article.date}</span>
                         </div>
                         </div>
                     </div>

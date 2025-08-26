@@ -37,7 +37,7 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
 
   return (
     <div 
-    className={`w-full flex justify-between items-center border-t border-b py-16 my-11 px-5 gap-6 overflow-hidden border-gray-300 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
+    className={`w-full md:flex justify-between items-center border-t border-b py-16 my-11 px-5 gap-6 overflow-hidden border-gray-300 ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>
       {/* Previous Article */}
       <div className="flex-1 min-w-0">
         {prevArticle ? (
@@ -66,7 +66,7 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
       </div>
 
       {/* Next Article */}
-      <div className="flex-1 min-w-0 text-right">
+      <div className="flex-1 md:mt-0 mt-8 min-w-0 text-right">
         {nextArticle ? (
           <Link
             href={`/${nextArticle.category}/${nextArticle.slug}`}
