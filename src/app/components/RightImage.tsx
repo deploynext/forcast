@@ -41,7 +41,7 @@ export default function RightImage ({ article }: { article: Article }) {
               </Link>
               <div className="flex items-center gap-3  text-xs md:gap-1 mt-5 ">
                 <Link href={`/${article.category}`} title={article.category}><span className="px-2 md:px-1 py-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer  font-medium">{article.category}</span></Link>
-                <span className="text-gray-500 font-sans ml-1 ">by </span>
+                <span className="text-gray-500 font-sans  ">by </span>
                 <Link 
                 title="go to author page"
                 
@@ -56,13 +56,13 @@ export default function RightImage ({ article }: { article: Article }) {
                   const key = (article.author ?? "").trim();
                   return routes[key] || "/team";
                 })()}
-                className=" font-sans  font-semibold ml-1">
+                className=" font-sans  font-semibold ">
                   {article.author || "Reporter"}
                 </Link>
                 
                 
               </div>
-              <div className="flex items-center text-xs mt-2  text-gray-500   font-sans">
+              <div className="flex items-center text-xs mt-4  text-gray-500   font-sans">
                 <span>Published date: {article.date}</span>
               </div>
             </div>

@@ -140,7 +140,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                  
                   
                 </div>
-                <div className="flex items-center text-xs mt-2 text-gray-500   font-sans">
+                <div className="flex items-center text-xs mt-4 text-gray-500   font-sans">
                       <span>Published date: {article.date}</span>
                   </div>
               </div>

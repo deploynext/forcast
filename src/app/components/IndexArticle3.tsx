@@ -68,7 +68,7 @@ export default function IndexArticle3 ({ article }: { article: Article }) {
             
             
         </div>
-        <div className="flex items-center text-xs  text-gray-500 mt-2  font-sans">
+        <div className="flex items-center text-xs  text-gray-500 mt-4  font-sans">
                 <span>Published date: {article.date}</span>
             </div>
     </div>

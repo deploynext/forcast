@@ -24,7 +24,6 @@ import ThreeNews from "./components/ThreeNews"
 import TwoNews from "./components/TwoNews"
 import LatestHead from "./components/LatestHead"
 import QuoteSlider from "./components/QuoteSlider"
-import NewsCard from "./components/NewsCard"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
 

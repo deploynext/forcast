@@ -69,7 +69,7 @@ export default function IndexArticle4 ({ article }: { article: Article }) {
         </div>
         
         </div>
-        <p className="text-gray-500 font-sans text-xs mt-2">{article.date}</p>
+        <p className="text-gray-500 font-sans text-xs mt-4">Published date: {article.date}</p>
     </div>
     )
 }

@@ -28,9 +28,9 @@ export default function ArticleHeader({ article }: { article: Article }) {
       {/* Title Section */}
       <div className="w-full lg:w-9/12">
         {article.category && (
-          <span className="inline-block font-sans bg-red-600 text-white text-xs font-bold px-3 py-1 rounded mb-3 capitalize">
+          <Link title="go to category page" href={`/${article.category}`} className="inline-block font-sans bg-red-600 text-white text-xs font-bold px-3 py-1 rounded mb-3 capitalize">
            - {article.category}
-          </span>
+          </Link>
         )}
         <h1 className={`text-2xl lg:text-4xl font-bold my-4 ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
           {article.title}
@@ -70,7 +70,7 @@ export default function ArticleHeader({ article }: { article: Article }) {
 
       {/* Social Share Section */}
       <div className="   lg:mt-40">
-        <p className={`text-lg font-semibold mb-3 font-sans ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>Share This Article:</p>
+        <p className={`text-lg font-semibold mb-3 py-8 md:py-2 font-sans ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>Share This Article:</p>
         <SocialIcons/>
       </div>
     </div>

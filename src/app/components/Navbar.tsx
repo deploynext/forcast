@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link";
 
-import { Search, Menu, Moon, Calendar, Sun } from "lucide-react";
+import { Search, Menu, Moon, Calendar, Sun, X } from "lucide-react";
 import {
   faFacebookF,
   faXTwitter,
@@ -108,7 +108,7 @@ const [searchOpen, setSearchOpen] = useState(false)
         </div>
 
         {/* Logo */}
-        <div className="flex w-[300px] h-[50px] items-center px-8 ml-8 overflow-hidden">
+        <div className="flex w-[300px] h-[50px] items-center px-8 ml-16 overflow-hidden">
           <Link title="logo" href="/" className="font-bold tracking-wide md:mx-0">
           <h1 title="fiscal fusion">
             {/* Show black logo in light mode */}
@@ -191,6 +191,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             "Science",
             "Technology",
             "Lifestyle",
+            "Entertainment",
           ].map((label) => (
             <div
               key={label}
@@ -373,7 +374,7 @@ const [searchOpen, setSearchOpen] = useState(false)
                   />
               </Link>
               <button onClick={() => setMenuOpen(false)} className="text-gray-50 hover:text-gray-600 font-sans cursor-pointer">
-                X
+                <X/>
               </button>
             </div>            
             
@@ -415,8 +416,8 @@ const [searchOpen, setSearchOpen] = useState(false)
             `}</style>
             <div className="w-full items-center   text-gray-700 hover:bg-gray-100 hover:text-red-600">
               
-              <button onClick={() => setMenuOpen1(false)} className="text-gray-50 px-5 bg-red-600 font-sans">
-                X
+              <button onClick={() => setMenuOpen1(false)} className="text-gray-50 px-3 py-2 bg-red-600 font-sans">
+                <X/>
               </button>
             </div>            
             <div className=" pt-5 mt-5">
@@ -430,19 +431,17 @@ const [searchOpen, setSearchOpen] = useState(false)
                   />
               </Link>
             </div>
-            <div className="px-5 mt-2">
-              <input placeholder="Search Here" className="w-full border border-gray-200 font-sans pl-2 py-3 text-xs"/>
+            <div className="mt-8">
+              <Link onClick={() => setMenuOpen1(false)} title="poltics" href="/politics" className=" font-sans font-semibold block px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200 pl-5">Politics</Link>
+              <Link onClick={() => setMenuOpen1(false)} title="business" href="/business" className=" font-sans font-semibold block px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200 pl-5">Business</Link>
+              <Link onClick={() => setMenuOpen1(false)} title="health" href="/health" className=" font-sans font-semibold block px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200 pl-5">Health</Link>
+              <Link onClick={() => setMenuOpen1(false)} title="sports" href="/sports" className=" font-sans font-semibold block px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200 pl-5">Sports</Link>
+              <Link onClick={() => setMenuOpen1(false)} title="science" href="/science" className=" font-sans font-semibold block px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200 pl-5">Science</Link>
+              <Link onClick={() => setMenuOpen1(false)} title="technology" href="/technology" className=" font-sans font-semibold block px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200 pl-5">Technology</Link>
+              <Link onClick={() => setMenuOpen1(false)} title="education" href="/education" className=" font-sans font-semibold block px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200 pl-5">Education</Link>
+              <Link onClick={() => setMenuOpen1(false)} title="entertainment" href="/entertainment" className=" font-sans font-semibold block px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200 pl-5">Entertainment</Link>
+              <Link onClick={() => setMenuOpen1(false)} title="lifestyle" href="/lifestyle" className=" font-sans font-semibold block px-4 py-4 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200 pl-5">Lifestyle</Link>
             </div>
-            <Link onClick={() => setMenuOpen1(false)} title="poltics" href="/politics" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200">Politics</Link>
-            <Link onClick={() => setMenuOpen1(false)} title="business" href="/business" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Business</Link>
-            <Link onClick={() => setMenuOpen1(false)} title="health" href="/health" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Health</Link>
-            <Link onClick={() => setMenuOpen1(false)} title="sports" href="/sports" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Sports</Link>
-            <Link onClick={() => setMenuOpen1(false)} title="science" href="/science" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Science</Link>
-            <Link onClick={() => setMenuOpen1(false)} title="technology" href="/technology" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Technology</Link>
-            <Link onClick={() => setMenuOpen1(false)} title="education" href="/education" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600  border-b border-gray-200">Education</Link>
-            <Link onClick={() => setMenuOpen1(false)} title="entertainment" href="/entertainment" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200">Entertainment</Link>
-            <Link onClick={() => setMenuOpen1(false)} title="lifestyle" href="/lifestyle" className=" font-sans font-semibold block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-red-600 border-b border-gray-200">Lifestyle</Link>
-          
           </div>
         )}
     </>

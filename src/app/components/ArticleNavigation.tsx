@@ -46,13 +46,13 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
             title={prevArticle.title}
             className="flex items-center gap-3 overflow-hidden"
           >
-            <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 leading-none">
+            <div className="w-12 h-12 rounded-full  overflow-hidden flex-shrink-0 leading-none">
               <Image
                 src={prevArticle.image}
                 alt={prevArticle.title}
-                width={80}
-                height={80}
-                className="object-cover scale-200"
+                width={100}
+                height={100}
+                className="object-cover scale-220 mt-3"
               />
             </div>
             <div className="min-w-0">
@@ -83,7 +83,7 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
                 alt={nextArticle.title}
                 width={80}
                 height={80}
-                className="object-cover scale-200"
+                className="object-cover scale-220 mt-2"
               />
             </div>
           </Link>

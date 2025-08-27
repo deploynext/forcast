@@ -1,6 +1,7 @@
 // File: app/team/page.tsx
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Link from 'next/link';
 
 const teamMembers = [
   { slug: 'ashley-e-marsh', name: "Ashley E. Marsh",
@@ -48,7 +49,7 @@ export default function TeamPage() {
                 <h3 className="text-xl font-semibold">{editor.name}</h3>
                 <p className="text-sm text-gray-500 mb-3">{editor.role}</p>
                 <p className="text-gray-700 mb-4">{editor.bio}</p>
-                <div >Read Full Bio</div>
+                <Link href={`/team/${editor.slug}`} >Read Full Bio</Link>
               </div>
             </div>
           ))}
@@ -65,7 +66,7 @@ export default function TeamPage() {
                 <h3 className="text-xl font-semibold">{reporter.name}</h3>
                 <p className="text-sm text-gray-500 mb-3">{reporter.role}</p>
                 <p className="text-gray-700 mb-4">{reporter.bio}</p>
-                <div >Read Full Bio</div>
+                <Link href={`/team/${reporter.slug}`} >Read Full Bio</Link>
               </div>
             </div>
           ))}

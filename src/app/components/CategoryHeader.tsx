@@ -10,7 +10,7 @@ export default function CategoryHeader( { category } :{category : string}) {
       useEffect(() => setMounted(true), []);
   if (!mounted) return null;
   return (
-    <section className={` py-24  overflow-hidden relative w-full  ${theme === "dark" ? "bg-black/ text-gray-50":'breadcrumb-bg text-gray-800'}`}
+    <section className={` py-5  overflow-hidden relative w-full  ${theme === "dark" ? "bg-black/ text-gray-50":'breadcrumb-bg text-gray-800'}`}
     
     >
       <div className="max-w-7xl mx-auto px-6 items-center  justify-items-center">

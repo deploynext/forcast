@@ -5,6 +5,7 @@ import CategoryHeader from "../components/CategoryHeader";
 import ArticlesList from "../components/ArticlesList"; // ✅ use the new component
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import ScrollToTop from "../components/ScrollToTop";
 
 interface Article {
   title: string;
@@ -75,6 +76,7 @@ export default async function CategoryPage({ params }: PageProps) {
         <CategoryHeader category={category} />
         <ArticlesList articles={articles} /> 
       </div>
+      <ScrollToTop/>
       <Footer />
     </>
   );

@@ -51,7 +51,7 @@ export default function IndexArticle ({ article }: { article: Article }) {
               </span>
             </Link>
 
-            <div className=" mx-2">
+            <div className=" ">
               <span className="text-gray-500 text-xs">by </span> 
               <Link 
               title="go to author page"
@@ -67,7 +67,7 @@ export default function IndexArticle ({ article }: { article: Article }) {
                 const key = (article.author ?? "").trim();
                 return routes[key] || "/team";
               })()} 
-              className="text-xs ml-2 font-semibold">
+              className="text-xs  font-semibold">
                 {article.author || "Reporter"}
               </Link>
             </div>

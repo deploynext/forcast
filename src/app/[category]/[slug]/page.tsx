@@ -12,6 +12,7 @@ import ArticleNavigation from "@/app/components/ArticleNavigation";
 import CommentForm from "@/app/components/CommentForm";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
+import ScrollToTop from "@/app/components/ScrollToTop";
 
 
 interface Article {
@@ -95,6 +96,7 @@ export default async function Page({
           </div>
         </div>
       </div>
+      <ScrollToTop/>
       <Footer/>
       </div>
     )
