@@ -49,6 +49,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                           src={article.image}
                           alt={article.title}
                           fill
+                          priority
                           className=  "object-cover transform transition-transform duration-700 ease-in-out scale-110 group-hover:scale-112 group-hover:translate-x-3"
                         />
                     </Link>
@@ -104,6 +105,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                     src={article.image}
                     alt={article.title}
                     fill
+                    priority
                     className={styles.image}
                   />
                   <div className={styles.cardInfo}>

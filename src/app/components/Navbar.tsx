@@ -117,6 +117,7 @@ const [searchOpen, setSearchOpen] = useState(false)
               alt="logo"
               width={230}
               height={36}
+              priority
               className={`scale-125 ${theme === "dark" ? "hidden" : "block"}`}
             />
 
@@ -126,6 +127,7 @@ const [searchOpen, setSearchOpen] = useState(false)
               alt="logo"
               width={230}
               height={36}
+              priority
               className={`scale-125 ${theme === "dark" ? "block" : "hidden"}`}
             />
             </h1>
@@ -313,6 +315,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             alt="logo"
             width={150}
             height={24}
+            priority
             className={`object-contain ${theme === "dark" ? "hidden":"block"}`}
             />
             <Image
@@ -320,6 +323,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             alt="logo"
             width={150}
             height={24}
+            priority
             className={`object-contain ${theme === "dark" ? "block":"hidden"}`}
             />
             </Link>
@@ -370,6 +374,7 @@ const [searchOpen, setSearchOpen] = useState(false)
                   alt="logo"
                   width={230}
                   height={36}
+                  priority
                   className={`scale-125${theme === "dark" ? "block":"hidden"}`}
                   />
               </Link>
@@ -427,6 +432,7 @@ const [searchOpen, setSearchOpen] = useState(false)
                   alt="logo"
                   width={230}
                   height={36}
+                  priority
                   className={`scale-125${theme === "dark" ? "block":"hidden"}`}
                   />
               </Link>

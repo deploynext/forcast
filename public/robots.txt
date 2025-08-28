@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.fiscalfusion.org/
+
+# Sitemaps
+Sitemap: https://www.fiscalfusion.org/sitemap.xml

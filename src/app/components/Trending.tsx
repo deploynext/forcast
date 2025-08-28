@@ -48,7 +48,7 @@ export default function Trending ({ articles }: { articles: Article[] }) {
                     ))}
                 </div>
                 <div className="lg:w-2/3 flex items-stretch p-4  ">
-                    <TitleInside3 article={articles[19]}/>
+                    <TitleInside3 article={articles[14]}/>
                 </div>
             </div>
         </div>

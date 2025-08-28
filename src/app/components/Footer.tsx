@@ -28,8 +28,11 @@ export default function Footer() {
           <div className="md:flex md:flex-row ">
             <div className="">
               <Link title="about us" href="/about-us" className="mb-4 text-lg font-semibold font-serif text-white">About Us</Link> 
-              <div className="md:w-1/2 my-5 text-gray-400">
-                Fiscal Fusion is your go-to source for balanced, clear financial news. Covering key topics like Politics, Business, Tech, Science, and Lifestyle, we deliver timely insights that help you stay informed and empowered.
+              <div className="md:w-1/2 my-5  flex flex-col gap-6">
+                <p className="text-gray-400">
+                  Fiscal Fusion is your go-to source for balanced, clear financial news. Covering key topics like Politics, Business, Tech, Science, and Lifestyle, we deliver timely insights that help you stay informed and empowered.
+                </p>
+              
               </div>
             </div>
             <div className="w-full md:w-2/4">
@@ -107,15 +110,16 @@ export default function Footer() {
                   alt="logo"
                   width={230}
                   height={36}
+                  priority
                   className="object-contain "
                   />
               </Link>
           </div>
           <div>Fiscal Fusion. All Rights Reserved.</div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 md:flex-row">
-            <Link className="hover:text-white" title="Privacy" href="#">Privacy</Link>
-            <Link className="hover:text-white" title="Terms" href="#">Terms</Link>
-            <Link className="hover:text-white" title="Contact" href="#">Contact</Link>
+            <Link className="hover:text-white font-semibold text-gray-500" title="Privacy" href="/privacy">Privacy</Link>
+            <Link className="hover:text-white font-semibold text-gray-500" title="Terms" href="/terms-and-condition">Terms</Link>
+            <Link className="hover:text-white font-semibold text-gray-500" title="Contact" href="/contact-us">Contact</Link>
           </div>
         </div>
       </div>

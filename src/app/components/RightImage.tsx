@@ -28,6 +28,7 @@ export default function RightImage ({ article }: { article: Article }) {
                     src={article.image}
                     alt={article.title}
                     fill
+                    priority
                     className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
                   />
                 </Link>

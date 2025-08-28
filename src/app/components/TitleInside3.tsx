@@ -21,8 +21,9 @@ return(
             alt={article.title}
             width={1000}
             height={1000}
+            priority
             className="object-cover  w-full h-full
-            transform transition-transform duration-700 ease-in-out scale-110 group-hover:scale-112 group-hover:translate-x-3"
+           "
           />
         </Link>
         <div className="bottom-0 h-full  absolute  text-white inset-0 bg-gradient-to-t from-black to-transparent ">

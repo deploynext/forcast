@@ -52,6 +52,7 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
                 alt={prevArticle.title}
                 width={100}
                 height={100}
+                priority
                 className="object-cover scale-220 mt-3"
               />
             </div>
@@ -83,6 +84,7 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
                 alt={nextArticle.title}
                 width={80}
                 height={80}
+                priority
                 className="object-cover scale-220 mt-2"
               />
             </div>

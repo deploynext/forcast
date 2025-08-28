@@ -21,6 +21,7 @@ return(
             alt={article.title}
             width={1000}
             height={1000}
+            priority
             className="object-cover  w-full h-full
             transform transition-transform duration-700 ease-in-out scale-110 group-hover:scale-112 group-hover:translate-x-3"
           />

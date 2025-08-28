@@ -40,6 +40,7 @@ export default function MostRead({ articles }: MostReadProps) {
               alt={articles.title}
               width={150}
               height={100}
+              priority
               className="w-full lg:w-[100px] h-[100px] object-cover rounded mt-1.5 mb-2"
             />
           </Link>

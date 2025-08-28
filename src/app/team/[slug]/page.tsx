@@ -91,6 +91,7 @@ export default async function TeamMemberPage({ params }: { params:Promise< { slu
             alt={member.name}
             width={100}
             height={100}
+            priority
             className='object-cover'
             />
           </div>
@@ -130,24 +131,6 @@ export default async function TeamMemberPage({ params }: { params:Promise< { slu
           <ArrowRight className="h-4 w-4" />
           </a>
           </div>
-          </section>
-
-
-          {/* Articles */}
-          <section className="mx-auto max-w-5xl px-6 py-6">
-          <h2 className="text-2xl font-semibold">Recent Articles</h2>
-          <ul className="mt-4 grid gap-3">
-          {/* {member.articles.map((article, idx) => (
-          <li
-          key={idx}
-          className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm hover:shadow"
-          >
-          <Link href={article.href} className="font-medium text-blue-600 hover:underline">
-          {article.title}
-          </Link>
-          </li>
-          ))} */}
-          </ul>
           </section>
         </main>
       <Footer/>

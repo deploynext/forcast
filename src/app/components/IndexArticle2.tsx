@@ -29,6 +29,7 @@ export default function IndexArticle2 ({ article }: { article: Article }) {
              alt={article.title}
              width={1000}
              height={1000}
+             priority
              className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
            />
          </Link>
