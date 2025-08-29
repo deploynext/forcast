@@ -7,8 +7,7 @@
     "build": "next build  && node minify-html.mjs && node optimize-images.mjs  ",
     "start": "next start",
     "lint": "next lint",
-    "sitemap": "next-sitemap",
-    "postbuild": "next-sitemap"
+    "sitemap": "next-sitemap"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
