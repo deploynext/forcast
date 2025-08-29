@@ -18,7 +18,7 @@ export default function WorldNews ({ articles }: { articles: Article[] }) {
               <div className="md:flex md:flex-row align-middle gap-5 ">
                   <h2 className="text-4xl mb-5 font-bold">World News</h2>
                   <div className="hidden mt-4 md:mt-0 md:block w-px  h-12 bg-gray-300"></div>
-                  <div className="text-gray-500 flex flex-col font-sans text-lg">
+                  <div className="text-gray-600 flex flex-col font-sans text-lg">
                       <p >What’s trending in health and medicine </p>  
                       <p>— breakthrough research, public health updatesand medical stories shaping the conversation.</p>
                   </div>

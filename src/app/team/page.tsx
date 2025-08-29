@@ -57,11 +57,11 @@ export default function TeamPage() {
                 alt={editor.name}
                 width={100}
                 height={100}
-                priority
+                quality={60}
                 className='my-2'
                 />
                 <h3 className="text-xl font-semibold">{editor.name}</h3>
-                <p className="text-sm text-gray-500 mb-3">{editor.role}</p>
+                <p className="text-sm text-gray-600 mb-3">{editor.role}</p>
                 <p className="text-gray-700 mb-4">{editor.bio}</p>
                 <Link href={`/team/${editor.slug}`} className='text-gray-600 font-sans font-semibold hover:text-gray-800'>Read Full Bio</Link>
               </div>
@@ -82,11 +82,11 @@ export default function TeamPage() {
                 alt={reporter.name}
                 width={100}
                 height={100}
-                priority
+                quality={60}
                 className='my-2'
                 />
                 <h3 className="text-xl font-semibold">{reporter.name}</h3>
-                <p className="text-sm text-gray-500 mb-3">{reporter.role}</p>
+                <p className="text-sm text-gray-600 mb-3">{reporter.role}</p>
                 <p className="text-gray-700 mb-4">{reporter.bio}</p>
                 <Link href={`/team/${reporter.slug}`} className='text-gray-600 font-sans font-semibold hover:text-gray-800'>Read Full Bio</Link>
               </div>

@@ -30,7 +30,7 @@ export default function ArticleCard({ article }: { article: Article }) {
             src={article.image}
             alt={article.title}
             fill
-            priority
+            quality={60}
             className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
           />
         </Link>
@@ -52,7 +52,7 @@ export default function ArticleCard({ article }: { article: Article }) {
 
 
       {/* Date */}
-      <div className="flex items-center gap-2 text-gray-500 text-sm mt-2 font-sans">
+      <div className="flex items-center gap-2 text-gray-600 text-sm mt-2 font-sans">
         <Calendar size={16} />
         <span>{article.date}</span>
       </div>

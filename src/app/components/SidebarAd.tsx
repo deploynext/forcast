@@ -11,7 +11,7 @@ export default function SidebarAd() {
           width={579}
           height={531}
           className="w-full h-auto"
-          priority
+          quality={60}
         />
       </Link>
     </div>

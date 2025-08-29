@@ -13,7 +13,7 @@ export default function NewsCard() {
         alt="News"
         width={400}
         height={700}
-        priority
+        quality={60}
         className="object-cover w-full md:h-[1320px] lg:h-[640px]"
       />
 
@@ -27,7 +27,7 @@ export default function NewsCard() {
         alt="logo"
         width={150}
         height={25}
-        priority
+        quality={60}
         />
       </span>
 

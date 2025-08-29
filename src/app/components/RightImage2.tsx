@@ -19,7 +19,7 @@ export default function RightImage2 ({ article }: { article: Article }) {
                     src={article.image}
                     alt={article.title}
                     fill
-                    priority
+                    quality={60}
                     className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
                   />
                 </Link>
@@ -32,7 +32,7 @@ export default function RightImage2 ({ article }: { article: Article }) {
               </Link>
               <div className="flex items-center gap-1 mt-4 text-xs ">
                 <Link href={`/${article.category}`} title={article.category}><span className="p-1 border hover:bg-red-600 hover:text-white capitalize font-sans cursor-pointer  font-medium">{article.category}</span></Link>
-                <span className="text-gray-500 font-sans  ">by </span>
+                <span className="text-gray-600 font-sans  ">by </span>
                 <Link 
                 title="go to author page"
                 
@@ -53,7 +53,7 @@ export default function RightImage2 ({ article }: { article: Article }) {
               
                 
               </div>
-              <div className="flex items-center text-xs mt-4 text-gray-500   font-sans">
+              <div className="flex items-center text-xs mt-4 text-gray-600   font-sans">
                 <span>Published date: {article.date}</span>
               </div>
             </div>

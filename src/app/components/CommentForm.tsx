@@ -21,14 +21,16 @@ const {theme} = useTheme()
         <input
           type="text"
           placeholder="Name"
-          className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
+          className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          
         />
         <input
           type="email"
           placeholder="Email"
-          className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
           required
+          className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          
         />
       </div>
 
@@ -36,6 +38,7 @@ const {theme} = useTheme()
         <input
           type="text"
           placeholder="Website"
+          required
           className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
@@ -44,6 +47,7 @@ const {theme} = useTheme()
         <input
           type="checkbox"
           id="saveInfo"
+          required
           className="mt-1 mr-2"
         />
         <label htmlFor="saveInfo" className="text-sm text-gray-700">
@@ -56,7 +60,6 @@ const {theme} = useTheme()
           placeholder="Comment"
           rows={6}
           className="w-full border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          required
         ></textarea>
       </div>
 

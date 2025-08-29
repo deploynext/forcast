@@ -25,7 +25,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
               <div className="md:flex md:flex-row align-middle gap-5 ">
                   <h2 className={`text-4xl mb-5 mt-1 font-bold ${ theme === "dark" ? "text-gray-50":"text-gray-950"}` }>{`Don't Miss`}</h2>
                   <div className="hidden mt-4 md:mt-0 md:block w-px  h-12 bg-gray-300"></div>
-                  <div className="text-gray-500 flex flex-col font-sans text-lg">
+                  <div className="text-gray-600 flex flex-col font-sans text-lg">
                       <p >The latest scores, game highlights, and stories from the world of sports.</p>  
                       <p> Stay updated on matches, players, and moments that matter.</p>
                   </div>
@@ -46,7 +46,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                                   src={article.image}
                                   alt={article.title}
                                   fill
-                                  priority
+                                  quality={60}
                                   className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
 
                                 />
@@ -76,7 +76,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                           {article.category}
                         </Link>
                         <div className="text-gray-900">
-                            <span className="text-gray-500 me-2">by</span> 
+                            <span className="text-gray-600 me-2">by</span> 
                             <Link 
                             title="go to author page"
                 
@@ -96,7 +96,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                             </Link>
                             </div>
                         </div>
-                        <span className="text-gray-500 font-sans text-xs mt-4">Published date : {article.date}</span>
+                        <span className="text-gray-600 font-sans text-xs mt-4">Published date : {article.date}</span>
                         </div>
                         </div>
                     </div>

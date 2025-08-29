@@ -27,7 +27,7 @@ export default function IndexArticle4 ({ article }: { article: Article }) {
              src={article.image}
              alt={article.title}
              fill
-             priority
+             quality={60}
              className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
            />
          </Link>
@@ -64,13 +64,13 @@ export default function IndexArticle4 ({ article }: { article: Article }) {
                 {article.author || "Reporter"}
               </Link>
             </div>
-            <div className="flex items-center text-xs  text-gray-500  font-sans">
+            <div className="flex items-center text-xs  text-gray-600   font-sans">
             
           
         </div>
         
         </div>
-        <p className="text-gray-500 font-sans text-xs mt-4">Published date: {article.date}</p>
+        <p className="text-gray-600  font-sans text-xs mt-4">Published date: {article.date}</p>
     </div>
     )
 }

@@ -86,7 +86,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                     src={article.image}
                     alt={article.title}
                     fill
-                    priority
+                    quality={60}
                     className="object-cover transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
                   />
                 </Link>
@@ -115,7 +115,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                   >
                     {article.category}
                   </span>
-                  <span className="text-gray-500 font-sans ml-2">by </span>
+                  <span className="text-gray-600 font-sans ml-2">by </span>
                   <Link
                   title="go to author page"
                 
@@ -141,7 +141,7 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                  
                   
                 </div>
-                <div className="flex items-center text-xs mt-4 text-gray-500   font-sans">
+                <div className="flex items-center text-xs mt-4 text-gray-600   font-sans">
                       <span>Published date: {article.date}</span>
                   </div>
               </div>

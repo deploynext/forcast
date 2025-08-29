@@ -52,12 +52,12 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
                 alt={prevArticle.title}
                 width={100}
                 height={100}
-                priority
+                quality={60}
                 className="object-cover scale-220 mt-3"
               />
             </div>
             <div className="min-w-0">
-              <p className="text-[16px] text-gray-500 font-sans mb-2">Previous Article</p>
+              <p className="text-[16px] text-gray-600 font-sans mb-2">Previous Article</p>
               <p className="font-semibold text-lg truncate">{prevArticle.title}</p>
             </div>
           </Link>
@@ -75,7 +75,7 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
             className="flex items-center gap-3 justify-end overflow-hidden"
           >
             <div className="min-w-0">
-              <p className="text-[16px] text-gray-500 font-sans mb-2">Next Article</p>
+              <p className="text-[16px] text-gray-600 font-sans mb-2">Next Article</p>
               <p className="font-semibold text-lg truncate">{nextArticle.title}</p>
             </div>
             <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 ">
@@ -84,7 +84,7 @@ export default function ArticleNavigation({ articles }: { articles: Article[] })
                 alt={nextArticle.title}
                 width={80}
                 height={80}
-                priority
+                quality={60}
                 className="object-cover scale-220 mt-2"
               />
             </div>

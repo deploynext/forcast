@@ -64,7 +64,7 @@ export default function ArticleHeader({ article }: { article: Article }) {
           
         </div>
         <div className="mt-2">
-            <p className="text-xl text-gray-500 font-sans italic">{article.shortdescription}</p>
+            <p className="text-xl text-gray-600 font-sans italic">{article.shortdescription}</p>
         </div>
       </div>
 

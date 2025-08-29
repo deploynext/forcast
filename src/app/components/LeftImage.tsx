@@ -31,7 +31,7 @@ const LeftImage = ({ article }: { article: Article }) => {
                 src={article.image}
                 alt={article.title}
                 fill
-                priority
+                quality={60}
                 className="object-cover transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
               />
             </Link>
@@ -50,7 +50,7 @@ const LeftImage = ({ article }: { article: Article }) => {
                   {article.category}
                 </span>
               </Link>
-              <span className="text-gray-500 font-sans ml-1">by </span>
+              <span className="text-gray-600 font-sans ml-1">by </span>
               <Link 
               title="go to author page"
                 
@@ -69,7 +69,7 @@ const LeftImage = ({ article }: { article: Article }) => {
                 {article.author || "Reporter"}
               </Link>       
             </div>
-            <div className="flex items-center text-xs mt-4  text-gray-500 font-sans">
+            <div className="flex items-center text-xs mt-4  text-gray-600 font-sans">
                 <span>Published date: {article.date}</span>
               </div>
           </div>

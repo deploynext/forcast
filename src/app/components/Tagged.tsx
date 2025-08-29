@@ -13,7 +13,7 @@ export default function Tagged () {
         <div className="px-9">
             <div className="w-full md:flex md:flex-row border justify-between border-dashed px-7 py-8 mt-12 border-gray-300">
                 <div className="flex flex-row mb-2">
-                    <strong className={`text-xl ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>Tagged : </strong><p className="text-gray-500 ml-2 text-xl font-sans ">Week</p>
+                    <strong className={`text-xl ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>Tagged : </strong><p className="text-gray-600 ml-2 text-xl font-sans ">Week</p>
                 </div>
                 <SocialIcons/>
             </div>

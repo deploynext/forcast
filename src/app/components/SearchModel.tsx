@@ -76,7 +76,7 @@ const SearchModel: React.FC<SearchProps> = ({ isOpen, onClose ,articles }) => {
                 </div>
               ))
             ) : (
-              <p className="text-gray-500">No results found.</p>
+              <p className="text-gray-600">No results found.</p>
             )}
           </div>
           </div>

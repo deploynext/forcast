@@ -15,12 +15,14 @@ body {
   src: url("/Assets/fonts/nyt-cheltenham-normal.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+   font-display: swap; 
 }
 @font-face {
   font-family: "CustomFont-medium";
   src: url("/Assets/fonts/nyt-cheltenham-medium.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+   font-display: swap; 
 }
 
 h2  {

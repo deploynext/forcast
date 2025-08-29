@@ -32,7 +32,7 @@ export default function MinusTop ( { article }: { article: Article } ) {
                     src={article.image}
                     alt={article.title}
                     fill
-                    priority
+                    quality={60}
                     className="object-cover  transform transition-transform
                     duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
                   />
@@ -54,7 +54,7 @@ export default function MinusTop ( { article }: { article: Article } ) {
                     {article.category}
                   </span>
                 </Link>
-                <span className="text-gray-500 font-sans ">by </span>
+                <span className="text-gray-600 font-sans ">by </span>
                 <Link 
                 title="go to author page"
                 
@@ -72,7 +72,7 @@ export default function MinusTop ( { article }: { article: Article } ) {
                 className="font-sans font-semibold">
                   {article.author || "Reporter"}
                 </Link>
-                <span className="text-gray-500">|</span>
+                <span className="text-gray-600">|</span>
                 <span className="font-sans">{article.date}</span>
               </div>
             </div>

@@ -21,7 +21,7 @@ return(
             alt={article.title}
             width={1000}
             height={1000}
-            priority
+            quality={60}
             className="object-cover  w-full h-full
             transform transition-transform duration-700 ease-in-out scale-110 group-hover:scale-112 group-hover:translate-x-3"
           />
@@ -63,7 +63,7 @@ return(
                   </Link >
                 </div>
                 
-                <div className="flex items-center  text-gray-500   font-sans">
+                <div className="flex items-center  text-gray-600   font-sans">
                     <span>{article.date}</span>
                 </div>
                 </div>

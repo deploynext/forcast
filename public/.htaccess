@@ -1,0 +1,81 @@
+RewriteEngine On
+
+# 🔒 Redirect HTTP to HTTPS and non-WWW to WWW
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^fiscalfusion\.org$ [NC]
+RewriteRule ^(.*)$ https://www.fiscalfusion.org/$1 [R=301,L]
+
+# ⚡ Enable Gzip Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/webp
+</IfModule>
+
+# 📂 Add MIME Types for Fonts & WebP Images
+<IfModule mod_mime.c>
+    AddType application/vnd.ms-fontobject .eot
+    AddType application/font-woff         .woff
+    AddType application/font-woff2        .woff2
+    AddType application/x-font-ttf        .ttf
+    AddType application/x-font-opentype   .otf
+    AddType font/woff2                    .woff2
+    AddType image/webp                    .webp
+</IfModule>
+
+# 🕒 Leverage Browser Caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault                        "access plus 1 month"
+    ExpiresByType text/html               "access plus 1 hour"
+    ExpiresByType text/css                "access plus 1 month"
+    ExpiresByType text/javascript         "access plus 1 month"
+    ExpiresByType application/javascript  "access plus 1 month"
+    ExpiresByType application/x-javascript "access plus 1 month"
+    ExpiresByType image/x-icon            "access plus 1 year"
+    ExpiresByType image/jpeg              "access plus 1 year"
+    ExpiresByType image/png               "access plus 1 year"
+    ExpiresByType image/gif               "access plus 1 year"
+    ExpiresByType image/webp              "access plus 1 year"
+    ExpiresByType application/x-font-ttf  "access plus 1 year"
+    ExpiresByType application/x-font-opentype "access plus 1 year"
+    ExpiresByType application/font-woff   "access plus 1 year"
+    ExpiresByType application/font-woff2  "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType font/woff2              "access plus 1 year"
+</IfModule>
+
+# 🚀 Cache Busting
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|woff|woff2|ttf|otf|eot|svg|jpg|jpeg|png|gif|webp)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires 0
+    </FilesMatch>
+</IfModule>
+
+# ✂️ Strip query strings from static file requests
+<IfModule mod_rewrite.c>
+    RewriteCond %{QUERY_STRING} !=""
+    RewriteRule (.*) $1? [L]
+</IfModule>
+
+# ✅ SPA Fallback (for React/Next.js static export)
+<IfModule mod_rewrite.c>
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.html [L]
+</IfModule>

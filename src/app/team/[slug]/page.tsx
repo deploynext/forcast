@@ -91,7 +91,7 @@ export default async function TeamMemberPage({ params }: { params:Promise< { slu
             alt={member.name}
             width={100}
             height={100}
-            priority
+            quality={60}
             className='object-cover'
             />
           </div>

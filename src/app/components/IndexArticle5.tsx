@@ -29,7 +29,7 @@ export default function IndexArticle5 ({ article }: { article: Article }) {
              src={article.image}
              alt={article.title}
              fill
-             priority
+             quality={60}
              className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
            />
          </Link>
@@ -68,7 +68,7 @@ export default function IndexArticle5 ({ article }: { article: Article }) {
             </div>
             
         </div>
-        <div className="flex items-center text-xs  text-gray-500 mt-4  font-sans">
+        <div className="flex items-center text-xs  text-gray-600 mt-4  font-sans">
           <span>Published date: {article.date}</span>
         </div>
     </div>

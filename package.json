@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build && node SlashClear.mjs",
+    "build": "next build && node SlashClear.mjs && node generateCritical.mjs && node minify-html.mjs ",
     "start": "next start",
     "lint": "next lint",
     "sitemap": "next-sitemap",
@@ -15,6 +15,7 @@
     "@fortawesome/free-brands-svg-icons": "^7.0.0",
     "@fortawesome/react-fontawesome": "^0.2.3",
     "bootstrap": "^5.3.7",
+    "compression": "^1.8.1",
     "framer-motion": "^12.23.12",
     "lucide-react": "^0.537.0",
     "next": "15.4.5",
@@ -29,8 +30,10 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.21",
+    "critical": "^7.2.1",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
+    "html-minifier": "^4.0.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.12",
     "typescript": "^5"

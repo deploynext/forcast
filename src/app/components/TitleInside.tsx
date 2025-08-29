@@ -20,7 +20,7 @@ return(
             src={article.image}
             alt={article.title}
             fill
-            priority
+            quality={60}
             className="object-cover  
             transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
           />
@@ -62,7 +62,7 @@ return(
                   </Link>
                 </div>
                 <div className="w-px h-3 bg-gray-500  mt-2"></div>
-                <div className="flex items-center  text-gray-500 text-xs  font-sans">
+                <div className="flex items-center  text-gray-600 text-xs  font-sans">
                     <span>{article.date}</span>
                 </div>
                 </div>

@@ -49,7 +49,7 @@ export default function SubscribeBox() {
         </button>
       </form>
     </div>
-        <p className="text-xs text-gray-500 mt-2">
+        <p className="text-xs text-gray-600 mt-2">
           By pressing the Subscribe button, you confirm that you have read and are
           agreeing to our <span className="underline">Privacy Policy</span> and{" "}
           <span className="underline">Terms of Use</span>

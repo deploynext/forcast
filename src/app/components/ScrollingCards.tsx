@@ -28,7 +28,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
           <div className="md:flex md:flex-row align-middle gap-5 ">
               <h2 className={`text-4xl mb-5 font-bold ${ theme === "dark" ? "text-gray-50" : "text-gray-900"}`}>Highlight</h2>
               <div className="hidden mt-4 md:mt-0 md:block w-px  h-12 bg-gray-300"></div>
-              <div className="text-gray-500 flex flex-col font-sans text-lg">
+              <div className=" text-gray-600 flex flex-col font-sans text-lg">
                   <p >Insights, market trends, and analysis driving global growth.</p>  
                   <p>From Wall Street to emerging markets—stay ahead in finance and trade.</p>
               </div>
@@ -49,7 +49,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                           src={article.image}
                           alt={article.title}
                           fill
-                          priority
+                          quality={60}
                           className=  "object-cover transform transition-transform duration-700 ease-in-out scale-110 group-hover:scale-112 group-hover:translate-x-3"
                         />
                     </Link>
@@ -87,7 +87,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                           </Link>
                         </div>
                         <div className="w-px h-3 bg-gray-500 mx-2 mt-1"></div>
-                        <div className="flex items-center gap-2 text-gray-500   font-sans">
+                        <div className="flex items-center gap-2 text-gray-600   font-sans">
                             <span>{article.date}</span>
                         </div>
                       </div>
@@ -105,7 +105,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                     src={article.image}
                     alt={article.title}
                     fill
-                    priority
+                    quality={60}
                     className={styles.image}
                   />
                   <div className={styles.cardInfo}>
@@ -142,7 +142,7 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                           </Link>
                         </div>
                         <div className="w-px h-3 bg-gray-500 mx-2 mt-2"></div>
-                        <div className="flex items-center gap-2 text-gray-500   font-sans">
+                        <div className="flex items-center gap-2 text-gray-600   font-sans">
                             <span>{article.date}</span>
                         </div>
                       </div>

@@ -117,7 +117,6 @@ const [searchOpen, setSearchOpen] = useState(false)
               alt="logo"
               width={230}
               height={36}
-              priority
               className={`scale-125 ${theme === "dark" ? "hidden" : "block"}`}
             />
 
@@ -127,7 +126,6 @@ const [searchOpen, setSearchOpen] = useState(false)
               alt="logo"
               width={230}
               height={36}
-              priority
               className={`scale-125 ${theme === "dark" ? "block" : "hidden"}`}
             />
             </h1>
@@ -139,7 +137,7 @@ const [searchOpen, setSearchOpen] = useState(false)
         <div className="flex items-center gap-4 ">
           <span className="hidden sm:inline">
             <span className="mr-2 inline-flex items-center gap-1 me-5">
-              <Calendar className="w-[16px]" /> Wednesday, 30 July 2025
+              <Calendar className="w-[16px]" aria-label="date" /> Wednesday, 30 July 2025
             </span>
           </span>
           <div className="hidden md:block h-5 w-px bg-gray-500" />
@@ -157,10 +155,10 @@ const [searchOpen, setSearchOpen] = useState(false)
       <div className={`flex flex-col md:flex-row md:items-center justify-between px-6 py-4   ${theme === "dark" ? "bg-gray-900 text-gray-50" :"bg-gray-50 text-gray-900"}`}>
         {/* Left - Menu + Search */}
         <div className="flex items-center ">
-          <button className="mr-4 p-2 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
+          <button aria-label="menu" className="mr-4 p-2 cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
             <Menu size={22} />
           </button>
-          <button className="p-2"
+          <button className="p-2" aria-label="search"
           onClick={() => setSearchOpen(true)}
           >
             <Search size={22}  />
@@ -279,7 +277,7 @@ const [searchOpen, setSearchOpen] = useState(false)
           </button> */}
           <div className="hidden md:block h-5 w-px bg-gray-300" />
          {mounted && (
-                <button
+                <button aria-label="dark mode toggle"
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   className="p-2"
                 >
@@ -315,7 +313,6 @@ const [searchOpen, setSearchOpen] = useState(false)
             alt="logo"
             width={150}
             height={24}
-            priority
             className={`object-contain ${theme === "dark" ? "hidden":"block"}`}
             />
             <Image
@@ -323,7 +320,6 @@ const [searchOpen, setSearchOpen] = useState(false)
             alt="logo"
             width={150}
             height={24}
-            priority
             className={`object-contain ${theme === "dark" ? "block":"hidden"}`}
             />
             </Link>
@@ -332,7 +328,7 @@ const [searchOpen, setSearchOpen] = useState(false)
             
             <div className="h-6 w-px bg-gray-300" />
             {mounted && (
-                <button
+                <button   aria-label="dark mode toggle"
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                   className="p-2"
                 >
@@ -374,7 +370,6 @@ const [searchOpen, setSearchOpen] = useState(false)
                   alt="logo"
                   width={230}
                   height={36}
-                  priority
                   className={`scale-125${theme === "dark" ? "block":"hidden"}`}
                   />
               </Link>
@@ -432,7 +427,6 @@ const [searchOpen, setSearchOpen] = useState(false)
                   alt="logo"
                   width={230}
                   height={36}
-                  priority
                   className={`scale-125${theme === "dark" ? "block":"hidden"}`}
                   />
               </Link>

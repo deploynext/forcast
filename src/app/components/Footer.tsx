@@ -60,7 +60,6 @@ export default function Footer() {
                 <div className="relative w-full me-10 md:me-0  ">
                   <input
                     type="email"
-                    required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Your email address"
@@ -77,7 +76,7 @@ export default function Footer() {
               </form>
 
             <label className="mt-3 flex items-start gap-2 text-sm text-neutral-400">
-              <input type="checkbox" className="mt-0.5 accent-indigo-600" /> I have read and agree to the terms & conditions
+              <input type="checkbox" required className="mt-0.5 accent-indigo-600" /> I have read and agree to the terms & conditions
             </label>
 
             <div className="mt-6 space-y-2 text-sm">
@@ -110,16 +109,16 @@ export default function Footer() {
                   alt="logo"
                   width={230}
                   height={36}
-                  priority
+                  quality={60}
                   className="object-contain "
                   />
               </Link>
           </div>
           <div>Fiscal Fusion. All Rights Reserved.</div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 md:flex-row">
-            <Link className="hover:text-white font-semibold text-gray-500" title="Privacy" href="/privacy">Privacy</Link>
-            <Link className="hover:text-white font-semibold text-gray-500" title="Terms" href="/terms-and-condition">Terms</Link>
-            <Link className="hover:text-white font-semibold text-gray-500" title="Contact" href="/contact-us">Contact</Link>
+            <Link className="hover:text-white font-semibold text-gray-600" title="Privacy" href="/privacy">Privacy</Link>
+            <Link className="hover:text-white font-semibold text-gray-600" title="Terms" href="/terms-and-condition">Terms</Link>
+            <Link className="hover:text-white font-semibold text-gray-600" title="Contact" href="/contact-us">Contact</Link>
           </div>
         </div>
       </div>

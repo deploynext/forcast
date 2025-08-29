@@ -29,7 +29,7 @@ export default function WorldNews2 ({ articles }: { articles: Article[] }) {
               <div className="md:flex md:flex-row align-middle gap-5 ">
                   <h2 className={`text-4xl mb-5 font-bold ${ theme === "dark" ? "text-gray-50":"text-gray-950"}`}>World News</h2>
                   <div className="hidden mt-4 md:mt-0 md:block w-px  h-12 bg-gray-300"></div>
-                  <div className="text-gray-500 flex flex-col font-sans text-lg">
+                  <div className="text-gray-600 flex flex-col font-sans text-lg">
                       <p >Your source for clear, reliable, and timely news.</p>  
                       <p>Breaking stories, deep analysis, and insights that connect the world.</p>
                   </div>

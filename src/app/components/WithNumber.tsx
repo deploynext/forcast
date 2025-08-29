@@ -30,7 +30,7 @@ export default function WithNumber ({ article,index }: { article: Article , inde
                                   src={article.image}
                                   alt={article.title}
                                   fill
-                                  priority
+                                  quality={60}
                                   className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
 
                                 />
@@ -54,7 +54,7 @@ export default function WithNumber ({ article,index }: { article: Article , inde
                         >
                           {article.category}
                         </Link>
-                        <div ><span className="text-gray-500 text-xs">by</span> 
+                        <div ><span className="text-gray-600 text-xs">by</span> 
                         <Link 
                         title="go to author page"
                 
@@ -73,8 +73,8 @@ export default function WithNumber ({ article,index }: { article: Article , inde
                             {article.author || "Reporter"}
                         </Link>
                         </div>
-                        <span className="text-gray-500">|</span>
-                        <span className="text-gray-500 text-xs">{article.date}</span>
+                        <span className="text-gray-600">|</span>
+                        <span className="text-gray-600 text-xs">{article.date}</span>
                       </div>
                     </div>
                

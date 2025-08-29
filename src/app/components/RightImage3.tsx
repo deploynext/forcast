@@ -31,7 +31,7 @@ export default function RightImage3 ({ article }: { article: Article }) {
                     src={article.image}
                     alt={article.title}
                     fill
-                    priority
+                    quality={60}
                     className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
                   />
                 </Link>
@@ -43,7 +43,7 @@ export default function RightImage3 ({ article }: { article: Article }) {
                 </h3>
               </Link>
               <div className="flex items-center gap-2  text-sm justify-between">
-                <span className="flex flex-row gap-2 align-middle text-gray-500 font-sans text-xs"><Calendar size={12} className="mt-0.5"/>{article.date}</span><div className="rounded-full bg-gray-700 p-1"><Bookmark size={12}/></div>
+                <span className="flex flex-row gap-2 align-middle text-gray-600 font-sans text-xs"><Calendar size={12} className="mt-0.5"/>{article.date}</span><div className="rounded-full bg-gray-700 p-1"><Bookmark size={12}/></div>
               </div>
             </div>
           </div>

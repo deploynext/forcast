@@ -40,7 +40,7 @@ export default function MostRead({ articles }: MostReadProps) {
               alt={articles.title}
               width={150}
               height={100}
-              priority
+              quality={60}
               className="w-full lg:w-[100px] h-[100px] object-cover rounded mt-1.5 mb-2"
             />
           </Link>
@@ -54,7 +54,7 @@ export default function MostRead({ articles }: MostReadProps) {
             >
               {articles.title}
             </Link>
-            <p className="flex flex-row text-xs text-gray-500 font-sans font-semibold">
+            <p className="flex flex-row text-xs text-gray-600 font-sans font-semibold">
               <AlarmClock className="me-2 w-3 " />
               <div className="mt-1">{articles.date}</div>
             </p>

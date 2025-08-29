@@ -51,7 +51,7 @@ export default function FeaturedArticleCard({article}: FeaturedArticleCardProps)
                   return routes[key] ?? "/team";
                 })()} 
                 className='font-semibold   font-sans'>{article.author || "Reporter"}</Link>
-                <div className="text-gray-500 font-sans  ml-2 ">{article.date}</div>
+                <div className="text-gray-600 font-sans  ml-2 ">{article.date}</div>
         </div>
           
       </div>
@@ -64,7 +64,10 @@ export default function FeaturedArticleCard({article}: FeaturedArticleCardProps)
             src={article.image}
             alt={article.title}
             fill
+            quality={60}
             priority
+            fetchPriority='high'
+            loading='eager'
             className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
           />
           </Link>

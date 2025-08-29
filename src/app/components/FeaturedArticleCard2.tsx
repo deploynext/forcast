@@ -36,7 +36,7 @@ export default function FeaturedArticleCard2({article}: FeaturedArticleCardProps
           </h2>
         </Link>
 
-        <p className="text-gray-500 mt-4 text-sm md:text-base font-sans leading-relaxed line-clamp-4">
+        <p className="text-gray-600 mt-4 text-sm md:text-base font-sans leading-relaxed line-clamp-4">
           {article.shortdescription}
         </p>
 
@@ -61,7 +61,7 @@ export default function FeaturedArticleCard2({article}: FeaturedArticleCardProps
             {article.author || "Reporter"}
             </Link>
           <div className='w-px h-4 bg-gray-700'></div>
-          <span className="text-gray-500  font-sans  ">{article.date}</span>
+          <span className="text-gray-600  font-sans  ">{article.date}</span>
         </div>
       </div>
 
@@ -75,7 +75,7 @@ export default function FeaturedArticleCard2({article}: FeaturedArticleCardProps
             src={article.image}
             alt={article.title}
             fill
-            priority
+            quality={60}
             className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
           />
           </Link>

@@ -28,7 +28,7 @@ export default function PopularNews ({ articles }: { articles: Article[] }) {
               <div className="md:flex md:flex-row align-middle gap-5 ">
                   <h2 className={`text-4xl font-bold ${theme === "dark" ? "text-gray-50" : "text-gray-900"}`}>Popular News</h2>
                   <div className="hidden mt-4 md:mt-0 md:block w-px  h-12 bg-gray-300"></div>
-                  <div className="text-gray-500 flex flex-col font-sans text-lg">
+                  <div className="text-gray-600 flex flex-col font-sans text-lg">
                       <p >Updates, insights, and debates shaping learning worldwide.</p>  
                       <p> From schools to universities—news on policies, innovation, and opportunities.</p>
                   </div>

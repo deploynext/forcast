@@ -33,6 +33,10 @@ import { Metadata } from "next";
 import ScrollToTop from "./components/ScrollToTop"
 import SidebarAd from "./components/SidebarAd"
 
+
+export const revalidate = 60;
+
+
 export const metadata: Metadata = {
   title: "Fiscal Fusion - Fusing News and Numbers.",
   description:

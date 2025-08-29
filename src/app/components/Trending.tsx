@@ -30,7 +30,7 @@ export default function Trending ({ articles }: { articles: Article[] }) {
               <div className="md:flex md:flex-row align-middle gap-5 ">
                   <h2 className={`text-4xl font-bold mb-5 ${theme === "dark" ? "text-gray-50" :"text-gray-900"}`}>Trending</h2>
                   <div className="hidden mt-4 md:mt-0 md:block w-px  h-12 bg-gray-300"></div>
-                  <div className="text-gray-500 flex flex-col font-sans text-lg">
+                  <div className="text-gray-600 flex flex-col font-sans text-lg">
                       <p >Daily updates on research, breakthroughs, and global challenges.</p>  
                       <p>From labs to outer space—science that matters to everyone.</p>
                   </div>
