@@ -75,11 +75,11 @@ export const metadata: Metadata = {
     images: ["https://www.fiscalfusion.org/"],
   },
 
-  // robots: {
-  //   index: true,
-  //   follow: true,
-  //   googleBot: { index: true, follow: true },
-  // },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   icons: {
     icon: "/logo-black.webp",
     shortcut: "/logo-black.webp",
@@ -127,7 +127,7 @@ export default function Home() {
         headline: "Home",
         url: metadata.metadataBase?.toString() ?? "https://www.fiscalfusion.org/",
         keywords: [
-          "fiscal fusion",
+          "fiscalfusion",
           "global news",
           "breaking news",
           "world headlines",
@@ -144,10 +144,7 @@ export default function Home() {
             "@type": "ImageObject",
             url: "https://www.fiscalfusion.org/logo-black.webp",
           },
-          // sameAs: [
-          //   "https://x.com/ChroniqNow",
-          //   "https://www.instagram.com/chroniqnow/",
-          // ],
+          
         },
       },
       {
