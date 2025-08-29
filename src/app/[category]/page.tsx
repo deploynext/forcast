@@ -72,8 +72,8 @@ export default async function CategoryPage({ params }: PageProps) {
   return (
     <>
       <Navbar articles={articles} />
-      <div className="">
-        <CategoryHeader category={category} />
+      <CategoryHeader category={category} />
+      <div className="lg:mx-11">
         <ArticlesList articles={articles} /> 
       </div>
       <ScrollToTop/>

@@ -22,16 +22,17 @@ export default function ArticleCard({ article }: { article: Article }) {
       useEffect(() => setMounted(true), []);
   if (!mounted) return null;
   return (
-    <div className="w-full px-2 pb-8">
+    <div className="w-full px-4 pb-8">
       {/* Image */}
-       <div className="relative w-full h-44 overflow-hidden border border-gray-300 rounded-md sm:w-[800px] lg:w-[350px] ">
+       <div className="relative w-full h-44 overflow-hidden  rounded-md sm:w-[350px] lg:w-[300px] ">
         <Link href={`/${article.category}/${article.slug}`} title={article.title}>
           <Image
             src={article.image}
             alt={article.title}
-            fill
+            width={320}
+            height={180}
             quality={60}
-            className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
+            className="object-cover w-full border border-gray-300 transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
           />
         </Link>
       </div>
