@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build ",
+    "build": "next build && node SlashClear.mjs && node generateCritical.mjs && node minify-html.mjs ",
     "start": "next start",
     "lint": "next lint",
     "sitemap": "next-sitemap",
