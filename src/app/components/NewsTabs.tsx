@@ -85,9 +85,10 @@ export default function NewsTabs({ articles }: { articles: Article[] }) {
                   <Image
                     src={article.image}
                     alt={article.title}
-                    fill
+                    height={500}
+                    width={500}
                     quality={60}
-                    className="object-cover transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
+                    className="object-cover w-full h-full transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
                   />
                 </Link>
               </div>

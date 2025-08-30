@@ -48,9 +48,10 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                         <Image
                           src={article.image}
                           alt={article.title}
-                          fill
+                          height={500}
+                          width={500}
                           quality={60}
-                          className=  "object-cover transform transition-transform duration-700 ease-in-out scale-110 group-hover:scale-112 group-hover:translate-x-3"
+                          className=  "object-cover w-full h-full transform transition-transform duration-700 ease-in-out scale-110 group-hover:scale-112 group-hover:translate-x-3"
                         />
                     </Link>
                   <div className={`${styles.cardInfo} inset-0 bg-gradient-to-t from-black to-transparent`}>
@@ -104,9 +105,10 @@ export default function ScrollingCards({ articles }: { articles: Article[] }) {
                   <Image
                     src={article.image}
                     alt={article.title}
-                    fill
+                    height={500}
+                    width={500}
                     quality={60}
-                    className={styles.image}
+                    className="w-full h-full"
                   />
                   <div className={styles.cardInfo}>
                     <div className="absolute bottom-5 px-5 pb-2">

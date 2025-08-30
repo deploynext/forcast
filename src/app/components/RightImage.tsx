@@ -27,9 +27,10 @@ export default function RightImage ({ article }: { article: Article }) {
                   <Image
                     src={article.image}
                     alt={article.title}
-                    fill
+                    width={500}
+                    height={500}
                     quality={60}
-                    className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
+                    className="object-cover w-full h-full transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-2"
                   />
                 </Link>
             </div>

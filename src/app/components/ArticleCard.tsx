@@ -32,7 +32,7 @@ export default function ArticleCard({ article }: { article: Article }) {
             width={320}
             height={180}
             quality={60}
-            className="object-cover w-full border border-gray-300 transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
+            className="object-cover w-full h-full border border-gray-300 transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
           />
         </Link>
       </div>

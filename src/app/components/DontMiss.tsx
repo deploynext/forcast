@@ -45,9 +45,10 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                                 <Image
                                   src={article.image}
                                   alt={article.title}
-                                  fill
+                                  width={320}
+                                  height={250}
                                   quality={60}
-                                  className="object-cover  transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
+                                  className="object-cover w-full h-full transform transition-transform duration-700 ease-in-out scale-110 hover:scale-112 hover:translate-x-3"
 
                                 />
                             </Link>
@@ -75,7 +76,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                         >
                           {article.category}
                         </Link>
-                        <div className="text-gray-900">
+                        <div className="">
                             <span className="text-gray-600 me-2">by</span> 
                             <Link 
                             title="go to author page"
@@ -91,7 +92,7 @@ export default function DontMiss({ articles }: { articles: Article[] }) {
                               const key = (article.author ?? "").trim();
                               return routes[key] || "/team";
                             })()} 
-                            className="font-semibold  ">
+                            className={`font-semibold ${theme === "dark" ? "text-gray-50":"text-gray-900"}`}>
                                 {article.author || "Reporter"}
                             </Link>
                             </div>

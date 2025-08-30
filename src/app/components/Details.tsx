@@ -50,7 +50,7 @@ function splitIntoParagraphs(text: string, sentencesPerParagraph = 3) {
           />
         </div>
 
-       <div className="text-lg text-gray-600 leading-relaxed mt-5 w-full">
+       <div className="text-lg text-gray-500 leading-relaxed mt-5 w-full">
           {splitIntoParagraphs(article.description, 3).map((paragraph, idx) => (
             <p key={idx} className="mb-4 ">
               {paragraph}
